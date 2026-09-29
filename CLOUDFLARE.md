@@ -1,5 +1,9 @@
 # Cloudflare deployment
 
+Live website: https://dopamine-boutique.eng-mohamdkamal1987.workers.dev
+
+Staff dashboard: https://dopamine-boutique.eng-mohamdkamal1987.workers.dev/#/admin
+
 The `dopamine-boutique` Worker serves the Expo web export from `dist/` and the same-origin `/api/*` endpoints. D1 database `dopamine-orders` persists online customer orders, bookings and staff sessions. Convex hosts the image gallery. This deployment does not require the shop's computer to remain running.
 
 ## Deploy
