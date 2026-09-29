@@ -1,3 +1,4 @@
+import { validate } from './validation.mjs';
 import http from 'node:http';
 import { DatabaseSync } from 'node:sqlite';
 import { randomBytes, randomUUID, createHash, timingSafeEqual } from 'node:crypto';
@@ -32,26 +33,6 @@ async function body(req) { let text = ''; for await (const part of req) { text +
 function throttle(req, name, max) { const key = `${req.socket.remoteAddress}:${name}`; const now = Date.now(); const entry = limits.get(key); if (!entry || entry.until < now) { limits.set(key, { count:1, until:now+60000 }); return; } if (++entry.count > max) throw fail('Too many requests. Try again in a minute.', 429); }
 function auth(req) { const token = (req.headers.authorization || '').replace(/^Bearer /, ''); const session = sessions.get(hash(token)); if (!session || session < Date.now()) throw fail('Sign in required', 401); }
 function dto(row) { return { ...JSON.parse(row.payload), id:row.id, status:row.status, createdAt:row.created_at, updatedAt:row.updated_at }; }
-function validate(input) {
-  const customer = { name:clean(input.name, 2, 80, 'Enter your name'), phone:clean(input.phone, 7, 24, 'Enter your phone number') };
-  if (!/^\+?[\d\s()-]{7,24}$/.test(customer.phone) || customer.phone.replace(/\D/g, '').length < 7) throw fail('Invalid phone number');
-  const kind = input.kind;
-  if (!['order','booking'].includes(kind)) throw fail('Invalid request type');
-  const day = clean(input.day, 10, 10, 'Choose a date');
-  if (!/^\d{4}-\d{2}-\d{2}$/.test(day) || !Number.isFinite(Date.parse(day)) || new Date(day).toISOString().slice(0,10) !== day || day < nowDay() || day > new Date(Date.now()+366*86400000).toISOString().slice(0,10)) throw fail('Choose a date within the next year');
-  const time = clean(input.time, 5, 5, 'Choose a time');
-  if (!/^([01]\d|2[0-3]):[0-5]\d$/.test(time) || new Date(`${day}T${time}:00+03:00`).getTime() <= Date.now()) throw fail('Choose a future time');
-  const notes = clean(input.notes || '', kind === 'booking' ? 5 : 0, 1000, 'Describe your booking');
-  if (!['pickup','delivery'].includes(input.fulfillment)) throw fail('Choose pickup or delivery');
-  const address = input.fulfillment === 'delivery' ? clean(input.address, 8, 300, 'Enter a delivery address') : '';
-  let items = [];
-  if (kind === 'order') {
-    if (!Array.isArray(input.items) || !input.items.length || input.items.length > catalog.length) throw fail('Your bag is empty');
-    const used = new Set();
-    items = input.items.map(item => { const product = catalog.find(p => p.id === item.id); if (!product || used.has(item.id) || !Number.isInteger(item.quantity) || item.quantity < 1 || item.quantity > 99) throw fail('Invalid product quantity'); used.add(item.id); return { ...product, quantity:item.quantity }; });
-  }
-  return { ...customer, kind, day, time, notes, fulfillment:input.fulfillment, address, items, total:kind==='booking'||items.some(p=>p.price===null)?null:items.reduce((sum,p)=>sum+p.quantity*p.price,0), currency:'QAR' };
-}
 const server = http.createServer(async (req, res) => {
   const origin = req.headers.origin;
   if (origin && !allowedOrigins.has(origin)) return send(res,403,{error:'Origin not allowed'});
@@ -70,7 +51,7 @@ const server = http.createServer(async (req, res) => {
       const requestKey=clean(input.requestKey,20,100,'Invalid request key');
       const existing=db.prepare('SELECT * FROM orders WHERE request_key=?').get(requestKey);
       if (existing) { if (existing.owner_hash !== hash(ownerToken)) throw fail('Request conflict',409); return send(res,200,{order:dto(existing)}); }
-      const payload=validate(input);const id='DP-'+randomBytes(6).toString('hex').toUpperCase();const now=new Date().toISOString();
+      const payload=validate(input,catalog);const id='DP-'+randomBytes(6).toString('hex').toUpperCase();const now=new Date().toISOString();
       db.prepare('INSERT INTO orders VALUES (?,?,?,?,?,?,?,?,?,?)').run(id,requestKey,hash(ownerToken),now,now,'pending',payload.kind,payload.day,payload.time,JSON.stringify(payload));
       return send(res,201,{order:dto(db.prepare('SELECT * FROM orders WHERE id=?').get(id))});
     }

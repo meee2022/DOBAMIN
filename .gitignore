@@ -19,3 +19,7 @@ dist/
 logo-page.png
 photo-page.png
 pdf-contact-sheet.jpg
+
+.wrangler/
+.dev.vars
+.dev.vars.*

@@ -31,7 +31,7 @@ npm run web
 - Requests are pending until reviewed. Staff can filter by preparation date, status, customer name, phone or reference; changes refresh for customers every 15 seconds and for staff every 10 seconds.
 - Amounts are computed by the server using `src/prices.json`; submitted client prices are ignored. Date/time checks use Qatar time. Duplicate retries use the same request key. Staff status updates reject stale versions.
 - Local API binds to 127.0.0.1:8082. Public customer access requires deploying the API with persistent storage and HTTPS, setting `EXPO_PUBLIC_ORDERS_API_URL` before the web build, and configuring `DOPAMINE_ALLOWED_ORIGINS` for the deployed website. `DOPAMINE_ADMIN_KEY`, `DOPAMINE_DATA_DIR`, `HOST` and `PORT` are server settings. Do not expose the local access key in public environment variables.
-- Orders are now saved, but catalog/pricing remain illustrative. No payment, automatic booking guarantee, capacity management, notifications or real delivery integration is included.
+- Orders are saved; product prices await shop confirmation. No payment, automatic booking guarantee, capacity management, notifications or real delivery integration is included.
 
 Validation: `npm run test:orders` tests persistence across API restarts, isolation between customers, staff authentication, server pricing, invalid dates/quantities, delivery addresses, idempotent submission and concurrent update protection. Browser flow checks use an isolated temporary database, not the actual shop database.
 
@@ -42,3 +42,7 @@ Validation: `npm run test:orders` tests persistence across API restarts, isolati
 
 Generated product and packaging images are concepts for review. The native Expo app is still a scaffold; the completed review surface is the website.
 
+
+## Cloudflare deployment
+
+Cloudflare Workers serves the exported website and same-origin /api routes. D1 stores new online orders independently from the local SQLite database. Convex continues to host the 72 image originals and optimized copies. See CLOUDFLARE.md for deployment and staff access.
