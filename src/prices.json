@@ -1,0 +1,146 @@
+[
+  {
+    "id": "tarte-hazelnut-praline",
+    "ar": "تارت براليني البندق",
+    "en": "Hazelnut praline tarte",
+    "price": null
+  },
+  {
+    "id": "tarte-caviar",
+    "ar": "تارت كافيار",
+    "en": "Caviar tarte",
+    "price": null
+  },
+  {
+    "id": "tarte-pistachio",
+    "ar": "تارت فستق",
+    "en": "Pistachio tarte",
+    "price": null
+  },
+  {
+    "id": "tarte-strawberry",
+    "ar": "تارت فراولة",
+    "en": "Strawberry tarte",
+    "price": null
+  },
+  {
+    "id": "tarte-dried-apple",
+    "ar": "تارت تفاح مجفف",
+    "en": "Dried apple tarte",
+    "price": null
+  },
+  {
+    "id": "tarte-raspberry",
+    "ar": "تارت توت العليق",
+    "en": "Raspberry tarte",
+    "price": null
+  },
+  {
+    "id": "bahamas-lava-cake",
+    "ar": "باهاماس لافا كيك",
+    "en": "Bahamas lava cake",
+    "price": null
+  },
+  {
+    "id": "tiramisu",
+    "ar": "تيراميسو",
+    "en": "Tiramisu",
+    "price": null
+  },
+  {
+    "id": "rice-pudding",
+    "ar": "أرز بالحليب",
+    "en": "Rice pudding",
+    "price": null
+  },
+  {
+    "id": "sneakers-bar",
+    "ar": "سنيكرز بار",
+    "en": "Sneakers bar",
+    "price": null
+  },
+  {
+    "id": "matcha-cheesecake",
+    "ar": "تشيز كيك ماتشا",
+    "en": "Matcha cheesecake",
+    "price": null
+  },
+  {
+    "id": "basbousa",
+    "ar": "بسبوسة",
+    "en": "Basbousa",
+    "price": null
+  },
+  {
+    "id": "cup-chocolate-cheesecake",
+    "ar": "كوب تشيز كيك شوكولاتة",
+    "en": "Chocolate cheesecake cup",
+    "price": null
+  },
+  {
+    "id": "cup-berries-cheesecake",
+    "ar": "كوب تشيز كيك توت",
+    "en": "Berries cheesecake cup",
+    "price": null
+  },
+  {
+    "id": "cup-lotus-cheesecake",
+    "ar": "كوب تشيز كيك لوتس",
+    "en": "Lotus cheesecake cup",
+    "price": null
+  },
+  {
+    "id": "cup-victoria-berries",
+    "ar": "كوب فيكتوريا كيك بالتوت",
+    "en": "Victoria cake berries cup",
+    "price": null
+  },
+  {
+    "id": "cup-victoria-apple-cinnamon",
+    "ar": "كوب فيكتوريا كيك بالتفاح والقرفة",
+    "en": "Victoria cake apple cinnamon cup",
+    "price": null
+  },
+  {
+    "id": "cup-victoria-coconut-pineapple",
+    "ar": "كوب فيكتوريا كيك بجوز الهند والأناناس",
+    "en": "Victoria cake coconut pineapple cup",
+    "price": null
+  },
+  {
+    "id": "cup-black-forest",
+    "ar": "كوب بلاك فورست",
+    "en": "Black Forest cup",
+    "price": null
+  },
+  {
+    "id": "cup-friandise-pistachio-raspberry",
+    "ar": "كوب فريانديز بالفستق وتوت العليق",
+    "en": "Friandise pistachio raspberry cup",
+    "price": null
+  },
+  {
+    "id": "cup-orange-creme-brulee",
+    "ar": "كوب كريم بروليه بالبرتقال",
+    "en": "Orange creme brulee cup",
+    "price": null
+  },
+  {
+    "id": "almond-cardamom-petit-four",
+    "ar": "بيتي فور باللوز والهيل",
+    "en": "Almond cardamom petit four",
+    "price": null
+  },
+  {
+    "id": "cup-libanaise-traditional",
+    "ar": "كوب ليبانيز التقليدي",
+    "en": "Traditional Libanaise cup",
+    "price": null
+  },
+  {
+    "id": "cup-libanaise-apple-crumble",
+    "ar": "كوب ليبانيز تفاح كرامبل",
+    "en": "Libanaise apple crumble cup",
+    "price": null
+  }
+]

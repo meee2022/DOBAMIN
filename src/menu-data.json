@@ -1,0 +1,218 @@
+[
+  {
+    "id": "tarte-hazelnut-praline",
+    "ar": "تارت براليني البندق",
+    "en": "Hazelnut praline tarte",
+    "category": "tarte",
+    "price": null,
+    "plate": "tarte-hazelnut-praline - تارت براليني البندق - طبق - Plate",
+    "packaging": "tarte-hazelnut-praline - تارت براليني البندق - تغليف - Packaging"
+  },
+  {
+    "id": "tarte-caviar",
+    "ar": "تارت كافيار",
+    "en": "Caviar tarte",
+    "category": "tarte",
+    "price": null,
+    "plate": "tarte-caviar - تارت كافيار - طبق - Plate",
+    "packaging": "tarte-caviar - تارت كافيار - تغليف - Packaging"
+  },
+  {
+    "id": "tarte-pistachio",
+    "ar": "تارت فستق",
+    "en": "Pistachio tarte",
+    "category": "tarte",
+    "price": null,
+    "plate": "tarte-pistachio - تارت فستق - طبق - Plate",
+    "packaging": "tarte-pistachio - تارت فستق - تغليف - Packaging"
+  },
+  {
+    "id": "tarte-strawberry",
+    "ar": "تارت فراولة",
+    "en": "Strawberry tarte",
+    "category": "tarte",
+    "price": null,
+    "plate": "tarte-strawberry - تارت فراولة - طبق - Plate",
+    "packaging": "tarte-strawberry - تارت فراولة - تغليف - Packaging"
+  },
+  {
+    "id": "tarte-dried-apple",
+    "ar": "تارت تفاح مجفف",
+    "en": "Dried apple tarte",
+    "category": "tarte",
+    "price": null,
+    "plate": "tarte-dried-apple - تارت تفاح مجفف - طبق - Plate",
+    "packaging": "tarte-dried-apple - تارت تفاح مجفف - تغليف - Packaging"
+  },
+  {
+    "id": "tarte-raspberry",
+    "ar": "تارت توت العليق",
+    "en": "Raspberry tarte",
+    "category": "tarte",
+    "price": null,
+    "plate": "tarte-raspberry - تارت توت العليق - طبق - Plate",
+    "packaging": "tarte-raspberry - تارت توت العليق - تغليف - Packaging"
+  },
+  {
+    "id": "bahamas-lava-cake",
+    "ar": "باهاماس لافا كيك",
+    "en": "Bahamas lava cake",
+    "category": "desserts",
+    "price": null,
+    "plate": "bahamas-lava-cake - باهاماس لافا كيك - طبق - Plate",
+    "packaging": "bahamas-lava-cake - باهاماس لافا كيك - تغليف - Packaging"
+  },
+  {
+    "id": "tiramisu",
+    "ar": "تيراميسو",
+    "en": "Tiramisu",
+    "category": "desserts",
+    "price": null,
+    "plate": "tiramisu - تيراميسو - طبق - Plate",
+    "packaging": "tiramisu - تيراميسو - تغليف - Packaging"
+  },
+  {
+    "id": "rice-pudding",
+    "ar": "أرز بالحليب",
+    "en": "Rice pudding",
+    "category": "desserts",
+    "price": null,
+    "plate": "rice-pudding - أرز بالحليب - طبق - Plate",
+    "packaging": "rice-pudding - أرز بالحليب - تغليف - Packaging"
+  },
+  {
+    "id": "sneakers-bar",
+    "ar": "سنيكرز بار",
+    "en": "Sneakers bar",
+    "category": "desserts",
+    "price": null,
+    "plate": "sneakers-bar - سنيكرز بار - طبق - Plate",
+    "packaging": "sneakers-bar - سنيكرز بار - تغليف - Packaging"
+  },
+  {
+    "id": "matcha-cheesecake",
+    "ar": "تشيز كيك ماتشا",
+    "en": "Matcha cheesecake",
+    "category": "desserts",
+    "price": null,
+    "plate": "matcha-cheesecake - تشيز كيك ماتشا - طبق - Plate",
+    "packaging": "matcha-cheesecake - تشيز كيك ماتشا - تغليف - Packaging"
+  },
+  {
+    "id": "basbousa",
+    "ar": "بسبوسة",
+    "en": "Basbousa",
+    "category": "desserts",
+    "price": null,
+    "plate": "basbousa - بسبوسة - طبق - Plate",
+    "packaging": "basbousa - بسبوسة - تغليف - Packaging"
+  },
+  {
+    "id": "cup-chocolate-cheesecake",
+    "ar": "كوب تشيز كيك شوكولاتة",
+    "en": "Chocolate cheesecake cup",
+    "category": "cups",
+    "price": null,
+    "plate": "cup-chocolate-cheesecake - كوب تشيز كيك شوكولاتة - طبق - Plate",
+    "packaging": "cup-chocolate-cheesecake - كوب تشيز كيك شوكولاتة - تغليف - Packaging"
+  },
+  {
+    "id": "cup-berries-cheesecake",
+    "ar": "كوب تشيز كيك توت",
+    "en": "Berries cheesecake cup",
+    "category": "cups",
+    "price": null,
+    "plate": "cup-berries-cheesecake - كوب تشيز كيك توت - طبق - Plate",
+    "packaging": "cup-berries-cheesecake - كوب تشيز كيك توت - تغليف - Packaging"
+  },
+  {
+    "id": "cup-lotus-cheesecake",
+    "ar": "كوب تشيز كيك لوتس",
+    "en": "Lotus cheesecake cup",
+    "category": "cups",
+    "price": null,
+    "plate": "cup-lotus-cheesecake - كوب تشيز كيك لوتس - طبق - Plate",
+    "packaging": "cup-lotus-cheesecake - كوب تشيز كيك لوتس - تغليف - Packaging"
+  },
+  {
+    "id": "cup-victoria-berries",
+    "ar": "كوب فيكتوريا كيك بالتوت",
+    "en": "Victoria cake berries cup",
+    "category": "cups",
+    "price": null,
+    "plate": "cup-victoria-berries - كوب فيكتوريا كيك بالتوت - طبق - Plate",
+    "packaging": "cup-victoria-berries - كوب فيكتوريا كيك بالتوت - تغليف - Packaging"
+  },
+  {
+    "id": "cup-victoria-apple-cinnamon",
+    "ar": "كوب فيكتوريا كيك بالتفاح والقرفة",
+    "en": "Victoria cake apple cinnamon cup",
+    "category": "cups",
+    "price": null,
+    "plate": "cup-victoria-apple-cinnamon - كوب فيكتوريا كيك بالتفاح والقرفة - طبق - Plate",
+    "packaging": "cup-victoria-apple-cinnamon - كوب فيكتوريا كيك بالتفاح والقرفة - تغليف - Packaging"
+  },
+  {
+    "id": "cup-victoria-coconut-pineapple",
+    "ar": "كوب فيكتوريا كيك بجوز الهند والأناناس",
+    "en": "Victoria cake coconut pineapple cup",
+    "category": "cups",
+    "price": null,
+    "plate": "cup-victoria-coconut-pineapple - كوب فيكتوريا كيك بجوز الهند والأناناس - طبق - Plate",
+    "packaging": "cup-victoria-coconut-pineapple - كوب فيكتوريا كيك بجوز الهند والأناناس - تغليف - Packaging"
+  },
+  {
+    "id": "cup-black-forest",
+    "ar": "كوب بلاك فورست",
+    "en": "Black Forest cup",
+    "category": "cups",
+    "price": null,
+    "plate": "cup-black-forest - كوب بلاك فورست - طبق - Plate",
+    "packaging": "cup-black-forest - كوب بلاك فورست - تغليف - Packaging"
+  },
+  {
+    "id": "cup-friandise-pistachio-raspberry",
+    "ar": "كوب فريانديز بالفستق وتوت العليق",
+    "en": "Friandise pistachio raspberry cup",
+    "category": "cups",
+    "price": null,
+    "plate": "cup-friandise-pistachio-raspberry - كوب فريانديز بالفستق وتوت العليق - طبق - Plate",
+    "packaging": "cup-friandise-pistachio-raspberry - كوب فريانديز بالفستق وتوت العليق - تغليف - Packaging"
+  },
+  {
+    "id": "cup-orange-creme-brulee",
+    "ar": "كوب كريم بروليه بالبرتقال",
+    "en": "Orange creme brulee cup",
+    "category": "cups",
+    "price": null,
+    "plate": "cup-orange-creme-brulee - كوب كريم بروليه بالبرتقال - طبق - Plate",
+    "packaging": "cup-orange-creme-brulee - كوب كريم بروليه بالبرتقال - تغليف - Packaging"
+  },
+  {
+    "id": "almond-cardamom-petit-four",
+    "ar": "بيتي فور باللوز والهيل",
+    "en": "Almond cardamom petit four",
+    "category": "cups",
+    "price": null,
+    "plate": "almond-cardamom-petit-four - بيتي فور باللوز والهيل - طبق - Plate",
+    "packaging": "almond-cardamom-petit-four - بيتي فور باللوز والهيل - تغليف - Packaging"
+  },
+  {
+    "id": "cup-libanaise-traditional",
+    "ar": "كوب ليبانيز التقليدي",
+    "en": "Traditional Libanaise cup",
+    "category": "cups",
+    "price": null,
+    "plate": "cup-libanaise-traditional - كوب ليبانيز التقليدي - طبق - Plate",
+    "packaging": "cup-libanaise-traditional - كوب ليبانيز التقليدي - تغليف - Packaging"
+  },
+  {
+    "id": "cup-libanaise-apple-crumble",
+    "ar": "كوب ليبانيز تفاح كرامبل",
+    "en": "Libanaise apple crumble cup",
+    "category": "cups",
+    "price": null,
+    "plate": "cup-libanaise-apple-crumble - كوب ليبانيز تفاح كرامبل - طبق - Plate",
+    "packaging": "cup-libanaise-apple-crumble - كوب ليبانيز تفاح كرامبل - تغليف - Packaging"
+  }
+]

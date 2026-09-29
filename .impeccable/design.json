@@ -1,0 +1,425 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-29T16:31:25.090601+00:00",
+  "title": "Design System: Dopamine",
+  "extensions": {
+    "colorMeta": {
+      "primary": {
+        "role": "primary",
+        "displayName": "Caramel",
+        "tonalRamp": [
+          "oklch(0.15 0.06554 48.78)",
+          "oklch(0.2643 0.06554 48.78)",
+          "oklch(0.3786 0.06554 48.78)",
+          "oklch(0.4929 0.06554 48.78)",
+          "oklch(0.6071 0.06554 48.78)",
+          "oklch(0.7214 0.06554 48.78)",
+          "oklch(0.8357 0.06554 48.78)",
+          "oklch(0.95 0.06554 48.78)"
+        ]
+      },
+      "rose": {
+        "role": "secondary",
+        "displayName": "Rose",
+        "tonalRamp": [
+          "oklch(0.15 0.05882 35.09)",
+          "oklch(0.2643 0.05882 35.09)",
+          "oklch(0.3786 0.05882 35.09)",
+          "oklch(0.4929 0.05882 35.09)",
+          "oklch(0.6071 0.05882 35.09)",
+          "oklch(0.7214 0.05882 35.09)",
+          "oklch(0.8357 0.05882 35.09)",
+          "oklch(0.95 0.05882 35.09)"
+        ]
+      },
+      "bg": {
+        "role": "neutral",
+        "displayName": "Cream",
+        "tonalRamp": [
+          "oklch(0.15 0.00587 59.65)",
+          "oklch(0.2643 0.00587 59.65)",
+          "oklch(0.3786 0.00587 59.65)",
+          "oklch(0.4929 0.00587 59.65)",
+          "oklch(0.6071 0.00587 59.65)",
+          "oklch(0.7214 0.00587 59.65)",
+          "oklch(0.8357 0.00587 59.65)",
+          "oklch(0.95 0.00587 59.65)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Cocoa",
+        "tonalRamp": [
+          "oklch(0.15 0.03881 34.06)",
+          "oklch(0.2643 0.03881 34.06)",
+          "oklch(0.3786 0.03881 34.06)",
+          "oklch(0.4929 0.03881 34.06)",
+          "oklch(0.6071 0.03881 34.06)",
+          "oklch(0.7214 0.03881 34.06)",
+          "oklch(0.8357 0.03881 34.06)",
+          "oklch(0.95 0.03881 34.06)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted cocoa",
+        "tonalRamp": [
+          "oklch(0.15 0.03440 41.57)",
+          "oklch(0.2643 0.03440 41.57)",
+          "oklch(0.3786 0.03440 41.57)",
+          "oklch(0.4929 0.03440 41.57)",
+          "oklch(0.6071 0.03440 41.57)",
+          "oklch(0.7214 0.03440 41.57)",
+          "oklch(0.8357 0.03440 41.57)",
+          "oklch(0.95 0.03440 41.57)"
+        ]
+      },
+      "accent": {
+        "role": "primary",
+        "displayName": "Burgundy",
+        "tonalRamp": [
+          "oklch(0.15 0.12874 19.93)",
+          "oklch(0.2643 0.12874 19.93)",
+          "oklch(0.3786 0.12874 19.93)",
+          "oklch(0.4929 0.12874 19.93)",
+          "oklch(0.6071 0.12874 19.93)",
+          "oklch(0.7214 0.12874 19.93)",
+          "oklch(0.8357 0.12874 19.93)",
+          "oklch(0.95 0.12874 19.93)"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Warm rule",
+        "tonalRamp": [
+          "oklch(0.15 0.02338 56.92)",
+          "oklch(0.2643 0.02338 56.92)",
+          "oklch(0.3786 0.02338 56.92)",
+          "oklch(0.4929 0.02338 56.92)",
+          "oklch(0.6071 0.02338 56.92)",
+          "oklch(0.7214 0.02338 56.92)",
+          "oklch(0.8357 0.02338 56.92)",
+          "oklch(0.95 0.02338 56.92)"
+        ]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Soft parchment",
+        "tonalRamp": [
+          "oklch(0.15 0.01455 64.34)",
+          "oklch(0.2643 0.01455 64.34)",
+          "oklch(0.3786 0.01455 64.34)",
+          "oklch(0.4929 0.01455 64.34)",
+          "oklch(0.6071 0.01455 64.34)",
+          "oklch(0.7214 0.01455 64.34)",
+          "oklch(0.8357 0.01455 64.34)",
+          "oklch(0.95 0.01455 64.34)"
+        ]
+      },
+      "white": {
+        "role": "neutral",
+        "displayName": "Warm white",
+        "tonalRamp": [
+          "oklch(0.15 0.00340 67.78)",
+          "oklch(0.2643 0.00340 67.78)",
+          "oklch(0.3786 0.00340 67.78)",
+          "oklch(0.4929 0.00340 67.78)",
+          "oklch(0.6071 0.00340 67.78)",
+          "oklch(0.7214 0.00340 67.78)",
+          "oklch(0.8357 0.00340 67.78)",
+          "oklch(0.95 0.00340 67.78)"
+        ]
+      },
+      "status-pending-bg": {
+        "role": "semantic",
+        "displayName": "Status Pending Bg"
+      },
+      "status-pending-text": {
+        "role": "semantic",
+        "displayName": "Status Pending Text"
+      },
+      "status-preparing-bg": {
+        "role": "semantic",
+        "displayName": "Status Preparing Bg"
+      },
+      "status-preparing-text": {
+        "role": "semantic",
+        "displayName": "Status Preparing Text"
+      },
+      "status-ready-bg": {
+        "role": "semantic",
+        "displayName": "Status Ready Bg"
+      },
+      "status-ready-text": {
+        "role": "semantic",
+        "displayName": "Status Ready Text"
+      },
+      "status-cancelled-bg": {
+        "role": "semantic",
+        "displayName": "Status Cancelled Bg"
+      },
+      "status-cancelled-text": {
+        "role": "semantic",
+        "displayName": "Status Cancelled Text"
+      },
+      "error-bg": {
+        "role": "semantic",
+        "displayName": "Error Bg"
+      },
+      "error-border": {
+        "role": "semantic",
+        "displayName": "Error Border"
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Arabic display",
+        "purpose": "Expressive hero heading."
+      },
+      "headline": {
+        "displayName": "Arabic headline",
+        "purpose": "Section headings."
+      },
+      "title": {
+        "displayName": "Product title",
+        "purpose": "Product names."
+      },
+      "body": {
+        "displayName": "Arabic body",
+        "purpose": "Supporting text."
+      },
+      "english": {
+        "displayName": "English serif",
+        "purpose": "English-language site and editorial details."
+      },
+      "button": {
+        "displayName": "Action label",
+        "purpose": "Full-size actions."
+      },
+      "label": {
+        "displayName": "Category label",
+        "purpose": "Noninteractive product categories."
+      },
+      "operate": {
+        "displayName": "Operate body",
+        "purpose": "Arial for bilingual operational forms and schedules."
+      },
+      "operate-heading": {
+        "displayName": "Operate heading",
+        "purpose": "Operational page headings."
+      },
+      "field-label": {
+        "displayName": "Field label",
+        "purpose": "Visible labels above native controls."
+      },
+      "product-title": {
+        "displayName": "Product title",
+        "purpose": "Bilingual enclosed product-card names, 25px on small screens."
+      },
+      "gallery-title": {
+        "displayName": "Gallery title",
+        "purpose": "Image titles within enclosed gallery cards."
+      }
+    },
+    "shadows": [
+      {
+        "name": "photo-stamp",
+        "value": "0 4px 18px #462d2710",
+        "purpose": "Diffuse depth under the photograph stamp."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease",
+        "value": "cubic-bezier(.16,1,.3,1)",
+        "purpose": "Shared reveal, image, and movement easing."
+      },
+      {
+        "name": "button-background",
+        "value": ".25s",
+        "purpose": "Action background transitions."
+      },
+      {
+        "name": "button-transform",
+        "value": ".35s",
+        "purpose": "Two-pixel hover lift."
+      },
+      {
+        "name": "product-image",
+        "value": ".65s",
+        "purpose": "Gentle image hover scaling."
+      },
+      {
+        "name": "hero-reveal",
+        "value": "1.4s",
+        "purpose": "Initial photograph unveil."
+      },
+      {
+        "name": "product-border",
+        "value": ".25s",
+        "purpose": "Caramel border on product-card hover."
+      },
+      {
+        "name": "gallery-border",
+        "value": ".3s",
+        "purpose": "Caramel border on gallery-card hover."
+      },
+      {
+        "name": "gallery-image",
+        "value": ".6s",
+        "purpose": "Image hover scale with shared ease; reduced motion disables the transition."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "compact-desktop",
+        "value": "1050px"
+      },
+      {
+        "name": "mobile",
+        "value": "700px"
+      },
+      {
+        "name": "wide",
+        "value": "1600px"
+      },
+      {
+        "name": "media-single-column",
+        "value": "600px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Burgundy collection and bag action.",
+      "html": "<button class=\"ds-button\">اكتشف لحظتك الحلوة</button>",
+      "css": ".ds-button{font-family:Amiri,serif;font-size:16px;min-height:51px;padding:12px 25px;display:inline-flex;align-items:center;justify-content:center;gap:30px;border:0;border-radius:3px;cursor:pointer;transition:background .25s,transform .35s var(--ease,cubic-bezier(.16,1,.3,1))}.ds-button:hover{transform:translateY(-2px)}.ds-button:focus-visible,.ds-add:focus-visible,.ds-nav a:focus-visible,.ds-tabs button:focus-visible{outline:2px solid var(--accent,#650015);outline-offset:5px}@media(prefers-reduced-motion:reduce){.ds-button{transition:none}}.ds-button{background:var(--accent,#650015);color:var(--white,#fffdfb)}.ds-button:hover{background:#470111}"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Outlined gifting action.",
+      "html": "<button class=\"ds-button\">اكتشف هدايا دوبامين</button>",
+      "css": ".ds-button{font-family:Amiri,serif;font-size:16px;min-height:51px;padding:12px 25px;display:inline-flex;align-items:center;justify-content:center;gap:30px;border:0;border-radius:3px;cursor:pointer;transition:background .25s,transform .35s var(--ease,cubic-bezier(.16,1,.3,1))}.ds-button:hover{transform:translateY(-2px)}.ds-button:focus-visible,.ds-add:focus-visible,.ds-nav a:focus-visible,.ds-tabs button:focus-visible{outline:2px solid var(--accent,#650015);outline-offset:5px}@media(prefers-reduced-motion:reduce){.ds-button{transition:none}}.ds-button{background:transparent;color:var(--ink,#462d27);border:1px solid var(--ink,#462d27)}.ds-button:hover{background:var(--surface,#f0e7df)}"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "description": "Text navigation with a thin hover underline.",
+      "html": "<nav class=\"ds-nav\" dir=\"rtl\"><a href=\"#collection\">المجموعة</a><a href=\"#story\">حكايتنا</a><a href=\"#gifting\">فن الإهداء</a></nav>",
+      "css": ".ds-nav{display:flex;gap:30px;font-family:Amiri,serif;font-size:16px;color:var(--ink,#462d27)}.ds-nav a{position:relative;color:inherit;text-decoration:none}.ds-nav a:after{content:'';position:absolute;bottom:-6px;inset-inline-start:0;width:100%;height:1px;background:var(--accent,#650015);transform:scaleX(0);transform-origin:right;transition:transform .3s}.ds-nav a:hover:after{transform:scaleX(1)}.ds-button:focus-visible,.ds-add:focus-visible,.ds-nav a:focus-visible,.ds-tabs button:focus-visible{outline:2px solid var(--accent,#650015);outline-offset:5px}"
+    },
+    {
+      "name": "Collection Filters",
+      "kind": "nav",
+      "description": "Pressed state is expressed by a burgundy underline.",
+      "html": "<div class=\"ds-tabs\" dir=\"rtl\" role=\"group\" aria-label=\"Filter collection\"><button aria-pressed=\"true\">كل اللحظات</button><button aria-pressed=\"false\">حلا يومك</button><button aria-pressed=\"false\">للمشاركة</button></div>",
+      "css": ".ds-tabs{display:flex;gap:30px;border-bottom:1px solid var(--line,#dfcfc4)}.ds-tabs button{font-family:Amiri,serif;background:none;border:0;border-bottom:2px solid transparent;padding:12px 3px 16px;color:var(--muted,#786057);font-size:17px;cursor:pointer}.ds-tabs button[aria-pressed=true]{color:var(--accent,#650015);border-color:var(--accent,#650015)}.ds-button:focus-visible,.ds-add:focus-visible,.ds-nav a:focus-visible,.ds-tabs button:focus-visible{outline:2px solid var(--accent,#650015);outline-offset:5px}"
+    },
+    {
+      "name": "Toast",
+      "kind": "custom",
+      "refersTo": "toast",
+      "description": "Compact lower-center confirmation surface.",
+      "html": "<div class=\"ds-toast\" role=\"status\">أضفنا لحظة حلوة إلى حقيبتك</div>",
+      "css": ".ds-toast{background:var(--ink,#462d27);color:var(--white,#fffdfb);padding:12px 24px;display:inline-flex;gap:12px;align-items:center;border-radius:4px;font-family:Amiri,serif;font-size:16px}"
+    },
+    {
+      "name": "Operational Field",
+      "kind": "input",
+      "refersTo": "order-field",
+      "description": "Visible label and native field with caramel focus.",
+      "html": "<label class=\"ds-field\">Full name<input autocomplete=\"name\" required></label>",
+      "css": ".ds-field{display:flex;flex-direction:column;gap:8px;font:14px/1.7 Arial,sans-serif;color:var(--ink,#462d27)}.ds-field input{font:inherit;border:1px solid var(--line,#dfcfc4);border-radius:4px;padding:12px;background:var(--white,#fffdfb);color:var(--ink,#462d27);min-height:45px;caret-color:var(--accent,#650015)}.ds-field input:focus{outline:2px solid var(--primary,#bf9179);outline-offset:2px}"
+    },
+    {
+      "name": "Order Statuses",
+      "kind": "chip",
+      "refersTo": "status-pending",
+      "description": "Written semantic status labels; confirmed shares preparing, completed shares ready.",
+      "html": "<div class=\"ds-statuses\"><span class=\"ds-status ds-pending\">Pending</span><span class=\"ds-status ds-preparing\">Preparing</span><span class=\"ds-status ds-ready\">Ready</span><span class=\"ds-status ds-cancelled\">Cancelled</span></div>",
+      "css": ".ds-statuses{display:flex;gap:8px;flex-wrap:wrap}.ds-status{font:12px/1.65 Arial,sans-serif;padding:5px 10px;border-radius:20px;white-space:nowrap}.ds-pending{background:#f4e8cf;color:#735011}.ds-preparing{background:#e9e4f2;color:#594477}.ds-ready{background:#e1ede3;color:#32633d}.ds-cancelled{background:#efe5e4;color:#82443c}"
+    },
+    {
+      "name": "Product Card",
+      "kind": "card",
+      "refersTo": "product-card",
+      "description": "Paired image-frame specimen with an enclosed bilingual body; actual product assets are supplied by the catalog.",
+      "html": "<article class=\"ds-product\" dir=\"rtl\"><div class=\"ds-pair\"><div>بتغليف دوبامين</div><div>على الطبق</div></div><div class=\"ds-copy\"><span class=\"ds-type\">تارت</span><h3>تارت فستق</h3><p dir=\"ltr\">Pistachio tarte</p><div class=\"ds-bottom\"><span>السعر عند التأكيد</span><button class=\"ds-media-add\">أضف للحقيبة</button></div></div></article>",
+      "css": ".ds-product{font-family:Amiri,serif;color:var(--ink,#462d27);background:var(--white,#fffdfb);border:1px solid var(--line,#dfcfc4);border-radius:14px;overflow:hidden;max-width:420px;transition:border-color .25s}.ds-product:hover{border-color:var(--primary,#bf9179)}.ds-pair{display:grid;grid-template-columns:1fr 1fr;gap:3px;background:var(--surface,#f0e7df)}.ds-pair div{aspect-ratio:1;display:grid;place-items:end center;padding:10px 4px;font-size:13px;color:var(--muted,#786057)}.ds-copy{padding:17px 22px 22px}.ds-type{font-size:12px;color:var(--muted,#786057);border-bottom:1px solid var(--line,#dfcfc4);padding-bottom:4px}.ds-copy h3{font-size:24px;line-height:1.55;font-weight:400;margin:10px 0 0}.ds-copy p{font:14px/1.6 \"Antic Didone\",serif;color:var(--muted,#786057);margin:6px 0 0}.ds-bottom{display:flex;justify-content:space-between;align-items:center;gap:12px;border-top:1px solid var(--line,#dfcfc4);padding-top:17px;margin-top:22px;font-size:13px}.ds-media-add{font:14px Amiri,serif;border:0;background:var(--accent,#650015);color:var(--white,#fffdfb);border-radius:5px;min-height:44px;padding:8px 13px;cursor:pointer}.ds-media-add:hover{background:#470111}.ds-media-add:focus-visible,.ds-filter:focus-visible,.ds-photo-button:focus-visible{outline:2px solid var(--accent,#650015);outline-offset:5px}@media(prefers-reduced-motion:reduce){.ds-product{transition:none}}"
+    },
+    {
+      "name": "Gallery Card",
+      "kind": "card",
+      "refersTo": "gallery-card",
+      "description": "Single square image-frame specimen with bilingual title and warm border.",
+      "html": "<article class=\"ds-gallery-card\"><div class=\"ds-gallery-frame\"></div><div class=\"ds-gallery-copy\"><span>Packaging concepts</span><h2>Blooming Flower Box</h2><p dir=\"rtl\">بوكس زهرة متفتح</p></div></article>",
+      "css": ".ds-gallery-card{max-width:420px;background:var(--white,#fffdfb);color:var(--ink,#462d27);border:1px solid var(--line,#dfcfc4);border-radius:14px;overflow:hidden;transition:border-color .3s;font-family:\"Antic Didone\",serif}.ds-gallery-card:hover{border-color:var(--primary,#bf9179)}.ds-gallery-frame{aspect-ratio:1;background:var(--surface,#f0e7df)}.ds-gallery-copy{padding:21px 24px 26px}.ds-gallery-copy span{font-size:12px;color:var(--muted,#786057)}.ds-gallery-copy h2{font-size:25px;line-height:1.5;font-weight:400;margin:8px 0 0}.ds-gallery-copy p{font-family:Amiri,serif;font-size:14px;line-height:1.6;color:var(--muted,#786057);margin:9px 0 0}"
+    },
+    {
+      "name": "Gallery Filters",
+      "kind": "chip",
+      "refersTo": "gallery-filter",
+      "description": "Count-bearing category buttons with a filled selected state.",
+      "html": "<div class=\"ds-filters\" role=\"group\" aria-label=\"Filter images\"><button class=\"ds-filter\" aria-pressed=\"true\">All images <span>72</span></button><button class=\"ds-filter\" aria-pressed=\"false\">Packaging concepts <span>16</span></button></div>",
+      "css": ".ds-filters{display:flex;gap:10px;flex-wrap:wrap}.ds-filter{font:15px Amiri,serif;display:flex;gap:14px;align-items:center;border:1px solid var(--line,#dfcfc4);border-radius:6px;min-height:46px;padding:8px 17px;background:var(--white,#fffdfb);color:var(--ink,#462d27);cursor:pointer}.ds-filter span{font:11px Arial,sans-serif;opacity:.8}.ds-filter[aria-pressed=true]{background:var(--accent,#650015);border-color:var(--accent,#650015);color:var(--white,#fffdfb)}.ds-media-add:focus-visible,.ds-filter:focus-visible,.ds-photo-button:focus-visible{outline:2px solid var(--accent,#650015);outline-offset:5px}"
+    },
+    {
+      "name": "Media Search",
+      "kind": "input",
+      "refersTo": "media-search",
+      "description": "Labelled gallery search with caramel focus.",
+      "html": "<label class=\"ds-search\">Find an image<input type=\"search\" placeholder=\"Tart, box, chocolate…\"></label>",
+      "css": ".ds-search{font:15px Amiri,serif;color:var(--ink,#462d27);display:flex;align-items:center;gap:18px;flex-wrap:wrap}.ds-search input{font:16px Amiri,serif;min-height:46px;border:1px solid var(--line,#dfcfc4);border-radius:6px;background:var(--white,#fffdfb);padding:10px 15px;color:var(--ink,#462d27);max-width:100%}.ds-search input:focus{outline:2px solid var(--primary,#bf9179);outline-offset:2px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "A calm confectionery boutique",
+    "overview": "Warm paper surfaces, the supplied script logo, and original dessert and packaging imagery establish a quiet boutique. Caramel and cream carry the atmosphere; burgundy concentrates attention on actions and selected states. Fine warm borders enclose product and gallery cards, while editorial sections retain generous open space.\n\nArabic is the initial reading direction, with literary display lettering and generous text leading. English uses a restrained high-contrast serif. Operational forms and preparation schedules use Arial for both languages while retaining the brand palette. This record describes the implemented web demo in `App.web.tsx`, `src/web.css`, `src/Orders.web.tsx`, `src/orders.css`, `src/menu.css`, `src/ProductCard.web.tsx`, `src/Gallery.web.tsx`, and `src/PhotoViewer.web.tsx`; the deferred native scaffold does not establish a second visual system.",
+    "keyCharacteristics": [
+      "Warm cream surfaces and caramel identity accents.",
+      "Arabic literary display paired with restrained English serif.",
+      "Product photography, fine rules, and generous spacing.",
+      "Warm-white enclosed media cards with rounded corners and focused image enlargement."
+    ],
+    "rules": [
+      {
+        "name": "The Burgundy Action Rule",
+        "body": "Use burgundy to identify actions, selected filters, and keyboard focus; preserve the warm neutral field around them.",
+        "section": "colors"
+      },
+      {
+        "name": "The Language Pairing Rule",
+        "body": "Preserve the implemented Arabic and English family relationship and reading direction when extending a surface.",
+        "section": "typography"
+      },
+      {
+        "name": "The Operate Typography Rule",
+        "body": "Use Arial for order forms, request records, and preparation schedules in both languages; keep the boutique display pairing on editorial surfaces. Operational headings are 32px at weight 500, reducing to 26px on mobile; fields use 14px labels, and status labels use 12px.",
+        "section": "typography"
+      },
+      {
+        "name": "The Enclosed Media Rule",
+        "body": "Keep product and gallery imagery, bilingual names, and associated actions within warm-white cards with fine warm borders and 14px corners; retain shadow-free surfaces.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do preserve the supplied logo and brand palette.",
+      "Do retain Arabic and English reading direction and type pairing.",
+      "Do use enclosed warm-white product and gallery cards, fine rules, and warm tonal sections.",
+      "Do provide visible keyboard focus and honor reduced-motion preference.",
+      "Do pair every operational status color with a written label and display Qatar time for preparation dates."
+    ],
+    "donts": [
+      "Don't replace supplied brand assets with a generic wordmark or unrelated palette.",
+      "Don't apply container shadows to the bordered product and gallery cards.",
+      "Don't treat English category labels as interactive filter controls.",
+      "Don't promote demo prices or checkout states into production commerce claims."
+    ]
+  }
+}
