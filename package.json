@@ -14,7 +14,9 @@
     "test:orders": "node --test server/orders.test.mjs",
     "media:upload": "node scripts/upload-gallery.cjs",
     "deploy:cloudflare": "npm run build:web && wrangler deploy",
-    "test:cloudflare": "node --test cloudflare/orders.test.mjs"
+    "test:cloudflare": "node --test cloudflare/orders.test.mjs",
+    "build:pages": "node scripts/build-pages.cjs",
+    "deploy:pages": "npm run build:pages && cd cloudflare/pages && wrangler pages deploy --branch main"
   },
   "dependencies": {
     "@expo/metro-runtime": "~56.0.15",
