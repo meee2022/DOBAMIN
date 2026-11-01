@@ -178,6 +178,12 @@ components:
 
 # Design System: Dopamine
 
+## Approved web color distribution — 2026-11-01
+
+The approved cup gift box now leads the home hero in place of the previous warm cocoa photograph. Render `public/brand/approved-packaging.webp` with `object-fit: contain` so the full packaging remains visible, including on mobile. This reuses the existing user-approved concept; it does not introduce a new product photograph.
+
+Keep Nardo as the page canvas, soft sage (`surface`) behind the hero copy and packaging captions, and pale blue (`sky-surface`) behind the hero image and plated-photo captions. Graphite carries text. Deep sage carries primary actions and the announcement band with white text. The approved drybrush artwork connects sections and the footer; keep text on solid surfaces. Preserve Arabic RTL, English LTR and the existing catalog, bag, booking and order flows.
+
 ## Overview
 
 **Creative North Star: "A calm confectionery boutique"**

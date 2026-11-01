@@ -10,7 +10,6 @@ import { Checkout, OrderReceipt, MyOrders, AdminOrders, Booking } from './src/Or
 import type { Order } from './src/orders-api';
 
 const logo = require('./assets/brand/logo-graphite.png');
-const hero = require('./assets/hero.webp');
 const signature = '/brand/approved-packaging.webp';
 type IconName = 'bag' | 'arrow' | 'close' | 'plus' | 'minus' | 'heart' | 'check';
 function Icon({ name, size = 22 }: { name: IconName; size?: number }) {
@@ -61,7 +60,7 @@ export default function App() {
     {route === '#/gallery' ? <Gallery ar={ar}/> : route === '#/admin' ? <AdminOrders ar={ar}/> : route === '#/orders' ? <MyOrders ar={ar}/> : route === '#/booking' ? <Booking ar={ar}/> : <main>
       <section className="hero">
         <div className="hero-copy"><div className="fine-line"/><h1>{t('لذّة تُشبهك.', 'A little pleasure.')}<br/><em>{t('وتوازن يليق بك.', 'A lovely balance.')}</em></h1><p>{t('بين ما تحبّ وما يناسبك، لحظة حلوة تستحقّها. حلويات صُنعت لتجمع المتعة والتوازن في كل قضمة.', 'Between what you love and what feels right, a sweet moment awaits. Discover desserts that bring pleasure and balance to every bite.')}</p><a className="button primary" href="#collection">{t('اكتشف لحظتك الحلوة', 'Find your sweet moment')}<Icon name="arrow"/></a><div className="hero-note"><Icon name="heart" size={17}/>{t('صُنعت للحظات التي تشتهيها', 'Made for the moments you crave')}</div></div>
-        <div className="hero-photo"><img src={assetUrl(hero)} alt={t('طبقات حلوى كريمية بلمسة كاكاو على قماش كتاني', 'Creamy dessert layers with cocoa on natural linen')} fetchPriority="high"/><div className="photo-stamp"><Icon name="heart" size={26}/><span>A FEEL-GOOD<br/>MOMENT</span></div></div>
+        <div className="hero-photo"><img src={signature} width="900" height="600" alt={t('بوكس دوبامين المعتمد لأكواب الحلوى، بشعار رمادي وفرشاة خضراء وزرقاء', 'Dopamine dessert cup gift box with the approved graphite logo and sage and blue brushstrokes')} fetchPriority="high"/></div>
       </section>
       <div className="brand-strip"><span>{t('لذّة بلا تنازل', 'Pleasure without compromise')}</span><Icon name="heart" size={16}/><span>{t('تفاصيل تُلامس القلب', 'Thoughtful in every detail')}</span><Icon name="heart" size={16}/><span>{t('توازن في كل قضمة', 'Balance in every bite')}</span></div>
       <section id="collection" className="collection section-wrap">
