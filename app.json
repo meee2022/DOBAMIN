@@ -11,6 +11,35 @@
     "web": {
       "bundler": "metro",
       "name": "Dopamine — Indulgence, in balance."
+    },
+    "plugins": [
+      "expo-font",
+      "expo-status-bar",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/brand/app-adaptive.png",
+          "imageWidth": 220,
+          "resizeMode": "contain",
+          "backgroundColor": "#F4F4F1"
+        }
+      ]
+    ],
+    "icon": "./assets/brand/app-icon.png",
+    "scheme": "dopamine",
+    "ios": {
+      "bundleIdentifier": "com.dopaminsweets.app",
+      "supportsTablet": false,
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
+    },
+    "android": {
+      "package": "com.dopaminsweets.app",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/brand/app-adaptive.png",
+        "backgroundColor": "#F4F4F1"
+      }
     }
   }
 }

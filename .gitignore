@@ -24,3 +24,17 @@ pdf-contact-sheet.jpg
 .dev.vars
 .dev.vars.*
 dist-pages/
+
+# Local working folders and heavy media kept outside git
+tmp/
+output/
+references/
+كل الصور - All Images/new/
+كل الصور - All Images/*.zip
+كل الصور - All Images/*.pdf
+كل الصور - All Images/التصميم المعتمد النهائي - Final Approved Design/
+كل الصور - All Images/الهوية الرسمية المعتمدة - Official Brand Identity/
+
+backups/
+
+.claude/

@@ -1,20 +1,19 @@
 # Product
 <!-- impeccable:product-schema 1 -->
 ## Platform
-web
+web, ios, android
 ## Stack
-Expo SDK 56, React Native with a tailored web surface; native application follows after website approval.
+Expo with React Native for the native app, a tailored web surface, and a Cloudflare Workers and D1 backend.
 ## Product Purpose
-Dopamine healthy sweets. First delivery is a realistic luxury demo website for review before later updates.
+Dopamine sweets boutique in Qatar. Customers browse the menu, then submit scheduled orders and occasion bookings for staff review.
 ## Users
-Visitors exploring sweets and gift collections; commerce is demonstrative.
+Customers ordering sweets and gifts; shop staff preparing requests by day.
 ## Brand Commitments
-Preserve the original Dopamine heart-script logo and refined, balanced language. On 2026-11-01 the user requested a website identity based on their approved Nardo, sage, pistachio, powder blue, olive and slate drybrush packaging. The website's current source of truth is branding/website-identity.json; its accessible semantic roles supersede the previous caramel/rose/burgundy web palette. BREWSPOT is a structural reference, not the brand.
+Preserve the original Dopamine heart-script logo. branding/website-identity.json is the source of truth for colors and fonts, based on the approved Nardo, sage, pistachio, powder blue, olive and slate drybrush packaging. BREWSPOT is a structural reference, not the brand.
 ## Evidence on Hand
-Dopamine Brand Identity Design1.pdf: brand assets and packaging references. Collections: Single Daily, Daily Gathering, Luxury. No real product prices, contact details, nutrition or checkout credentials provided.
+The real handheld shop-container photo supplied on 2026-11-02 is the primary physical reference for future cup-based designs and supersedes the earlier squat mockup proportions. Read `branding/approved-cups.json` before creating cup imagery. The actual container is taller and photographed open; numerical dimensions, capacity and actual lid appearance remain unconfirmed.
+Dopamine Brand Identity Design1.pdf: brand assets and packaging references.
 ## Capabilities and Constraints
-Demo catalog and cart, Arabic and English. Scheduled requests are now stored by a local API for team review. No real payments. Website first requested explicitly.
-
-## Order workflow update — 2026-09-29
-User requested customer orders/bookings visible to staff by day for preparation. Implemented persistent local SQLite API, scheduled product orders and occasion enquiries, customer-private browser-linked tracking, and protected staff dashboard. Demo products and prices remain. Requests begin pending review. No payment or guaranteed availability. Public hosting and cross-device customer accounts remain future work.
-
+Arabic and English. Orders and bookings are saved as pending and reviewed by staff. No online payment. Customers track requests by device or by request number and phone. Order rules live in src/shop-config.json.
+## Open business inputs
+Prices, WhatsApp number, address, confirmed opening hours and lead time, delivery zones and fees, real photography, nutrition and allergen details, and the Single Daily, Daily Gathering and Luxury collections.

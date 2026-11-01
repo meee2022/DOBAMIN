@@ -1,64 +1,171 @@
-import React, { useRef, useState } from 'react';
-import { View, Text, Image, ScrollView, StyleSheet, Pressable, Alert, Linking, ActivityIndicator } from 'react-native';
+import { DefaultTheme, NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { StatusBar } from 'expo-status-bar';
-import { products } from './src/catalog';
-import { productWebsiteUrl, websiteLinks } from './src/site-config';
-export default function App() {
-  const [opening, setOpening] = useState<string | null>(null);
-  const openingRef = useRef(false);
-  async function openWebsite(url: string) {
-    if (openingRef.current) return;
-    openingRef.current = true;
-    setOpening(url);
-    try {
-      await Linking.openURL(url);
-    } catch {
-      Alert.alert('تعذّر فتح الموقع', 'تأكد من الاتصال بالإنترنت وحاول مجددًا. يمكنك فتح dopaminsweets.com في المتصفح.');
-    } finally {
-      openingRef.current = false;
-      setOpening(null);
-    }
-  }
-  function action(label: string, url: string) {
-    return <Pressable accessibilityRole="link" accessibilityLabel={`${label} على موقع دوبامين`} accessibilityHint="يفتح الموقع في المتصفح" accessibilityState={{ disabled: opening !== null, busy: opening === url }} disabled={opening !== null} style={({ pressed }) => [styles.button, pressed && styles.pressed, opening !== null && styles.disabled]} onPress={() => openWebsite(url)}>
-      {opening === url ? <ActivityIndicator color="#fff"/> : <Text style={styles.buttonText}>{label}</Text>}
-    </Pressable>;
-  }
-  return <ScrollView style={styles.page} contentContainerStyle={{ paddingTop: 64, paddingBottom: 40 }}>
-    <StatusBar style="dark"/>
-    <Image source={require('./assets/logo.png')} accessibilityLabel="Dopamine Healthy sweets" style={styles.logo}/>
-    <Text style={styles.title}>لذّة تُشبهك. وتوازن يليق بك.</Text>
-    <View style={styles.websiteActions}>
-      {action('المنيو والطلب', websiteLinks.menu)}
-      {action('طلباتي', websiteLinks.orders)}
-      {action('حجز مناسبة', websiteLinks.booking)}
-    </View>
-    <Text style={styles.note}>الطلب والحجز متاحان على موقع دوبامين في المتصفح.</Text>
-    <Image source={require('./assets/hero.webp')} accessibilityLabel="حلوى دوبامين" style={styles.hero}/>
-    <Text style={styles.heading}>لكل لحظة، حلاها.</Text>
-    <Text style={styles.note}>معاينة أولية للتطبيق — صور المنتجات تصورية، والأسعار عند التأكيد</Text>
-    <View style={styles.grid}>{products.map(p => <View key={p.id} style={styles.product}>
-      <Image source={p.image} accessibilityLabel={p.ar} style={styles.image}/>
-      <Text style={styles.name}>{p.ar}</Text>
-      <Text style={styles.note}>{p.price === null ? 'السعر عند التأكيد' : `${p.price} ر.ق`}</Text>
-      {action('عرض وطلب على الموقع', productWebsiteUrl(p.en))}
-    </View>)}</View>
-  </ScrollView>;
+import { Feather } from '@expo/vector-icons';
+import { useFonts } from 'expo-font';
+import { Amiri_400Regular, Amiri_700Bold } from '@expo-google-fonts/amiri';
+import { ArefRuqaa_700Bold } from '@expo-google-fonts/aref-ruqaa';
+import { AnticDidone_400Regular } from '@expo-google-fonts/antic-didone';
+import { colors, fonts } from './src/native/theme';
+import { StoreProvider, useStore } from './src/native/store';
+import MenuScreen from './src/native/MenuScreen';
+import ProductScreen from './src/native/ProductScreen';
+import CartScreen from './src/native/CartScreen';
+import CheckoutScreen from './src/native/CheckoutScreen';
+import OrdersScreen from './src/native/OrdersScreen';
+import MoreScreen, { PrivacyScreen } from './src/native/MoreScreen';
+
+const Tab = createBottomTabNavigator();
+const MenuStack = createNativeStackNavigator();
+const BagStack = createNativeStackNavigator();
+const MoreStack = createNativeStackNavigator();
+
+const theme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    background: colors.bg,
+    card: colors.bg,
+    primary: colors.action,
+    text: colors.ink,
+    border: colors.line,
+  },
+};
+
+function useStackOptions() {
+  const { ar, t } = useStore();
+  return {
+    headerStyle: { backgroundColor: colors.bg },
+    headerShadowVisible: false,
+    headerTintColor: colors.ink,
+    headerTitleStyle: { fontFamily: fonts.heading(ar), fontSize: 20 },
+    headerBackTitle: t('رجوع', 'Back'),
+  };
 }
-const styles = StyleSheet.create({
-  page: { backgroundColor: '#F9F5F2' },
-  logo: { width: 240, height: 73, alignSelf: 'center', resizeMode: 'contain' },
-  title: { fontSize: 31, textAlign: 'center', color: '#462d27', margin: 28, lineHeight: 48 },
-  websiteActions: { marginHorizontal: 20, marginBottom: 12, gap: 10 },
-  hero: { width: '100%', height: 350 },
-  heading: { fontSize: 28, color: '#462d27', textAlign: 'right', margin: 24 },
-  note: { fontSize: 13, color: '#786057', textAlign: 'right', marginHorizontal: 20, marginBottom: 12 },
-  grid: { flexDirection: 'row', flexWrap: 'wrap', padding: 14, gap: 14 },
-  product: { width: '47%', paddingBottom: 18 },
-  image: { width: '100%', height: 220, borderRadius: 4 },
-  name: { fontSize: 19, textAlign: 'right', color: '#462d27', marginVertical: 12 },
-  button: { backgroundColor: '#650015', minHeight: 48, padding: 12, alignItems: 'center', justifyContent: 'center', borderRadius: 3 },
-  buttonText: { color: '#fff', fontSize: 16, textAlign: 'center' },
-  pressed: { opacity: 0.75 },
-  disabled: { opacity: 0.65 },
-});
+
+function MenuTab() {
+  const { t } = useStore();
+  const options = useStackOptions();
+  return (
+    <MenuStack.Navigator screenOptions={options}>
+      <MenuStack.Screen name="Menu" component={MenuScreen} options={{ headerShown: false }} />
+      <MenuStack.Screen
+        name="Product"
+        component={ProductScreen}
+        options={{ title: t('تفاصيل الصنف', 'Details') }}
+      />
+    </MenuStack.Navigator>
+  );
+}
+
+function BagTab() {
+  const { t } = useStore();
+  const options = useStackOptions();
+  return (
+    <BagStack.Navigator screenOptions={options}>
+      <BagStack.Screen
+        name="Cart"
+        component={CartScreen}
+        options={{ title: t('حقيبتك الحلوة', 'Your sweet bag') }}
+      />
+      <BagStack.Screen
+        name="Checkout"
+        component={CheckoutScreen}
+        options={{ title: t('تفاصيل طلبك', 'Your order details') }}
+      />
+      <BagStack.Screen
+        name="Privacy"
+        component={PrivacyScreen}
+        options={{ title: t('الخصوصية والشروط', 'Privacy and terms') }}
+      />
+    </BagStack.Navigator>
+  );
+}
+
+function MoreTab() {
+  const { t } = useStore();
+  const options = useStackOptions();
+  return (
+    <MoreStack.Navigator screenOptions={options}>
+      <MoreStack.Screen
+        name="More"
+        component={MoreScreen}
+        options={{ title: t('المزيد', 'More') }}
+      />
+      <MoreStack.Screen
+        name="Booking"
+        component={CheckoutScreen}
+        options={{ title: t('احجز مناسبتك', 'Book an occasion') }}
+      />
+      <MoreStack.Screen
+        name="Privacy"
+        component={PrivacyScreen}
+        options={{ title: t('الخصوصية والشروط', 'Privacy and terms') }}
+      />
+    </MoreStack.Navigator>
+  );
+}
+
+const tabIcons = {
+  MenuTab: 'home',
+  BagTab: 'shopping-bag',
+  OrdersTab: 'clipboard',
+  MoreTab: 'menu',
+} as const;
+
+function Tabs() {
+  const { t, count } = useStore();
+  const options = useStackOptions();
+  return (
+    <Tab.Navigator
+      screenOptions={({ route }) => ({
+        headerShown: false,
+        tabBarActiveTintColor: colors.action,
+        tabBarInactiveTintColor: colors.muted,
+        tabBarLabelStyle: { fontFamily: fonts.body, fontSize: 13, lineHeight: 20 },
+        tabBarIcon: ({ color, size }) => (
+          <Feather name={tabIcons[route.name as keyof typeof tabIcons]} color={color} size={size} />
+        ),
+      })}
+    >
+      <Tab.Screen name="MenuTab" component={MenuTab} options={{ title: t('المنيو', 'Menu') }} />
+      <Tab.Screen
+        name="BagTab"
+        component={BagTab}
+        options={{
+          title: t('الحقيبة', 'Bag'),
+          tabBarBadge: count || undefined,
+          tabBarBadgeStyle: { backgroundColor: colors.action },
+        }}
+      />
+      <Tab.Screen
+        name="OrdersTab"
+        component={OrdersScreen}
+        options={{ ...options, headerShown: true, title: t('طلباتي', 'My requests') }}
+      />
+      <Tab.Screen name="MoreTab" component={MoreTab} options={{ title: t('المزيد', 'More') }} />
+    </Tab.Navigator>
+  );
+}
+
+export default function App() {
+  const [loaded] = useFonts({
+    Amiri_400Regular,
+    Amiri_700Bold,
+    ArefRuqaa_700Bold,
+    AnticDidone_400Regular,
+  });
+  if (!loaded) return null;
+  return (
+    <SafeAreaProvider>
+      <StoreProvider>
+        <NavigationContainer theme={theme}>
+          <StatusBar style="dark" />
+          <Tabs />
+        </NavigationContainer>
+      </StoreProvider>
+    </SafeAreaProvider>
+  );
+}
