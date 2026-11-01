@@ -2,25 +2,25 @@
 name: Dopamine
 description: A warm bilingual confectionery boutique, with indulgence in balance.
 colors:
-  primary: "#bf9179"
-  rose: "#bf9185"
-  bg: "#f9f5f2"
-  ink: "#462d27"
-  muted: "#786057"
-  accent: "#650015"
-  line: "#dfcfc4"
-  surface: "#f0e7df"
-  white: "#fffdfb"
-  status-pending-bg: "#f4e8cf"
-  status-pending-text: "#735011"
-  status-preparing-bg: "#e9e4f2"
-  status-preparing-text: "#594477"
-  status-ready-bg: "#e1ede3"
-  status-ready-text: "#32633d"
-  status-cancelled-bg: "#efe5e4"
-  status-cancelled-text: "#82443c"
-  error-bg: "#f6e6e5"
-  error-border: "#b77e81"
+  primary: "#A8B798"
+  rose: "#B6CDD6"
+  bg: "#F4F4F1"
+  ink: "#454B4B"
+  muted: "#5F6963"
+  accent: "#435342"
+  line: "#D4DAD1"
+  surface: "#E9EDE6"
+  white: "#FFFFFF"
+  status-pending-bg: "#F0EEDD"
+  status-pending-text: "#675C31"
+  status-preparing-bg: "#E4EDF1"
+  status-preparing-text: "#465E6A"
+  status-ready-bg: "#E5ECDE"
+  status-ready-text: "#3F5B43"
+  status-cancelled-bg: "#F2E7E5"
+  status-cancelled-text: "#88453E"
+  error-bg: "#F7ECEA"
+  error-border: "#A85E55"
 typography:
   display:
     fontFamily: "Aref Ruqaa, serif"
@@ -94,7 +94,7 @@ components:
     padding: "12px 25px"
     typography: "{typography.button}"
   button-primary-hover:
-    backgroundColor: "#470111"
+    backgroundColor: "#344334"
   button-secondary:
     textColor: "{colors.ink}"
     rounded: "{rounded.subtle}"
@@ -182,7 +182,7 @@ components:
 
 **Creative North Star: "A calm confectionery boutique"**
 
-Warm paper surfaces, the supplied script logo, and original dessert and packaging imagery establish a quiet boutique. Caramel and cream carry the atmosphere; burgundy concentrates attention on actions and selected states. Fine warm borders enclose product and gallery cards, while editorial sections retain generous open space.
+Warm paper surfaces, the supplied script logo, and original dessert and packaging imagery establish a quiet boutique. Light Nardo, sage and powder blue carry the atmosphere; deep sage concentrates attention on actions and selected states. Fine neutral borders enclose product and gallery cards, while editorial sections retain generous open space.
 
 Arabic is the initial reading direction, with literary display lettering and generous text leading. English uses a restrained high-contrast serif. Operational forms and preparation schedules use Arial for both languages while retaining the brand palette. This record describes the implemented web demo in `App.web.tsx`, `src/web.css`, `src/Orders.web.tsx`, `src/orders.css`, `src/menu.css`, `src/ProductCard.web.tsx`, `src/Gallery.web.tsx`, and `src/PhotoViewer.web.tsx`; the deferred native scaffold does not establish a second visual system.
 
@@ -194,11 +194,11 @@ Arabic is the initial reading direction, with literary display lettering and gen
 
 ## Colors
 
-The palette combines warm confectionery neutrals with a deep burgundy action color. Frontmatter values reproduce the implemented custom properties and operational semantic colors.
+The palette combines warm confectionery neutrals with a deep deep sage action color. Frontmatter values reproduce the implemented custom properties and operational semantic colors.
 
 ### Primary
 - **Caramel (`primary`):** announcement background, brand rules, and scrollbar thumb.
-- **Burgundy (`accent`):** primary actions, selected collection filters, and keyboard focus.
+- **Deep sage (`accent`):** primary actions, selected collection filters, and keyboard focus.
 
 ### Secondary
 - **Rose (`rose`):** text-selection background.
@@ -209,12 +209,12 @@ The palette combines warm confectionery neutrals with a deep burgundy action col
 - **Muted cocoa (`muted`):** descriptive copy and secondary metadata.
 - **Warm rule (`line`):** navigation, collection, cart, and footer dividers.
 - **Soft parchment (`surface`):** footer, image placeholders, count badges, and secondary hover.
-- **Warm white (`white`):** product and gallery card surfaces, search and filter controls, and text over burgundy actions and cocoa notifications.
+- **Warm white (`white`):** product and gallery card surfaces, search and filter controls, and text over deep sage actions and cocoa notifications.
 
-**The Burgundy Action Rule.** Use burgundy to identify actions, selected filters, and keyboard focus; preserve the warm neutral field around them.
+**The Deep sage Action Rule.** Use deep sage to identify actions, selected filters, and keyboard focus; preserve the warm neutral field around them.
 
 ### Operational status colors
-Pending uses the amber pair; confirmed and preparing share the lavender pair; ready and completed share the green pair; cancelled uses the muted red pair. Error surfaces combine the error background and border with burgundy text. These are semantic feedback colors, not new brand accents. Always display the written status alongside its color.
+Pending uses the amber pair; confirmed and preparing share the lavender pair; ready and completed share the green pair; cancelled uses the muted red pair. Error surfaces combine the error background and border with deep sage text. These are semantic feedback colors, not new brand accents. Always display the written status alongside its color.
 
 ## Typography
 
@@ -247,7 +247,7 @@ Operational pages cap at 1280px with 55px 5% 80px padding; booking and login cap
 
 ## Elevation & Depth
 
-The system is predominantly flat: photography, warm tonal bands, whitespace, and fine borders establish depth. Product and gallery cards use warm-white surfaces and fine warm borders without outer shadows; hover changes their border to caramel. The photograph stamp uses a diffuse shadow (`0 4px 18px #462d2710`). The cart backdrop combines translucent cocoa with a 3px blur. The photo viewer uses a separate dark translucent backdrop (`#271c19cf`) without blur.
+The system is predominantly flat: photography, warm tonal bands, whitespace, and fine borders establish depth. Product and gallery cards use offwhite surfaces and fine neutral borders without outer shadows; hover changes their border to caramel. The photograph stamp uses a diffuse shadow (`0 4px 18px #462d2710`). The cart backdrop combines translucent cocoa with a 3px blur. The photo viewer uses a separate dark translucent backdrop (`#271c19cf`) without blur.
 
 Hover lifts full-size actions by 2px and gently scales product photography to 1.035. The shared easing is `cubic-bezier(.16,1,.3,1)`. Reduced-motion preference disables animations and transitions and restores automatic scrolling.
 
@@ -260,29 +260,29 @@ Operational records use 12px corners and a 1px warm-rule border, without shadows
 ## Components
 
 ### Buttons
-Primary actions are burgundy with warm-white text; secondary actions are transparent with a 1px cocoa border. Shared minimum height is 51px, reducing to 48px on mobile. Hover darkens primary actions or fills secondary actions with parchment. All links and buttons receive a 2px burgundy focus outline with 5px offset. Disabled buttons use 0.45 opacity and a not-allowed cursor.
+Primary actions are deep sage with offwhite text; secondary actions are transparent with a 1px cocoa border. Shared minimum height is 51px, reducing to 48px on mobile. Hover darkens primary actions or fills secondary actions with parchment. All links and buttons receive a 2px deep sage focus outline with 5px offset. Disabled buttons use 0.45 opacity and a not-allowed cursor.
 
 ### Chips
-Product categories are muted text metadata with a short bottom rule within the card copy. Collection filters remain underlined text buttons. Gallery filters are warm-white bordered buttons with category counts; their pressed state fills burgundy with warm-white text. Both filter families expose `aria-pressed`.
+Product categories are muted text metadata with a short bottom rule within the card copy. Collection filters remain underlined text buttons. Gallery filters are offwhite bordered buttons with category counts; their pressed state fills deep sage with offwhite text. Both filter families expose `aria-pressed`.
 
 ### Cards / Containers
-Product and gallery cards are warm-white, enclosed by a 1px warm-rule border with 14px corners and no shadow. Product cards show packaging and plated views simultaneously, each captioned and clickable for enlargement. Copy uses 17px 22px 22px padding, becoming 16px 20px 20px at 600px. Category, primary name, and translation precede a ruled bottom row with price status and a burgundy Add to bag button. Gallery cards use one generous square image and 21px 24px 26px copy padding. Their circular expand affordance is 40px.
+Product and gallery cards are offwhite, enclosed by a 1px warm-rule border with 14px corners and no shadow. Product cards show packaging and plated views simultaneously, each captioned and clickable for enlargement. Copy uses 17px 22px 22px padding, becoming 16px 20px 20px at 600px. Category, primary name, and translation precede a ruled bottom row with price status and a deep sage Add to bag button. Gallery cards use one generous square image and 21px 24px 26px copy padding. Their circular expand affordance is 40px.
 
-**The Enclosed Media Rule.** Keep product and gallery imagery, bilingual names, and associated actions within warm-white cards with fine warm borders and 14px corners; retain shadow-free surfaces.
+**The Enclosed Media Rule.** Keep product and gallery imagery, bilingual names, and associated actions within offwhite cards with fine neutral borders and 14px corners; retain shadow-free surfaces.
 
 ### Media Search and Image Viewer
-Menu and gallery searches use warm-white fields with 46px minimum height, 6px corners, and a 2px caramel focus outline offset by 2px. Gallery category filters include counts; a separate live status reports matching images. Search matches Arabic and English names. Empty gallery results offer a reset.
+Menu and gallery searches use offwhite fields with 46px minimum height, 6px corners, and a 2px slate focus outline offset by 2px. Gallery category filters include counts; a separate live status reports matching images. Search matches Arabic and English names. Empty gallery results offer a reset.
 
 The native photo dialog uses a cream surface, 12px corners, width `min(920px,94vw)`, and maximum height of 94dvh. A sticky header holds the title, subtitle, and 44px SVG close control. The image is contained without cropping within 70dvh, with an underlined original-image link beneath. Escape and backdrop dismissal close the dialog; body scrolling is restored on close. Remote media fall back to local assets on image error. Product cards do not animate on entry; gallery images retain a restrained 1.035 hover scale and reduced-motion handling.
 
 ### Navigation
-Desktop links are text-only with an animated thin burgundy hover underline. The supplied logo anchors the center. Language and bag controls occupy the opposing side; mobile retains the logo and actions above a dedicated navigation row. Icons are thin inline SVG strokes, never text glyph substitutes.
+Desktop links are text-only with an animated thin deep sage hover underline. The supplied logo anchors the center. Language and bag controls occupy the opposing side; mobile retains the logo and actions above a dedicated navigation row. Icons are thin inline SVG strokes, never text glyph substitutes.
 
 ### Bag Drawer and Notifications
 The native dialog has a cream surface, a fine header divider, scrollable item list, and an anchored subtotal/action area. Quantity controls are square outlined buttons; remove and close use SVG icons. Empty and completed states center their icon, title, copy, and action. A cocoa toast appears at the lower center with a short fade and vertical transition.
 
 ### Operational Forms
-Fields use warm-white surfaces, cocoa text, warm-rule borders, 12px padding, and a 45px minimum height. Labels sit above their controls with an 8px gap. Focus uses a 2px caramel outline with 2px offset. Date and time occupy paired columns; phone entry remains left-to-right. Textareas resize vertically. The conditional delivery address follows fulfilment choice. Errors appear inline in a tinted bordered alert, and submission disables the fieldset while saving. The cart form scrolls with its header held sticky.
+Fields use offwhite surfaces, graphite text, neutral borders, 12px padding, and a 45px minimum height. Labels sit above their controls with an 8px gap. Focus uses a 2px slate outline with 2px offset. Date and time occupy paired columns; phone entry remains left-to-right. Textareas resize vertically. The conditional delivery address follows fulfilment choice. Errors appear inline in a tinted bordered alert, and submission disables the fieldset while saving. The cart form scrolls with its header held sticky.
 
 ### Order Status and Preparation Schedule
 Statuses always combine a written label with their semantic color pair. Confirmed/preparing and ready/completed deliberately share color families; text distinguishes the exact state. Records group by preparation day, with Qatar time visible next to the time. Explicit date, status, and customer/request search controls precede the records; counts and update feedback remain separate from the records. A labelled native select changes status and exposes saving feedback. Long notes preserve line breaks, wrap, and cap at 65ch. Empty results offer a filter-reset action.
@@ -294,7 +294,7 @@ Receipts emphasize the request identifier and requested Qatar date/time, with pe
 ### Do:
 - **Do** preserve the supplied logo and brand palette.
 - **Do** retain Arabic and English reading direction and type pairing.
-- **Do** use enclosed warm-white product and gallery cards, fine rules, and warm tonal sections.
+- **Do** use enclosed offwhite product and gallery cards, fine rules, and sage and powder-blue tonal sections.
 - **Do** provide visible keyboard focus and honor reduced-motion preference.
 - **Do** pair every operational status color with a written label and display Qatar time for preparation dates.
 
@@ -305,3 +305,13 @@ Receipts emphasize the request identifier and requested Qatar date/time, with pe
 - **Don't** promote demo prices or checkout states into production commerce claims.
 
 
+
+## Approved website identity — 2026-11-01
+
+The user explicitly requested applying the approved packaging identity to the website. Source of truth: `branding/website-identity.json`. `npm run build:brand` generates CSS tokens, the shareable guide at `/brand/`, downloadable CSS/JSON and optimized approved artwork.
+
+Nardo #F4F4F1 and graphite #454B4B lead. Sage #A8B798, pale pistachio #C3CDB3, powder blue #B6CDD6, olive #939A75 and slate #748791 reproduce the approved drybrush family. Accessible deep sage #435342 is reserved for primary actions; hover #344334 and focus #465E6A keep controls legible. Text uses solid backgrounds, never the decorative brush.
+
+Preserve the original heart-script logo, Arabic/English type pairing and reading direction. The transparent graphite logo follows the original heart-script reference; preserve its letterforms and proportions. Drybrush artwork belongs on section edges and the footer; do not scatter it across controls or product cards. The current scope changes the website identity while retaining catalog, cart, bookings and order behavior. Native UI styling is outside this identity update.
+
+The visual/downloadable guide is `/brand/`; code is in `src/brand-tokens.css` and `src/brand.css`. Semantic status tokens retain written labels. Ten foreground/background pairs are checked by the build script; text contrast is at least 4.5:1.

@@ -1,0 +1,39 @@
+/* Dopamine website identity v1.0 — derived from approved packaging, 2026-11-01. */
+:root {
+  --brand-nardo: #F4F4F1;
+  --brand-graphite: #454B4B;
+  --brand-sage: #A8B798;
+  --brand-pistachio: #C3CDB3;
+  --brand-powder-blue: #B6CDD6;
+  --brand-olive: #939A75;
+  --brand-slate: #748791;
+
+  --bg: #F4F4F1;
+  --ink: #454B4B;
+  --muted: #5F6963;
+  --primary: #A8B798;
+  --rose: #B6CDD6;
+  --accent: #435342;
+  --accent-hover: #344334;
+  --line: #D4DAD1;
+  --surface: #E9EDE6;
+  --white: #FFFFFF;
+  --focus: #465E6A;
+  --control-border: #859180;
+  --sky-surface: #E9F0F3;
+  --olive-ink: #5E674D;
+  --backdrop: #252D2ACC;
+  --shadow: #454B4B12;
+  --status-pending-bg: #F0EEDD;
+  --status-pending-text: #675C31;
+  --status-preparing-bg: #E4EDF1;
+  --status-preparing-text: #465E6A;
+  --status-ready-bg: #E5ECDE;
+  --status-ready-text: #3F5B43;
+  --status-cancelled-bg: #F2E7E5;
+  --status-cancelled-text: #88453E;
+  --error-bg: #F7ECEA;
+  --error-border: #A85E55;
+  --ease: cubic-bezier(.16, 1, .3, 1);
+  color-scheme: light;
+}

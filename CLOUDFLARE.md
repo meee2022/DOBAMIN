@@ -1,10 +1,22 @@
 # Cloudflare deployment
 
-Live website: https://dopamin-bj1.pages.dev
+Live website: https://dopaminsweets.com
+
+The custom domains `dopaminsweets.com` and `www.dopaminsweets.com` point to the existing `dopamin` Pages project. Cloudflare manages their DNS and HTTPS certificates. The Pages fallback address remains https://dopamin-bj1.pages.dev. Social preview and canonical metadata use the primary custom domain.
+
+## Expo app connection
+
+The primary website URL is stored in `app.json` under `expo.extra.websiteUrl`. `src/site-config.ts` supplies the native app's menu, requests, booking and product links; social metadata uses the same setting. Product links open the website with its menu search prefilled. The native preview opens ordering in the system browser and clearly labels that handoff. Native API calls default to this domain; web requests remain same-origin, and local web development still targets the local API. `EXPO_PUBLIC_ORDERS_API_URL` can explicitly override the API base.
+
+These source changes require a new app build or a refreshed Expo development session to reach a device. No App Store/Play Store release or over-the-air app update has been published. Orders and tracking currently run in the browser, using that browser's existing customer token; native cross-device customer accounts are not implemented.
 
 Original website (still available): https://dopamine-boutique.eng-mohamdkamal1987.workers.dev
 
-Staff dashboard: https://dopamin-bj1.pages.dev/#/admin
+Staff dashboard: https://dopaminsweets.com/#/admin
+
+## Approved website identity
+
+The shareable brand guide is https://dopaminsweets.com/brand/. Downloadable CSS and JSON are served at `/brand/colors.css` and `/brand/tokens.json`. `branding/website-identity.json` is the source of truth; `npm run build:brand` generates the website tokens, guide and optimized assets from committed `assets/brand/` sources. Both web build commands run this step automatically. The site uses the user-approved Nardo, sage, powder blue, olive and slate brush identity, with accessible dark action colors. Packaging originals and the local guide copy are saved in `كل الصور - All Images/التصميم المعتمد النهائي - Final Approved Design/`.
 
 The `dopamine-boutique` Worker serves the Expo web export from `dist/` and the same-origin `/api/*` endpoints. D1 database `dopamine-orders` persists online customer orders, bookings and staff sessions. Convex hosts the image gallery. This deployment does not require the shop's computer to remain running.
 

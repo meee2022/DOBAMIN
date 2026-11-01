@@ -9,7 +9,7 @@ Dopamine healthy sweets. First delivery is a realistic luxury demo website for r
 ## Users
 Visitors exploring sweets and gift collections; commerce is demonstrative.
 ## Brand Commitments
-Preserve supplied PDF identity, logo, caramel #BF9179, rose #BF9185, cream #F9F5F2 and burgundy #650015. Refined, warm, balanced language. BREWSPOT is a structural reference, not the brand.
+Preserve the original Dopamine heart-script logo and refined, balanced language. On 2026-11-01 the user requested a website identity based on their approved Nardo, sage, pistachio, powder blue, olive and slate drybrush packaging. The website's current source of truth is branding/website-identity.json; its accessible semantic roles supersede the previous caramel/rose/burgundy web palette. BREWSPOT is a structural reference, not the brand.
 ## Evidence on Hand
 Dopamine Brand Identity Design1.pdf: brand assets and packaging references. Collections: Single Daily, Daily Gathering, Luxury. No real product prices, contact details, nutrition or checkout credentials provided.
 ## Capabilities and Constraints

@@ -2,16 +2,18 @@ const fs = require('node:fs');
 const path = require('node:path');
 const output = process.argv[2] || 'dist';
 const file = path.resolve(__dirname, '..', output, 'index.html');
-const url = 'https://dopamin-bj1.pages.dev/';
+const url = require('../app.json').expo.extra.websiteUrl + '/';
 const title = 'Dopamine | دوبامين — لحظات حلوة بطابع فاخر';
 const description = 'اكتشف تشكيلة دوبامين من التارت والحلويات وتغليفات الهدايا الراقية. تصفّح المنيو واطلب لحظتك الحلوة أو احجز لمناسبتك.';
-const image = url + 'social/dopamine-share-v1.jpg';
-const alt = 'شعار دوبامين مع تارت الفستق والتوت وعلبة هدايا أنيقة بشريط عنابي';
+const image = url + 'social/dopamine-share-v2.jpg';
+const alt = 'شعار دوبامين الرمادي مع الفرشاة المعتمدة بالأخضر والأزرق على خلفية ناردو فاتحة';
+const theme = require('../branding/website-identity.json').semantic.bg;
 let html = fs.readFileSync(file, 'utf8');
 html = html.replace(/<html lang="[^"]*">/, '<html lang="ar">').replace(/<title>[^<]*<\/title>/, `<title>${title}</title>`);
 html = html.replace(/\n?<!-- social-preview:start -->[\s\S]*?<!-- social-preview:end -->\n?/g, '');
 const meta = `
 <!-- social-preview:start -->
+<meta name="theme-color" content="${theme}">
 <meta name="description" content="${description}">
 <link rel="canonical" href="${url}">
 <meta property="og:type" content="website">
@@ -24,8 +26,8 @@ const meta = `
 <meta property="og:image" content="${image}">
 <meta property="og:image:secure_url" content="${image}">
 <meta property="og:image:type" content="image/jpeg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
+<meta property="og:image:width" content="1672">
+<meta property="og:image:height" content="941">
 <meta property="og:image:alt" content="${alt}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="${title}">

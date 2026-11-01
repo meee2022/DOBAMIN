@@ -1,0 +1,26 @@
+{
+  "status": "approved_by_user",
+  "approvedOn": "2026-11-01",
+  "scope": "Packaging artwork and matching brand backgrounds",
+  "referenceFolder": "كل الصور - All Images/التصميم المعتمد النهائي - Final Approved Design",
+  "references": [
+    "01 - بوكس الكوبايات المعتمد - Approved Dessert Cup Box.png",
+    "02 - كيس الكورن فليكس المعتمد - Approved Cornflakes Pouch.png",
+    "03 - كيس المافن المعتمد - Approved Muffin Bag.png"
+  ],
+  "identity": {
+    "base": "Light Nardo / offwhite",
+    "logo": "Existing Dopamine heart-script wordmark and Healthy sweets tagline, in dark graphite",
+    "colors": [
+      "soft sage green",
+      "pale pistachio green",
+      "muted olive",
+      "powder blue",
+      "slate bluegray"
+    ],
+    "artwork": "Layered horizontal drybrush swipes with ragged bristle edges and white gaps, across the lower area; preserve exact visual direction of approved references",
+    "space": "Clean offwhite around the logo, clear legibility",
+    "muffinClosure": "Sage circular sticker with offwhite heart flourish"
+  },
+  "preservation": "Use these exact saved references for future packaging requests. Preserve original files; save variants separately. This approval does not itself request website restyling."
+}

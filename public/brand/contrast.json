@@ -1,0 +1,72 @@
+[
+  {
+    "name": "النص الأساسي",
+    "foreground": "#454B4B",
+    "background": "#F4F4F1",
+    "min": 4.5,
+    "ratio": 8.07
+  },
+  {
+    "name": "النص المساند",
+    "foreground": "#5F6963",
+    "background": "#F4F4F1",
+    "min": 4.5,
+    "ratio": 5.17
+  },
+  {
+    "name": "زر أساسي",
+    "foreground": "#FFFFFF",
+    "background": "#435342",
+    "min": 4.5,
+    "ratio": 8.22
+  },
+  {
+    "name": "مرور المؤشر",
+    "foreground": "#FFFFFF",
+    "background": "#344334",
+    "min": 4.5,
+    "ratio": 10.51
+  },
+  {
+    "name": "حلقة التركيز",
+    "foreground": "#465E6A",
+    "background": "#FFFFFF",
+    "min": 3,
+    "ratio": 6.84
+  },
+  {
+    "name": "حدود الحقول",
+    "foreground": "#859180",
+    "background": "#FFFFFF",
+    "min": 3,
+    "ratio": 3.3
+  },
+  {
+    "name": "بانتظار التأكيد",
+    "foreground": "#675C31",
+    "background": "#F0EEDD",
+    "min": 4.5,
+    "ratio": 5.7
+  },
+  {
+    "name": "قيد التجهيز",
+    "foreground": "#465E6A",
+    "background": "#E4EDF1",
+    "min": 4.5,
+    "ratio": 5.76
+  },
+  {
+    "name": "جاهز",
+    "foreground": "#3F5B43",
+    "background": "#E5ECDE",
+    "min": 4.5,
+    "ratio": 6.23
+  },
+  {
+    "name": "ملغي",
+    "foreground": "#88453E",
+    "background": "#F2E7E5",
+    "min": 4.5,
+    "ratio": 5.84
+  }
+]

@@ -1,1 +1,16 @@
-{"expo":{"name":"Dopamine","slug":"dopamine","version":"1.0.0","orientation":"portrait","userInterfaceStyle":"light","web":{"bundler":"metro","name":"Dopamine — Indulgence, in balance."}}}
+{
+  "expo": {
+    "name": "Dopamine",
+    "slug": "dopamine",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "extra": {
+      "websiteUrl": "https://dopaminsweets.com"
+    },
+    "web": {
+      "bundler": "metro",
+      "name": "Dopamine — Indulgence, in balance."
+    }
+  }
+}

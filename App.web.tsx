@@ -1,15 +1,17 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { products, assetUrl } from './src/catalog';
+import './src/brand-tokens.css';
 import './src/web.css';
 import './src/menu.css';
+import './src/brand.css';
 import ProductCard from './src/ProductCard.web';
 import Gallery from './src/Gallery.web';
 import { Checkout, OrderReceipt, MyOrders, AdminOrders, Booking } from './src/Orders.web';
 import type { Order } from './src/orders-api';
 
-const logo = require('./assets/logo.png');
+const logo = require('./assets/brand/logo-graphite.png');
 const hero = require('./assets/hero.webp');
-const signature = require('./assets/signature.webp');
+const signature = '/brand/approved-packaging.webp';
 type IconName = 'bag' | 'arrow' | 'close' | 'plus' | 'minus' | 'heart' | 'check';
 function Icon({ name, size = 22 }: { name: IconName; size?: number }) {
   const paths: Record<IconName, React.ReactNode> = {
@@ -24,14 +26,14 @@ function Icon({ name, size = 22 }: { name: IconName; size?: number }) {
 export default function App() {
   const [lang, setLang] = useState<'ar' | 'en'>('ar');
   const [category, setCategory] = useState('all');
-  const [search, setSearch] = useState('');
+  const [search, setSearch] = useState(() => new URLSearchParams(location.search).get('q') || '');
   const [cart, setCart] = useState<Record<string, number>>({});
   const [ready, setReady] = useState(false);
   const [toast, setToast] = useState('');
   const [checkout, setCheckout] = useState(false);
   const [savedOrder, setSavedOrder] = useState<Order | null>(null);
   const [route, setRoute] = useState(location.hash);
-  useEffect(() => { const update = () => { setRoute(location.hash); if(location.hash.startsWith('#/')) window.scrollTo(0,0); else requestAnimationFrame(() => document.getElementById(location.hash.slice(1))?.scrollIntoView()); }; window.addEventListener('hashchange',update); return () => window.removeEventListener('hashchange',update); }, []);
+  useEffect(() => { const update = () => { setRoute(location.hash); if(location.hash.startsWith('#/')) window.scrollTo(0,0); else requestAnimationFrame(() => document.getElementById(location.hash.slice(1))?.scrollIntoView()); }; update(); window.addEventListener('hashchange',update); return () => window.removeEventListener('hashchange',update); }, []);
   const dialog = useRef<HTMLDialogElement>(null);
   const ar = lang === 'ar';
   const t = (a: string, e: string) => ar ? a : e;
@@ -72,7 +74,7 @@ export default function App() {
       </section>
       <section className="gallery-teaser"><div><h2>{t('التغليف… جزء من الهدية.','The wrapping is part of the gift.')}</h2><p>{t('اكتشف كل صور المنتجات وتصاميم التغليف في معرض دوبامين.','Explore every product image and packaging concept in our gallery.')}</p></div><a className="button primary" href="#/gallery">{t('شاهد كل الصور','Explore all images')}<Icon name="arrow"/></a></section>
       <section id="story" className="story"><div className="story-heart"><Icon name="heart" size={58}/></div><p className="english-statement">The sweet spot between<br/><i>discipline and desire.</i></p><div className="story-copy"><h2>{t('نؤمن أن الحلا جزء من التوازن.', 'Sweetness belongs in balance.')}</h2><p>{t('دوبامين مساحة صغيرة للمتعة في يومك. نعيد تخيّل الحلويات الصحية بروح دافئة وتفاصيل مدروسة، لأن الاختيار الذي يشعرك بالرضا يستحق أن يكون لذيذًا أيضًا.', 'Dopamine is a little space for pleasure in your day. We reimagine healthy sweets with warmth and thoughtful details, because a feel-good choice deserves to taste beautiful, too.')}</p><span className="story-signature">With love, Dopamine</span></div></section>
-      <section id="gifting" className="gifting section-wrap"><div className="gift-photo"><img src={assetUrl(signature)} loading="lazy" alt={t('صندوق دوبامين الكريمي بتفاصيل الهوية الأصلية', 'Dopamine signature cream gift box')}/></div><div className="gift-copy"><h2>{t('بعض الهدايا', 'Some gifts')}<br/><em>{t('تُقال بقضمة.', 'say it sweetly.')}</em></h2><p>{t('شكرًا، أحبّك، أو لمجرّد أنك تستحقّ. اختَر هدية تحمل مشاعرك، بتغليف يليق باللحظة.', 'Thank you. I love you. Or simply, you deserve it. Find a thoughtful gift, beautifully wrapped for the moment.')}</p><a className="button secondary" href="#collection" onClick={() => setCategory('all')}>{t('اكتشف هدايا دوبامين', 'Explore thoughtful gifts')}<Icon name="arrow"/></a></div></section>
+      <section id="gifting" className="gifting section-wrap"><div className="gift-photo"><img src={assetUrl(signature)} loading="lazy" alt={t('صندوق دوبامين بالفرشاة الخضراء والزرقاء المعتمدة', 'Dopamine approved sage and blue brushstroke gift box')}/></div><div className="gift-copy"><h2>{t('بعض الهدايا', 'Some gifts')}<br/><em>{t('تُقال بقضمة.', 'say it sweetly.')}</em></h2><p>{t('شكرًا، أحبّك، أو لمجرّد أنك تستحقّ. اختَر هدية تحمل مشاعرك، بتغليف يليق باللحظة.', 'Thank you. I love you. Or simply, you deserve it. Find a thoughtful gift, beautifully wrapped for the moment.')}</p><a className="button secondary" href="#collection" onClick={() => setCategory('all')}>{t('اكتشف هدايا دوبامين', 'Explore thoughtful gifts')}<Icon name="arrow"/></a></div></section>
     </main>}
     <footer><div className="footer-top"><img src={assetUrl(logo)} alt="Dopamine Healthy sweets"/><p>{t('لحظة لك. وابتسامة لمن تحب.', 'A moment for you. A smile for someone you love.')}</p><a href="#collection">{t('اختر لحظتك', 'Find your moment')}<Icon name="arrow" size={18}/></a></div><div className="footer-bottom"><span>© {new Date().getFullYear()} Dopamine</span><span>{t('نسخة تجريبية — تُحفظ الطلبات للمراجعة دون مدفوعات', 'Demo — requests are saved for review; no payments')}</span><a href="#">{t('العودة للأعلى', 'Back to top')}</a></div></footer>
     <div role="status" className={`toast ${toast ? 'visible' : ''}`}><Icon name="check" size={18}/>{toast}</div>
