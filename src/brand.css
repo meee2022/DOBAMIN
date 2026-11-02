@@ -26,7 +26,10 @@
 }
 .hero-photo > img {
   object-fit: contain;
-  padding: 24px;
+  padding: 0;
+}
+.gift-photo img {
+  object-fit: contain;
 }
 .product-photo-pair figure:first-child figcaption {
   background: var(--surface);
@@ -110,10 +113,10 @@ textarea::placeholder {
 @media (max-width: 700px) {
   .hero-photo {
     min-height: 0;
-    aspect-ratio: 3 / 2;
+    aspect-ratio: 1;
   }
   .hero-photo > img {
-    padding: 12px;
+    padding: 0;
   }
   .brand-strip {
     padding-block: 20px 64px;

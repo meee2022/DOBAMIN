@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { products, assetUrl } from './catalog';
-import { signature } from './brand-assets';
+import { products } from './catalog';
+import { lifestyleHero, lifestyleGift } from './lifestyle-data';
 import Icon from './Icon.web';
 import ProductCard from './ProductCard.web';
 
@@ -54,12 +54,14 @@ export default function Home({
         </div>
         <div className="hero-photo">
           <img
-            src={signature}
-            width="900"
-            height="600"
+            src={lifestyleHero.src}
+            srcSet={lifestyleHero.srcSet}
+            sizes="(max-width: 700px) 100vw, 50vw"
+            width={lifestyleHero.width}
+            height={lifestyleHero.height}
             alt={t(
-              'بوكس دوبامين المعتمد لأكواب الحلوى، بشعار رمادي وفرشاة خضراء وزرقاء',
-              'Dopamine dessert cup gift box with the approved graphite logo and sage and blue brushstrokes',
+              'حامل أكواب دوبامين بشعار رمادي وفرشاة خضراء وزرقاء، على حجر طبيعي في ضوء الشباك',
+              'Dopamine dessert cup carriers with sage and blue brushstrokes, on natural stone in window light',
             )}
             fetchPriority="high"
           />
@@ -170,11 +172,15 @@ export default function Home({
       <section id="gifting" className="gifting section-wrap">
         <div className="gift-photo">
           <img
-            src={assetUrl(signature)}
+            src={lifestyleGift.src}
+            srcSet={lifestyleGift.srcSet}
+            sizes="(max-width: 700px) 88vw, 44vw"
+            width={lifestyleGift.width}
+            height={lifestyleGift.height}
             loading="lazy"
             alt={t(
-              'صندوق دوبامين بالفرشاة الخضراء والزرقاء المعتمدة',
-              'Dopamine approved sage and blue brushstroke gift box',
+              'بوكس دوبامين السداسي للبروتين بول مع الصوص والفرشاة المعتمدة في مشهد إهداء فاخر',
+              'Dopamine hexagonal protein ball gift box with sauce and the approved brush artwork in a boutique setting',
             )}
           />
         </div>

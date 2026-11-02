@@ -788,7 +788,8 @@ footer {
     height: 29px;
   }
   .header {
-    height: 104px;
+    height: auto;
+    min-height: 104px;
     grid-template-columns: 1fr 1fr;
     padding: 12px 6% 0;
     row-gap: 8px;
@@ -808,9 +809,17 @@ footer {
     grid-column: 1/-1;
     grid-row: 2;
     justify-content: center;
-    gap: 34px;
+    column-gap: 18px;
+    row-gap: 0;
+    flex-wrap: wrap;
     font-size: 14px;
     padding-bottom: 12px;
+  }
+  .header nav a {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    white-space: nowrap;
   }
   .bag-label {
     display: none;
