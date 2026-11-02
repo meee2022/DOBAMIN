@@ -5,13 +5,13 @@ import './src/web.css';
 import './src/menu.css';
 import './src/brand.css';
 import './src/orders.css';
+import './src/storefront.css';
 import Icon from './src/Icon.web';
 import SiteHeader from './src/SiteHeader.web';
 import SiteFooter from './src/SiteFooter.web';
 import Home from './src/Home.web';
 import Cart from './src/Cart.web';
 import Privacy from './src/Privacy.web';
-import Gallery from './src/Gallery.web';
 import MyOrders from './src/orders/MyOrders.web';
 import Booking from './src/orders/Booking.web';
 import AdminOrders from './src/orders/AdminOrders.web';
@@ -30,6 +30,8 @@ export default function App() {
   const [route, setRoute] = useState(location.hash);
   useEffect(() => {
     const update = () => {
+      // Old gallery links now lead to the customer-facing gifts collection.
+      if (location.hash === '#/gallery') history.replaceState(null, '', '#gifting');
       setRoute(location.hash);
       if (location.hash.startsWith('#/')) window.scrollTo(0, 0);
       else
@@ -90,9 +92,7 @@ export default function App() {
         toggleLang={() => setLang(ar ? 'en' : 'ar')}
         openCart={openCart}
       />
-      {route === '#/gallery' ? (
-        <Gallery ar={ar} />
-      ) : route === '#/admin' ? (
+      {route === '#/admin' ? (
         <AdminOrders ar={ar} />
       ) : route === '#/orders' ? (
         <MyOrders ar={ar} />

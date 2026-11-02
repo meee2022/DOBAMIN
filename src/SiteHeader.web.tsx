@@ -17,9 +17,9 @@ export default function SiteHeader({ t, count, toggleLang, openCart }: Props) {
       </div>
       <header className="header">
         <nav aria-label={t('القائمة الرئيسية', 'Main navigation')}>
-          <a href="#collection">{t('المجموعة', 'The collection')}</a>
-          <a href="#/gallery">{t('عالم الصور', 'Image gallery')}</a>
-          <a href="#gifting">{t('فن الإهداء', 'The art of gifting')}</a>
+          <a href="#collection">{t('المنيو', 'Menu')}</a>
+          <a href="#gifting">{t('هدايا ومناسبات', 'Gifts & occasions')}</a>
+          <a href="#story">{t('عن دوبامين', 'Our story')}</a>
         </nav>
         <a href="#" className="logo" aria-label="Dopamine home">
           <img src={assetUrl(logo)} alt="Dopamine Healthy sweets" />

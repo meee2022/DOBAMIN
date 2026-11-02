@@ -6,6 +6,7 @@ web, ios, android
 Expo with React Native for the native app, a tailored web surface, and a Cloudflare Workers and D1 backend.
 ## Product Purpose
 Dopamine sweets boutique in Qatar. Customers browse the menu, then submit scheduled orders and occasion bookings for staff review.
+The public website is the official customer storefront, not a packaging-design gallery. Keep packaging experiments out of customer navigation. Reuse the approved drybrush identity and existing gift-box assets. Legacy gallery links lead to the gifts section. No new image generation is required for this direction.
 ## Users
 Customers ordering sweets and gifts; shop staff preparing requests by day.
 ## Brand Commitments

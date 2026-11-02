@@ -178,11 +178,11 @@ components:
 
 # Design System: Dopamine
 
-## Approved web color distribution — 2026-11-01
+## Official customer storefront — 2026-11-02
 
-The approved cup gift box now leads the home hero in place of the previous warm cocoa photograph. Render `public/brand/approved-packaging.webp` with `object-fit: contain` so the full packaging remains visible, including on mobile. This reuses the existing user-approved concept; it does not introduce a new product photograph.
+The public website presents the official customer storefront rather than packaging experiments. `src/Home.web.tsx` and `src/storefront.css` own this surface. The first viewport pairs a product-led heading and menu action with the approved six-cup box and two plated products. All imagery is reused from existing assets without new generation. Preserve complete packaging with `object-fit: contain`.
 
-Keep Nardo as the page canvas, soft sage (`surface`) behind the hero copy and packaging captions, and pale blue (`sky-surface`) behind the hero image and plated-photo captions. Graphite carries text. Deep sage carries primary actions and the announcement band with white text. The approved drybrush artwork connects sections and the footer; keep text on solid surfaces. Preserve Arabic RTL, English LTR and the existing catalog, bag, booking and order flows.
+Nardo is the primary canvas. Graphite carries text; deep sage carries actions and selected states. Sage surfaces hold the gifts collection and pale blue holds the order sequence and story logo. Horizontal drybrush artwork connects the hero and menu and remains on the approved packaging and footer. Preserve Arabic RTL, English LTR and the existing bag, booking, tracking and order backend.
 
 ## Overview
 
@@ -193,7 +193,7 @@ Warm paper surfaces, the supplied script logo, and original dessert and packagin
 Arabic is the initial reading direction, with literary display lettering and generous text leading. English uses a restrained high-contrast serif. Operational forms and preparation schedules use Arial for both languages while retaining the brand palette. This record describes the implemented web demo in `App.web.tsx`, `src/web.css`, `src/Orders.web.tsx`, `src/orders.css`, `src/menu.css`, `src/ProductCard.web.tsx`, `src/Gallery.web.tsx`, and `src/PhotoViewer.web.tsx`; the deferred native scaffold does not establish a second visual system.
 
 **Key Characteristics:**
-- Warm cream surfaces and caramel identity accents.
+- Nardo surfaces with sage, pistachio, powder blue and slate drybrush accents.
 - Arabic literary display paired with restrained English serif.
 - Product photography, fine rules, and generous spacing.
 - Warm-white enclosed media cards with rounded corners and focused image enlargement.
@@ -203,16 +203,16 @@ Arabic is the initial reading direction, with literary display lettering and gen
 The palette combines warm confectionery neutrals with a deep deep sage action color. Frontmatter values reproduce the implemented custom properties and operational semantic colors.
 
 ### Primary
-- **Caramel (`primary`):** announcement background, brand rules, and scrollbar thumb.
+- **Sage (`primary`):** quiet rules, decorative accents, and scrollbar thumb.
 - **Deep sage (`accent`):** primary actions, selected collection filters, and keyboard focus.
 
 ### Secondary
-- **Rose (`rose`):** text-selection background.
+- **Powder blue (`rose`):** text-selection background.
 
 ### Neutral
-- **Cream (`bg`):** page, navigation, cart, and photo-viewer surface.
-- **Cocoa (`ink`):** principal text, outlined actions, and toast surface.
-- **Muted cocoa (`muted`):** descriptive copy and secondary metadata.
+- **Nardo (`bg`):** page, navigation, cart, and photo-viewer surface.
+- **Graphite (`ink`):** principal text and outlined actions.
+- **Muted green-gray (`muted`):** descriptive copy and secondary metadata.
 - **Warm rule (`line`):** navigation, collection, cart, and footer dividers.
 - **Soft parchment (`surface`):** footer, image placeholders, count badges, and secondary hover.
 - **Warm white (`white`):** product and gallery card surfaces, search and filter controls, and text over deep sage actions and cocoa notifications.
@@ -277,6 +277,8 @@ Product and gallery cards are offwhite, enclosed by a 1px warm-rule border with 
 **The Enclosed Media Rule.** Keep product and gallery imagery, bilingual names, and associated actions within offwhite cards with fine neutral borders and 14px corners; retain shadow-free surfaces.
 
 ### Media Search and Image Viewer
+The public packaging gallery has been retired. The menu has Arabic/English search and four category filters. Nine products appear initially; a button reveals the full menu, while searching or selecting a category shows all matching products. Each product has one plated image and a focused enlargement action. Approved six-tart, six-cup and twelve-protein-ball boxes appear only in the customer gifts section. Old `#/gallery` links resolve to `#gifting`.
+
 Menu and gallery searches use offwhite fields with 46px minimum height, 6px corners, and a 2px slate focus outline offset by 2px. Gallery category filters include counts; a separate live status reports matching images. Search matches Arabic and English names. Empty gallery results offer a reset.
 
 The native photo dialog uses a cream surface, 12px corners, width `min(920px,94vw)`, and maximum height of 94dvh. A sticky header holds the title, subtitle, and 44px SVG close control. The image is contained without cropping within 70dvh, with an underlined original-image link beneath. Escape and backdrop dismissal close the dialog; body scrolling is restored on close. Remote media fall back to local assets on image error. Product cards do not animate on entry; gallery images retain a restrained 1.035 hover scale and reduced-motion handling.

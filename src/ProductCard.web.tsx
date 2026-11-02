@@ -9,7 +9,6 @@ type Product = {
   category: string;
   price: number | null;
   image: any;
-  packagingImage?: any;
 };
 export default function ProductCard({
   product: p,
@@ -22,6 +21,8 @@ export default function ProductCard({
 }) {
   const [photo, setPhoto] = useState<Photo | null>(null);
   const label = ar ? p.ar : p.en;
+  const remote = media.find((m) => m.productId === p.id && m.variant === 'plate');
+  const fallback = assetUrl(p.image);
   const category =
     p.category === 'tarte'
       ? ar
@@ -36,44 +37,30 @@ export default function ProductCard({
           : 'Desserts';
   return (
     <article className="product menu-product">
-      <div className="product-photo-pair">
-        {[
-          {
-            image: p.packagingImage || p.image,
-            kind: 'packaging',
-            label: ar ? 'بتغليف دوبامين' : 'Dopamine packaging',
-          },
-          { image: p.image, kind: 'plate', label: ar ? 'على الطبق' : 'On the plate' },
-        ].map((view) => {
-          const remote = media.find((m) => m.productId === p.id && m.variant === view.kind);
-          const fallback = assetUrl(view.image);
-          return (
-            <figure key={view.kind}>
-              <button
-                className="product-image"
-                onClick={() =>
-                  setPhoto({
-                    src: remote?.url || fallback,
-                    fallback,
-                    original: remote?.originalUrl || fallback,
-                    title: label,
-                    subtitle: view.label,
-                  })
-                }
-                aria-label={`${ar ? 'تكبير' : 'Enlarge'} ${label} — ${view.label}`}
-              >
-                <MediaImage
-                  src={remote?.url || fallback}
-                  fallback={fallback}
-                  alt={`${label} — ${view.label}`}
-                  loading="lazy"
-                />
-              </button>
-              <figcaption>{view.label}</figcaption>
-            </figure>
-          );
-        })}
-      </div>
+      <button
+        className="product-image product-photo-single"
+        onClick={() =>
+          setPhoto({
+            src: remote?.url || fallback,
+            fallback,
+            original: remote?.originalUrl || fallback,
+            title: label,
+            subtitle: ar ? p.en : p.ar,
+          })
+        }
+        aria-label={`${ar ? 'تكبير صورة' : 'Enlarge image of'} ${label}`}
+      >
+        <MediaImage
+          src={remote?.url || fallback}
+          fallback={fallback}
+          alt={label}
+          width={1024}
+          height={1024}
+          loading="lazy"
+          decoding="async"
+        />
+        <span className="product-photo-open">{ar ? 'تكبير الصورة' : 'Enlarge image'}</span>
+      </button>
       <div className="product-card-copy">
         <span className="product-type">{category}</span>
         <h3>{label}</h3>
