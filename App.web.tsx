@@ -6,6 +6,7 @@ import './src/menu.css';
 import './src/brand.css';
 import './src/orders.css';
 import './src/storefront.css';
+import './src/identity.css';
 import Icon from './src/Icon.web';
 import SiteHeader from './src/SiteHeader.web';
 import SiteFooter from './src/SiteFooter.web';
@@ -33,7 +34,8 @@ export default function App() {
       // Old gallery links now lead to the customer-facing gifts collection.
       if (location.hash === '#/gallery') history.replaceState(null, '', '#gifting');
       setRoute(location.hash);
-      if (location.hash.startsWith('#/')) window.scrollTo(0, 0);
+      if (location.hash.startsWith('#/'))
+        requestAnimationFrame(() => window.scrollTo({ top: 0, left: 0, behavior: 'instant' }));
       else
         requestAnimationFrame(() =>
           document.getElementById(location.hash.slice(1))?.scrollIntoView(),
@@ -45,6 +47,7 @@ export default function App() {
   }, []);
   const dialog = useRef<HTMLDialogElement>(null);
   const ar = lang === 'ar';
+  const currentRoute = route.split('?')[0];
   const t = (a: string, e: string) => (ar ? a : e);
   useEffect(() => {
     try {
@@ -92,17 +95,24 @@ export default function App() {
         toggleLang={() => setLang(ar ? 'en' : 'ar')}
         openCart={openCart}
       />
-      {route === '#/admin' ? (
-        <AdminOrders ar={ar} />
-      ) : route === '#/orders' ? (
-        <MyOrders ar={ar} />
-      ) : route === '#/privacy' ? (
-        <Privacy t={t} />
-      ) : route === '#/booking' ? (
-        <Booking ar={ar} />
-      ) : (
-        <Home ar={ar} t={t} add={add} />
-      )}
+      <div
+        id="main-content"
+        className="route-content"
+        tabIndex={-1}
+        role={currentRoute.startsWith('#/') ? 'main' : undefined}
+      >
+        {currentRoute === '#/admin' ? (
+          <AdminOrders ar={ar} />
+        ) : currentRoute === '#/orders' ? (
+          <MyOrders ar={ar} />
+        ) : currentRoute === '#/privacy' ? (
+          <Privacy t={t} ar={ar} />
+        ) : currentRoute === '#/booking' ? (
+          <Booking key={route} ar={ar} />
+        ) : (
+          <Home ar={ar} t={t} add={add} />
+        )}
+      </div>
       <SiteFooter t={t} />
       <div role="status" className={`toast ${toast ? 'visible' : ''}`}>
         <Icon name="check" size={18} />

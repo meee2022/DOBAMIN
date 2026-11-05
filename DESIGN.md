@@ -178,6 +178,14 @@ components:
 
 # Design System: Dopamine
 
+## Complete identity rollout — 2026-11-06
+
+The approved Nardo, graphite and horizontal sage/blue drybrush identity applies across the complete public website. `src/identity.css` unifies shared chrome, product-photo frames, cart, booking, tracking and privacy. The compact header places the original logo, four customer navigation links, language and bag controls within one desktop row; mobile uses two compact rows. The first viewport contains only the latest approved lifestyle photographs of the six-cup, six-tart and twelve-protein-ball selections, never legacy warm hero photos. The original food subject in each menu photo stays identifiable inside a powder-blue/Nardo frame with the exact approved brush artwork.
+
+`src/brand-experience.ts` is the allowlist for approved customer gift selections. Every gift links to `#/booking?gift=<id>` and prefills editable request notes. `BrandPageHeader.web.tsx` establishes a shared solid sky surface, contained selection image, graphite heading and drybrush edge for customer pages. Booking uses a two-column form and selection image on desktop, with the form first on phones. Cart and photo dialogs retain native focus and Escape behavior. Navigation between application routes resets scroll instantly after the next render; in-page section links keep their smooth movement.
+
+The public gallery implementation and obsolete paired-image, hero and gallery styles have been removed. Original image files are preserved outside the interface. No new raster artwork was generated for this rollout. The existing color tokens, bilingual type system, order validation and server behavior remain authoritative. Earlier component descriptions below are historical where superseded by this section and the current source.
+
 ## Official customer storefront — 2026-11-02
 
 The public website presents the official customer storefront rather than packaging experiments. `src/Home.web.tsx` and `src/storefront.css` own this surface. The first viewport pairs a product-led heading and menu action with the approved six-cup box and two plated products. All imagery is reused from existing assets without new generation. Preserve complete packaging with `object-fit: contain`.

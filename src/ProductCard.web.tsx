@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { assetUrl } from './catalog';
 import { MediaImage, PhotoViewer, Photo } from './PhotoViewer.web';
-import media from './cloud-media.json';
 type Product = {
   id: string;
   ar: string;
@@ -21,7 +20,6 @@ export default function ProductCard({
 }) {
   const [photo, setPhoto] = useState<Photo | null>(null);
   const label = ar ? p.ar : p.en;
-  const remote = media.find((m) => m.productId === p.id && m.variant === 'plate');
   const fallback = assetUrl(p.image);
   const category =
     p.category === 'tarte'
@@ -41,9 +39,9 @@ export default function ProductCard({
         className="product-image product-photo-single"
         onClick={() =>
           setPhoto({
-            src: remote?.url || fallback,
+            src: fallback,
             fallback,
-            original: remote?.originalUrl || fallback,
+            original: fallback,
             title: label,
             subtitle: ar ? p.en : p.ar,
           })
@@ -51,7 +49,7 @@ export default function ProductCard({
         aria-label={`${ar ? 'تكبير صورة' : 'Enlarge image of'} ${label}`}
       >
         <MediaImage
-          src={remote?.url || fallback}
+          src={fallback}
           fallback={fallback}
           alt={label}
           width={1024}

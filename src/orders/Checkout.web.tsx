@@ -10,12 +10,14 @@ export default function Checkout({
   onSaved,
   onBack,
   booking = false,
+  initialNotes = '',
 }: {
   ar: boolean;
   cart: Record<string, number>;
   onSaved: (order: Order) => void;
   onBack: () => void;
   booking?: boolean;
+  initialNotes?: string;
 }) {
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState('');
@@ -131,6 +133,7 @@ export default function Checkout({
               : t('ملاحظات إضافية (اختياري)', 'Additional notes (optional)')}
             <textarea
               name="notes"
+              defaultValue={initialNotes}
               rows={3}
               minLength={booking ? 5 : undefined}
               maxLength={1000}

@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { api, customerToken, Order } from '../orders-api';
 import { Details, Props, Status, text } from './OrderParts.web';
+import BrandPageHeader from '../BrandPageHeader.web';
 
 export default function MyOrders({ ar }: Props) {
   const [orders, setOrders] = useState<Order[]>([]);
@@ -41,27 +42,26 @@ export default function MyOrders({ ar }: Props) {
   }
   return (
     <section className="orders-page">
-      <div className="orders-heading">
-        <div>
-          <h1>{t('طلباتك، بكل تفاصيلها.', 'Your requests, in one place.')}</h1>
-          <p>
-            {t(
-              'تابع حالة طلباتك وحجوزاتك المحفوظة من هذا المتصفح.',
-              'Track orders and bookings placed from this browser.',
-            )}
-          </p>
-        </div>
-        <button
-          className="button secondary"
-          onClick={() => {
-            setBusy(true);
-            load();
-          }}
-          disabled={busy}
-        >
-          {t('تحديث', 'Refresh')}
-        </button>
-      </div>
+      <BrandPageHeader
+        ar={ar}
+        title={t('طلباتك، بكل تفاصيلها.', 'Your requests, in one place.')}
+        description={t(
+          'تابع طلباتك وحجوزاتك، أو ابحث برقم الطلب ورقم التواصل.',
+          'Follow your orders and bookings, or look up a request with its number and phone.',
+        )}
+        actions={
+          <button
+            className="button secondary"
+            onClick={() => {
+              setBusy(true);
+              load();
+            }}
+            disabled={busy}
+          >
+            {t('تحديث', 'Refresh')}
+          </button>
+        }
+      />
       {error && (
         <p className="form-error" role="alert">
           {error}

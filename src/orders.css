@@ -402,23 +402,6 @@
 .status-control select {
   font-size: 13px;
 }
-.order-nav {
-  border-bottom: 1px solid var(--line);
-  padding: 9px 5.2%;
-  display: flex;
-  justify-content: space-between;
-  gap: 18px;
-  background: var(--white);
-  font-size: 14px;
-}
-.order-nav > div {
-  display: flex;
-  gap: 25px;
-}
-.order-nav a:hover {
-  text-decoration: underline;
-  text-underline-offset: 5px;
-}
 .cart-panel:has(.order-form-wrap) {
   overflow: auto;
 }
@@ -484,13 +467,6 @@
   }
   .customer-contact {
     gap: 12px;
-  }
-  .order-nav {
-    font-size: 12px;
-    padding: 10px 6%;
-  }
-  .order-nav > div {
-    gap: 17px;
   }
   .order-form input[type='date'],
   .order-form input[type='time'] {

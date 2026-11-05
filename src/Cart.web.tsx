@@ -4,6 +4,8 @@ import Icon from './Icon.web';
 import Checkout from './orders/Checkout.web';
 import OrderReceipt from './orders/OrderReceipt.web';
 import type { Order } from './orders-api';
+import { approvedGifts } from './brand-experience';
+import { logo } from './brand-assets';
 
 type CartItems = Record<string, number>;
 type Props = {
@@ -40,7 +42,10 @@ export default function Cart({ ar, t, cart, setCart, change, dialog }: Props) {
     >
       <div className="cart-panel">
         <div className="cart-header">
-          <h2>{t('حقيبتك الحلوة', 'Your sweet bag')}</h2>
+          <div className="cart-heading">
+            <img src={assetUrl(logo)} width={2172} height={724} alt="Dopamine" />
+            <h2>{t('حقيبتك الحلوة', 'Your sweet bag')}</h2>
+          </div>
           <button
             onClick={() => dialog.current?.close()}
             aria-label={t('إغلاق الحقيبة', 'Close bag')}
@@ -63,7 +68,15 @@ export default function Cart({ ar, t, cart, setCart, change, dialog }: Props) {
           />
         ) : count === 0 ? (
           <div className="empty">
-            <Icon name="bag" size={46} />
+            <img
+              className="empty-bag-photo"
+              src={approvedGifts[1].src}
+              srcSet={approvedGifts[1].srcSet}
+              sizes="220px"
+              width={1024}
+              height={1536}
+              alt={t('تشكيلة أكواب دوبامين', 'Dopamine dessert cup selection')}
+            />
             <h3>{t('لحظتك الحلوة في انتظارك', 'Your sweet moment awaits')}</h3>
             <p>
               {t(
@@ -86,7 +99,7 @@ export default function Cart({ ar, t, cart, setCart, change, dialog }: Props) {
                 .filter((p) => cart[p.id] > 0)
                 .map((p) => (
                   <div className="cart-item" key={p.id}>
-                    <img src={assetUrl(p.image)} alt="" />
+                    <img src={assetUrl(p.image)} width={1024} height={1024} alt="" />
                     <div>
                       <h3>{ar ? p.ar : p.en}</h3>
                       <span>{money(p.price)}</span>

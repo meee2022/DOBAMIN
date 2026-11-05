@@ -69,8 +69,3 @@ export const lifestylePhotos = [
   src: `/collections/brush-lifestyle/${photo.key}.webp`,
   srcSet: `/collections/brush-lifestyle/${photo.key}-640.webp 640w, /collections/brush-lifestyle/${photo.key}.webp ${photo.width}w`,
 }));
-
-export const lifestyleHero = lifestylePhotos.find((photo) => photo.key === 'window-cup-carrier')!;
-export const lifestyleGift = lifestylePhotos.find(
-  (photo) => photo.key === 'hexagonal-protein-box',
-)!;

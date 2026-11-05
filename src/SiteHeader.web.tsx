@@ -12,18 +12,29 @@ type Props = {
 export default function SiteHeader({ t, count, toggleLang, openCart }: Props) {
   return (
     <>
+      <a
+        className="skip-link"
+        href="#main-content"
+        onClick={(event) => {
+          event.preventDefault();
+          document.getElementById('main-content')?.focus();
+        }}
+      >
+        {t('انتقل للمحتوى', 'Skip to content')}
+      </a>
       <div className="announcement">
         {t('لحظات حلوة، بتوازن جميل', 'Sweet moments. Beautifully balanced.')}
       </div>
       <header className="header">
+        <a href="#" className="logo" aria-label="Dopamine home">
+          <img src={assetUrl(logo)} width={2172} height={724} alt="Dopamine Healthy sweets" />
+        </a>
         <nav aria-label={t('القائمة الرئيسية', 'Main navigation')}>
           <a href="#collection">{t('المنيو', 'Menu')}</a>
-          <a href="#gifting">{t('هدايا ومناسبات', 'Gifts & occasions')}</a>
-          <a href="#story">{t('عن دوبامين', 'Our story')}</a>
+          <a href="#gifting">{t('الهدايا', 'Gifts')}</a>
+          <a href="#/booking">{t('حجز مناسبة', 'Occasions')}</a>
+          <a href="#/orders">{t('طلباتي', 'My requests')}</a>
         </nav>
-        <a href="#" className="logo" aria-label="Dopamine home">
-          <img src={assetUrl(logo)} alt="Dopamine Healthy sweets" />
-        </a>
         <div className="header-actions">
           <button className="language" onClick={toggleLang}>
             {t('EN', 'العربية')}
@@ -40,12 +51,6 @@ export default function SiteHeader({ t, count, toggleLang, openCart }: Props) {
           </button>
         </div>
       </header>
-      <div className="order-nav">
-        <div>
-          <a href="#/booking">{t('حجز مناسبة', 'Book an occasion')}</a>
-          <a href="#/orders">{t('طلباتي', 'My requests')}</a>
-        </div>
-      </div>
     </>
   );
 }

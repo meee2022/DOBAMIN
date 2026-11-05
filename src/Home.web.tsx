@@ -1,7 +1,6 @@
 import { useState } from 'react';
-import { products, assetUrl } from './catalog';
-import { lifestylePhotos } from './lifestyle-data';
-import { logo } from './brand-assets';
+import { products } from './catalog';
+import { approvedGifts, giftBookingLink } from './brand-experience';
 import Icon from './Icon.web';
 import ProductCard from './ProductCard.web';
 
@@ -11,16 +10,8 @@ const categories = [
   { id: 'desserts', ar: 'حلويات', en: 'Desserts' },
   { id: 'cups', ar: 'أكواب', en: 'Dessert cups' },
 ];
-const cups = lifestylePhotos.find((p) => p.key === 'six-dessert-cups')!;
-const gifts = [
-  { key: 'six-tarts-v1', ar: 'بوكس التارت', en: 'Tart gift box' },
-  { key: 'six-dessert-cups', ar: 'بوكس أكواب الحلوى', en: 'Dessert cup gift box' },
-  { key: 'protein-balls-12-v1', ar: 'بوكس البروتين بول', en: 'Protein ball gift box' },
-].map((gift) => ({ ...lifestylePhotos.find((p) => p.key === gift.key)!, ...gift }));
-const heroTart = products.find((p) => p.id === 'tarte-pistachio')!;
-const heroCup =
-  products.find((p) => p.id === 'cup-berries-cheesecake') ||
-  products.find((p) => p.category === 'cups')!;
+const gifts = approvedGifts;
+const cups = approvedGifts[1];
 
 export default function Home({
   ar,
@@ -82,16 +73,20 @@ export default function Home({
           />
           <div className="storefront-hero-plates">
             <img
-              src={assetUrl(heroTart.image)}
-              width={1024}
-              height={1024}
-              alt={ar ? heroTart.ar : heroTart.en}
+              src={gifts[0].src}
+              srcSet={gifts[0].srcSet}
+              sizes="(max-width: 700px) 34vw, 20vw"
+              width={gifts[0].width}
+              height={gifts[0].height}
+              alt={ar ? gifts[0].ar : gifts[0].en}
             />
             <img
-              src={assetUrl(heroCup.image)}
-              width={1024}
-              height={1024}
-              alt={ar ? heroCup.ar : heroCup.en}
+              src={gifts[2].src}
+              srcSet={gifts[2].srcSet}
+              sizes="(max-width: 700px) 34vw, 20vw"
+              width={gifts[2].width}
+              height={gifts[2].height}
+              alt={ar ? gifts[2].ar : gifts[2].en}
             />
           </div>
         </div>
@@ -202,10 +197,10 @@ export default function Home({
             </a>
           </div>
           <div className="storefront-gift-grid">
-            {gifts.map((p, index) => (
+            {gifts.map((p) => (
               <article className="storefront-gift" key={p.key}>
                 <a
-                  href="#/booking"
+                  href={giftBookingLink(p.id)}
                   className="storefront-gift-photo"
                   aria-label={t(`احجز ${p.ar}`, `Plan a ${p.en} gift`)}
                 >
@@ -221,23 +216,9 @@ export default function Home({
                   />
                 </a>
                 <div className="storefront-gift-copy">
-                  <h3>
-                    {t(
-                      ['بوكس التارت', 'بوكس أكواب الحلوى', 'بوكس البروتين بول'][index],
-                      [
-                        'The tart selection',
-                        'The dessert cup selection',
-                        'The protein ball selection',
-                      ][index],
-                    )}
-                  </h3>
-                  <p>
-                    {t(
-                      ['٦ قطع تارت', '٦ أكواب حلوى', '١٢ حبة بروتين بول'][index],
-                      ['Six tarts', 'Six dessert cups', 'Twelve protein balls'][index],
-                    )}
-                  </p>
-                  <a className="storefront-text-link" href="#/booking">
+                  <h3>{ar ? p.ar : p.en}</h3>
+                  <p>{ar ? p.quantityAr : p.quantityEn}</p>
+                  <a className="storefront-text-link" href={giftBookingLink(p.id)}>
                     {t('اطلب لمناسبتك', 'Plan your gift')}
                     <Icon name="arrow" size={17} />
                   </a>
@@ -257,10 +238,12 @@ export default function Home({
       <section id="story" className="storefront-story storefront-wrap">
         <div className="storefront-story-mark">
           <img
-            src={assetUrl(logo)}
-            width={640}
-            height={213}
-            alt="Dopamine Healthy sweets"
+            src={gifts[2].src}
+            srcSet={gifts[2].srcSet}
+            sizes="(max-width: 700px) 88vw, 36vw"
+            width={gifts[2].width}
+            height={gifts[2].height}
+            alt={ar ? gifts[2].ar : gifts[2].en}
             loading="lazy"
           />
         </div>

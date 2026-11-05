@@ -1,11 +1,16 @@
-export default function Privacy({ t }: { t: (a: string, e: string) => string }) {
+import BrandPageHeader from './BrandPageHeader.web';
+export default function Privacy({ t, ar }: { t: (a: string, e: string) => string; ar: boolean }) {
   return (
-    <section className="orders-page">
-      <div className="orders-heading">
-        <div>
-          <h1>{t('الخصوصية وشروط الطلب', 'Privacy and order terms')}</h1>
-        </div>
-      </div>
+    <section className="orders-page privacy-page">
+      <BrandPageHeader
+        ar={ar}
+        photo="tarts"
+        title={t('الخصوصية وشروط الطلب', 'Privacy and order terms')}
+        description={t(
+          'كل ما تحتاج معرفته عن بياناتك وطلباتك مع دوبامين.',
+          'What you need to know about your details and requests with Dopamine.',
+        )}
+      />
       <h2>{t('البيانات التي نجمعها', 'What we collect')}</h2>
       <p>
         {t(
