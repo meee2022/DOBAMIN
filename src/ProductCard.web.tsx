@@ -78,7 +78,7 @@ export default function ProductCard({
             onClick={() => add(p.id)}
             aria-label={ar ? `أضف ${p.ar}` : `Add ${p.en}`}
           >
-            <span>{ar ? 'أضف للحقيبة' : 'Add to bag'}</span>
+            <span>{ar ? 'أضف إلى السلة' : 'Add to cart'}</span>
             <svg
               width="17"
               height="17"

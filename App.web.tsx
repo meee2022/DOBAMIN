@@ -67,7 +67,9 @@ export default function App() {
   useEffect(() => {
     document.documentElement.lang = lang;
     document.documentElement.dir = ar ? 'rtl' : 'ltr';
-    document.title = 'Dopamine — Indulgence, in balance.';
+    document.title = ar
+      ? 'دوبامين — حلويات وهدايا للمناسبات'
+      : 'Dopamine — Sweets and gifts for every occasion';
   }, [lang]);
   useEffect(() => {
     if (!toast) return;
@@ -80,7 +82,7 @@ export default function App() {
   };
   const add = (id: string) => {
     change(id, 1);
-    setToast(t('أضفنا لحظة حلوة إلى حقيبتك', 'A sweet moment added to your bag'));
+    setToast(t('أُضيف المنتج إلى سلة التسوق.', 'Product added to shopping cart.'));
   };
   const openCart = () => {
     document.body.style.overflow = 'hidden';

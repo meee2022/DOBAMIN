@@ -16,7 +16,7 @@ export default function Booking({ ar }: Props) {
       <BrandPageHeader
         ar={ar}
         photo={photo.id}
-        title={t('لمناسبة حلوة، بتفاصيلك.', 'A sweet occasion, your way.')}
+        title={t('طلبات المناسبات الخاصة', 'Special occasion requests')}
         description={
           gift
             ? t(
@@ -24,7 +24,7 @@ export default function Booking({ ar }: Props) {
                 `Your selection: ${gift.en} — ${gift.quantityEn}. Tell us your occasion and date; we will confirm the details with you.`,
               )
             : t(
-                'اختَر التشكيلة والموعد، واترك لنا مراجعة التفاصيل معك.',
+                'اختر التشكيلة والموعد المطلوب، وسيراجع فريقنا التفاصيل قبل تأكيد الحجز.',
                 'Tell us your selection and date. We will review the details with you.',
               )
         }

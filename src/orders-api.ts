@@ -31,7 +31,7 @@ export const statusLabels: Record<OrderStatus, [string, string]> = {
   preparing: ['قيد التجهيز', 'Preparing'],
   ready: ['جاهز', 'Ready'],
   completed: ['تم التسليم', 'Completed'],
-  cancelled: ['ملغي', 'Cancelled'],
+  cancelled: ['ملغى', 'Cancelled'],
 };
 export function qatarToday() {
   return new Intl.DateTimeFormat('en-CA', {

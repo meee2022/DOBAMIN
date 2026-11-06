@@ -29,7 +29,7 @@ export default function Cart({ ar, t, cart, setCart, change, dialog }: Props) {
   return (
     <dialog
       ref={dialog}
-      aria-label={t('حقيبتك الحلوة', 'Your sweet bag')}
+      aria-label={t('سلة التسوق', 'Shopping cart')}
       className="cart-dialog"
       onClick={(e) => {
         if (e.target === e.currentTarget) dialog.current?.close();
@@ -44,11 +44,11 @@ export default function Cart({ ar, t, cart, setCart, change, dialog }: Props) {
         <div className="cart-header">
           <div className="cart-heading">
             <img src={assetUrl(logo)} width={2172} height={724} alt="Dopamine" />
-            <h2>{t('حقيبتك الحلوة', 'Your sweet bag')}</h2>
+            <h2>{t('سلة التسوق', 'Shopping cart')}</h2>
           </div>
           <button
             onClick={() => dialog.current?.close()}
-            aria-label={t('إغلاق الحقيبة', 'Close bag')}
+            aria-label={t('إغلاق سلة التسوق', 'Close shopping cart')}
           >
             <Icon name="close" />
           </button>
@@ -77,10 +77,10 @@ export default function Cart({ ar, t, cart, setCart, change, dialog }: Props) {
               height={1536}
               alt={t('تشكيلة أكواب دوبامين', 'Dopamine dessert cup selection')}
             />
-            <h3>{t('لحظتك الحلوة في انتظارك', 'Your sweet moment awaits')}</h3>
+            <h3>{t('سلة التسوق فارغة', 'Your shopping cart is empty')}</h3>
             <p>
               {t(
-                'اكتشف المجموعة وأضف ما تحب إلى حقيبتك.',
+                'تصفح المنتجات وأضف الأصناف التي ترغب في طلبها.',
                 'Explore the collection and add something you love.',
               )}
             </p>
@@ -89,7 +89,7 @@ export default function Cart({ ar, t, cart, setCart, change, dialog }: Props) {
               className="button primary"
               onClick={() => dialog.current?.close()}
             >
-              {t('تصفح المجموعة', 'Explore collection')}
+              {t('تصفح المنتجات', 'Explore collection')}
             </a>
           </div>
         ) : (
@@ -105,14 +105,14 @@ export default function Cart({ ar, t, cart, setCart, change, dialog }: Props) {
                       <span>{money(p.price)}</span>
                       <div className="quantity">
                         <button
-                          aria-label={t(`تقليل ${p.ar}`, `Decrease ${p.en}`)}
+                          aria-label={t(`تقليل كمية ${p.ar}`, `Decrease quantity of ${p.en}`)}
                           onClick={() => change(p.id, -1)}
                         >
                           <Icon name="minus" size={15} />
                         </button>
                         <span>{cart[p.id]}</span>
                         <button
-                          aria-label={t(`زيادة ${p.ar}`, `Increase ${p.en}`)}
+                          aria-label={t(`زيادة كمية ${p.ar}`, `Increase quantity of ${p.en}`)}
                           disabled={cart[p.id] >= 99}
                           onClick={() => change(p.id, 1)}
                         >
@@ -137,8 +137,8 @@ export default function Cart({ ar, t, cart, setCart, change, dialog }: Props) {
               </div>
               <p>
                 {t(
-                  'أرسل اختياراتك وسنؤكّد السعر والتوفر قبل تجهيز الطلب. لا يتم الدفع الآن.',
-                  'Send your selection. Price and availability are confirmed before preparation. No payment now.',
+                  'سيؤكّد الفريق السعر والتوفر قبل تجهيز الطلب. لا يتم الدفع عبر الموقع.',
+                  'Our team confirms price and availability before preparation. No payment is taken on this website.',
                 )}
               </p>
               <button className="button primary" onClick={() => setCheckout(true)}>

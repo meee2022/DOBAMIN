@@ -24,10 +24,10 @@ export default function OrderReceipt({
       >
         <path d="m5 12 4 4L19 6" />
       </svg>
-      <h2>{t('وصلنا طلبك', 'Request received')}</h2>
+      <h2>{t('تم استلام طلبك', 'Request received')}</h2>
       <p>
         {t(
-          'تم حفظه لفريق التجهيز، وهو بانتظار التأكيد.',
+          'حُفظ طلبك وهو بانتظار مراجعة فريق التجهيز وتأكيده.',
           'It is saved for the preparation team and awaits confirmation.',
         )}
       </p>

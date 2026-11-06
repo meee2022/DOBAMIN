@@ -4,7 +4,7 @@ export const approvedGifts = [
   {
     id: 'tarts',
     key: 'six-tarts-v1',
-    ar: 'بوكس التارت',
+    ar: 'علبة التارت',
     en: 'Tart selection',
     quantityAr: '٦ قطع تارت',
     quantityEn: 'Six tarts',
@@ -12,7 +12,7 @@ export const approvedGifts = [
   {
     id: 'cups',
     key: 'six-dessert-cups',
-    ar: 'بوكس أكواب الحلوى',
+    ar: 'علبة أكواب الحلوى',
     en: 'Dessert cup selection',
     quantityAr: '٦ أكواب حلوى',
     quantityEn: 'Six dessert cups',
@@ -20,9 +20,9 @@ export const approvedGifts = [
   {
     id: 'protein',
     key: 'protein-balls-12-v1',
-    ar: 'بوكس البروتين بول',
+    ar: 'علبة كرات البروتين',
     en: 'Protein ball selection',
-    quantityAr: '١٢ حبة بروتين بول',
+    quantityAr: '١٢ كرة بروتين',
     quantityEn: 'Twelve protein balls',
   },
 ].map((gift) => ({ ...lifestylePhotos.find((photo) => photo.key === gift.key)!, ...gift }));

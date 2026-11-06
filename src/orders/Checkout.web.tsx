@@ -3,6 +3,7 @@ import { api, customerToken, Order, qatarToday } from '../orders-api';
 import { products } from '../catalog';
 import shop from '../shop-config.json';
 import { text } from './OrderParts.web';
+import { orderMessage } from '../order-messages';
 
 export default function Checkout({
   ar,
@@ -57,7 +58,7 @@ export default function Checkout({
       </button>
       <h2>
         {booking
-          ? t('احجز لحظتك الخاصة', 'Plan your special moment')
+          ? t('تفاصيل حجز المناسبة', 'Occasion booking details')
           : t('تفاصيل طلبك', 'Your order details')}
       </h2>
       <p className="form-intro">
@@ -73,7 +74,7 @@ export default function Checkout({
             <input name="name" autoComplete="name" minLength={2} maxLength={80} required />
           </label>
           <label>
-            {t('رقم التواصل', 'Phone number')}
+            {t('رقم الهاتف', 'Phone number')}
             <input
               name="phone"
               type="tel"
@@ -166,8 +167,8 @@ export default function Checkout({
           )}
           <p className="form-disclaimer">
             {t(
-              'لا يتم الدفع الآن. التوفر والتوصيل والسعر النهائي تحتاج تأكيد الفريق.',
-              'No payment is taken now. Availability, delivery and final pricing need team confirmation.',
+              'لا يتم الدفع عبر الموقع. يؤكّد الفريق التوفر وخيارات التوصيل والسعر النهائي قبل اعتماد الطلب.',
+              'No payment is taken on this website. Availability, delivery and final pricing need team confirmation.',
             )}
           </p>
           <label className="consent">
@@ -180,7 +181,7 @@ export default function Checkout({
         </fieldset>
         {error && (
           <p role="alert" className="form-error">
-            {error}
+            {orderMessage(error, ar)}
           </p>
         )}
         <button

@@ -7,14 +7,14 @@ export default function Privacy({ t, ar }: { t: (a: string, e: string) => string
         photo="tarts"
         title={t('الخصوصية وشروط الطلب', 'Privacy and order terms')}
         description={t(
-          'كل ما تحتاج معرفته عن بياناتك وطلباتك مع دوبامين.',
+          'معلومات حول استخدام بياناتك وشروط الطلب لدى دوبامين.',
           'What you need to know about your details and requests with Dopamine.',
         )}
       />
       <h2>{t('البيانات التي نجمعها', 'What we collect')}</h2>
       <p>
         {t(
-          'الاسم ورقم التواصل وموعد الطلب وملاحظاتك، والعنوان عند طلب التوصيل. لا نجمع بيانات دفع.',
+          'الاسم ورقم الهاتف وموعد الطلب وملاحظاتك، والعنوان عند طلب التوصيل. لا نجمع بيانات دفع.',
           'Your name, phone number, requested time and notes, plus your address for delivery requests. We collect no payment details.',
         )}
       </p>
@@ -25,11 +25,11 @@ export default function Privacy({ t, ar }: { t: (a: string, e: string) => string
           'Only to prepare your request and contact you about it. We do not sell it or share it for marketing. It is stored with Cloudflare and visible to authorised Dopamine staff.',
         )}
       </p>
-      <h2>{t('حقيبتك وسجلّ طلباتك', 'Your bag and request history')}</h2>
+      <h2>{t('سلة التسوق وسجلّ الطلبات', 'Your shopping cart and request history')}</h2>
       <p>
         {t(
-          'نحفظ الحقيبة ورمز متابعة الطلبات على جهازك فقط، ويمكنك حذفهما بمسح بيانات الموقع.',
-          'Your bag and request-tracking token stay on your device. Clearing site data removes them.',
+          'نحفظ سلة التسوق ورمز متابعة الطلبات على جهازك فقط، ويمكنك حذفهما بمسح بيانات الموقع.',
+          'Your shopping cart and request-tracking token stay on your device. Clearing site data removes them.',
         )}
       </p>
       <h2>{t('شروط الطلب', 'Order terms')}</h2>

@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { api, Order, qatarToday, statusLabels } from '../orders-api';
 import { Details, Props, Status, text } from './OrderParts.web';
+import { orderMessage } from '../order-messages';
 
 export default function AdminOrders({ ar }: Props) {
   const [token, setToken] = useState(() => sessionStorage.getItem('dopamine-admin-session') || '');
@@ -88,11 +89,11 @@ export default function AdminOrders({ ar }: Props) {
           </label>
           {error && (
             <p className="form-error" role="alert">
-              {error}
+              {orderMessage(error, ar)}
             </p>
           )}
           <button className="button primary" disabled={busy}>
-            {busy ? t('جارٍ الدخول…', 'Signing in…') : t('دخول الإدارة', 'Sign in')}
+            {busy ? t('جارٍ الدخول…', 'Signing in…') : t('تسجيل الدخول', 'Sign in')}
           </button>
         </form>
       </section>
@@ -113,7 +114,7 @@ export default function AdminOrders({ ar }: Props) {
           <h1>{t('جدول التجهيز', 'Preparation schedule')}</h1>
           <p>
             {t(
-              'كل طلب، في موعده. تحديث تلقائي كل ١٠ ثوانٍ.',
+              'تُحدّث قائمة الطلبات تلقائيًا كل ١٠ ثوانٍ.',
               'Every request, on time. Refreshes every 10 seconds.',
             )}
           </p>
@@ -142,7 +143,7 @@ export default function AdminOrders({ ar }: Props) {
               }
             }}
           >
-            {t('خروج', 'Sign out')}
+            {t('تسجيل الخروج', 'Sign out')}
           </button>
         </div>
       </div>
@@ -173,12 +174,12 @@ export default function AdminOrders({ ar }: Props) {
           {t('اليوم', 'Today')}
         </button>
         <button className="text-button" onClick={() => setDay('')}>
-          {t('كل الأيام', 'All dates')}
+          {t('جميع الأيام', 'All dates')}
         </button>
         <label>
           {t('الحالة', 'Status')}
           <select value={status} onChange={(e) => setStatus(e.target.value)}>
-            <option value="all">{t('كل الحالات', 'All statuses')}</option>
+            <option value="all">{t('جميع الحالات', 'All statuses')}</option>
             {Object.entries(statusLabels).map(([key, label]) => (
               <option key={key} value={key}>
                 {label[ar ? 0 : 1]}
@@ -187,12 +188,12 @@ export default function AdminOrders({ ar }: Props) {
           </select>
         </label>
         <label className="search-label">
-          {t('بحث بالعميل أو رقم الطلب', 'Find customer or request')}
+          {t('البحث عن طلب', 'Find customer or request')}
           <input
             type="search"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            placeholder={t('الاسم، الهاتف، رقم الطلب', 'Name, phone, request ID')}
+            placeholder={t('اسم العميل، رقم الهاتف، رقم الطلب…', 'Name, phone, request number…')}
           />
         </label>
       </div>
@@ -210,7 +211,7 @@ export default function AdminOrders({ ar }: Props) {
       </div>
       {error && (
         <p role="alert" className="form-error">
-          {error}
+          {orderMessage(error, ar)}
         </p>
       )}
       {!busy && !error && !shown.length && (
@@ -218,7 +219,7 @@ export default function AdminOrders({ ar }: Props) {
           <h2>{t('لا توجد طلبات مطابقة', 'No matching requests')}</h2>
           <p>
             {t(
-              'جرّب كل الأيام أو غيّر فلاتر البحث. ستظهر الطلبات الجديدة تلقائيًا.',
+              'اعرض جميع الأيام أو غيّر معايير البحث. ستظهر الطلبات الجديدة تلقائيًا.',
               'Try all dates or change the filters. New requests appear automatically.',
             )}
           </p>

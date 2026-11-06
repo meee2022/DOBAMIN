@@ -5,7 +5,7 @@ import Icon from './Icon.web';
 import ProductCard from './ProductCard.web';
 
 const categories = [
-  { id: 'all', ar: 'كل المنيو', en: 'Full menu' },
+  { id: 'all', ar: 'جميع المنتجات', en: 'Full menu' },
   { id: 'tarte', ar: 'تارت', en: 'Tarts' },
   { id: 'desserts', ar: 'حلويات', en: 'Desserts' },
   { id: 'cups', ar: 'أكواب', en: 'Dessert cups' },
@@ -37,19 +37,19 @@ export default function Home({
       <section className="storefront-hero storefront-wrap">
         <div className="storefront-intro">
           <h1>
-            {t('لحظتك الحلوة،', 'Your sweet moment,')}
+            {t('حلويات مميّزة،', 'Distinctive sweets,')}
             <br />
-            {t('بروح دوبامين.', 'the Dopamine way.')}
+            {t('بلمسة دوبامين.', 'with the Dopamine touch.')}
           </h1>
           <p>
             {t(
-              'تارت، حلويات وأكواب حلوى. اختَر ما تحبّ لنفسك، أو شارك لحظة حلوة مع من تحبّ.',
-              'Tarts, desserts and sweet little cups. A moment for you, or a gift to share.',
+              'تشكيلة من التارت والحلويات وأكواب الحلوى، للاستمتاع بها أو تقديمها هدية في مختلف المناسبات.',
+              'Explore tarts, desserts and dessert cups, for your own enjoyment or as a gift for any occasion.',
             )}
           </p>
           <div className="storefront-actions">
             <a className="button primary" href="#collection">
-              {t('تصفّح المنيو', 'Explore the menu')}
+              {t('تصفّح المنتجات', 'Explore the menu')}
               <Icon name="arrow" />
             </a>
             <a className="storefront-text-link" href="#gifting">
@@ -66,8 +66,8 @@ export default function Home({
             width={cups.width}
             height={cups.height}
             alt={t(
-              'تشكيلة من ستة أكواب حلوى في بوكس دوبامين المعتمد',
-              'Six dessert cups in the approved Dopamine gift box',
+              'علبة هدايا دوبامين تضم ستة أكواب من الحلوى',
+              'Six dessert cups in a Dopamine gift box',
             )}
             fetchPriority="high"
           />
@@ -96,24 +96,24 @@ export default function Home({
       <section id="collection" className="storefront-menu storefront-wrap">
         <div className="storefront-section-heading">
           <div>
-            <h2>{t('اختَر حلاك.', 'Find your favourite.')}</h2>
+            <h2>{t('قائمة المنتجات', 'Our product selection')}</h2>
             <p>
               {t(
-                'من أول تارت لآخر ملعقة، لكل لحظة اختيار.',
-                'From the first bite to the last spoonful, a little something for every moment.',
+                'تعرّف إلى أصنافنا واختر ما يناسب ذوقك.',
+                'Explore our selection and choose your preferred products.',
               )}
             </p>
           </div>
           <span className="storefront-menu-total">
             {new Intl.NumberFormat(ar ? 'ar-QA' : 'en').format(products.length)}{' '}
-            {t('صنفًا في المنيو', 'creations on the menu')}
+            {t('منتجًا في القائمة', 'creations on the menu')}
           </span>
         </div>
         <div className="storefront-menu-tools">
           <div
             className="storefront-categories"
             role="group"
-            aria-label={t('تصفية المنيو', 'Filter menu')}
+            aria-label={t('تصفية المنتجات', 'Filter menu')}
           >
             {categories.map((c) => (
               <button
@@ -129,10 +129,10 @@ export default function Home({
             ))}
           </div>
           <label className="storefront-search">
-            <span className="sr-only">{t('ابحث في المنيو', 'Search menu')}</span>
+            <span className="sr-only">{t('البحث في المنتجات', 'Search menu')}</span>
             <input
               type="search"
-              placeholder={t('بتدور على إيه؟', 'Find a favourite…')}
+              placeholder={t('ابحث باسم المنتج…', 'Search by product name…')}
               value={search}
               onChange={(e) => setSearch(e.target.value)}
             />
@@ -140,7 +140,7 @@ export default function Home({
         </div>
         <p className="storefront-result-count" role="status">
           {t(
-            `نعرض ${visible.length} من ${matches.length} صنفًا`,
+            `المنتجات المعروضة: ${visible.length} من ${matches.length}`,
             `Showing ${visible.length} of ${matches.length} creations`,
           )}
         </p>
@@ -151,7 +151,7 @@ export default function Home({
         </div>
         {!matches.length && (
           <div className="storefront-empty">
-            <h3>{t('جرّب اسمًا آخر.', 'Try another favourite.')}</h3>
+            <h3>{t('لم نعثر على منتجات مطابقة.', 'No matching products.')}</h3>
             <button
               className="button secondary"
               onClick={() => {
@@ -159,14 +159,14 @@ export default function Home({
                 setCategory('all');
               }}
             >
-              {t('عرض كل المنيو', 'Show the full menu')}
+              {t('عرض جميع المنتجات', 'Show the full menu')}
             </button>
           </div>
         )}
         {visible.length < matches.length && (
           <div className="storefront-more">
             <button className="button secondary" onClick={() => setExpanded(true)}>
-              {t('عرض باقي المنيو', 'Explore the rest of the menu')}
+              {t('عرض المزيد من المنتجات', 'Explore the rest of the menu')}
               <Icon name="arrow" />
             </button>
           </div>
@@ -183,11 +183,11 @@ export default function Home({
         <div className="storefront-wrap">
           <div className="storefront-section-heading">
             <div>
-              <h2>{t('حلوى تُهدى.', 'Sweetness, shared.')}</h2>
+              <h2>{t('هدايا للمناسبات', 'Gifts for every occasion')}</h2>
               <p>
                 {t(
-                  'للمّة، لهدية، أو لمناسبة تستحق. تشكيلة دوبامين في بوكساتنا المعتمدة.',
-                  'For a gathering, a gift, or a moment worth celebrating. Dopamine selections in our signature boxes.',
+                  'تشكيلات من حلويات دوبامين في علب هدايا بتصميمنا الخاص، للتجمعات والمناسبات.',
+                  'Dopamine dessert selections in our signature gift boxes, for gatherings and special occasions.',
                 )}
               </p>
             </div>
@@ -248,11 +248,11 @@ export default function Home({
           />
         </div>
         <div>
-          <h2>{t('حلاوتها في التفاصيل.', 'The pleasure is in the details.')}</h2>
+          <h2>{t('العناية بالتفاصيل', 'Attention to detail')}</h2>
           <p>
             {t(
-              'دوبامين مساحة صغيرة للمتعة في يومك. نعيد تخيّل الحلويات بروح دافئة وتفاصيل مدروسة، لأن الاختيار الذي يشعرك بالرضا يستحق أن يكون لذيذًا أيضًا.',
-              'Dopamine is a little space for pleasure in your day. We reimagine sweets with warmth and thoughtful details, because a feel-good choice deserves to taste beautiful, too.',
+              'تقدّم دوبامين تشكيلة من الحلويات تجمع بين تنوّع المذاق والعناية بالتفاصيل، للاستمتاع بها في يومك أو مشاركتها في مناسباتك.',
+              'Dopamine offers a varied selection of desserts with thoughtful attention to detail, for everyday enjoyment and special occasions.',
             )}
           </p>
         </div>
@@ -260,24 +260,24 @@ export default function Home({
 
       <section className="storefront-ordering">
         <div className="storefront-wrap">
-          <h2>{t('من اختيارك، لحد لحظتك.', 'From your choice to your moment.')}</h2>
+          <h2>{t('خطوات تقديم الطلب', 'How to place an order')}</h2>
           <ol>
             {[
               [
-                t('اختَر من المنيو', 'Choose from the menu'),
-                t('أضف الأصناف اللي تحبّها لحقيبتك.', 'Add your favourites to your bag.'),
+                t('اختَر من قائمة المنتجات', 'Choose from the menu'),
+                t('أضف المنتجات التي ترغب في طلبها إلى سلة التسوق.', 'Add your selected products to the shopping cart.'),
               ],
               [
                 t('حدّد الموعد', 'Choose your date'),
                 t(
-                  'اكتب بياناتك والموعد وطريقة الاستلام.',
+                  'أدخل بياناتك والموعد المطلوب وطريقة الاستلام.',
                   'Enter your details, date and collection preference.',
                 ),
               ],
               [
                 t('نراجع ونؤكّد', 'We review and confirm'),
                 t(
-                  'فريقنا يراجع الطلب قبل تأكيد التجهيز.',
+                  'يراجع فريقنا الطلب قبل تأكيد موعد التجهيز.',
                   'Our team reviews your request before confirming preparation.',
                 ),
               ],

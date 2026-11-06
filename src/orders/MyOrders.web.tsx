@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useState } from 'react';
 import { api, customerToken, Order } from '../orders-api';
 import { Details, Props, Status, text } from './OrderParts.web';
 import BrandPageHeader from '../BrandPageHeader.web';
+import { orderMessage } from '../order-messages';
 
 export default function MyOrders({ ar }: Props) {
   const [orders, setOrders] = useState<Order[]>([]);
@@ -44,9 +45,9 @@ export default function MyOrders({ ar }: Props) {
     <section className="orders-page">
       <BrandPageHeader
         ar={ar}
-        title={t('طلباتك، بكل تفاصيلها.', 'Your requests, in one place.')}
+        title={t('متابعة الطلبات والحجوزات', 'Track orders and bookings')}
         description={t(
-          'تابع طلباتك وحجوزاتك، أو ابحث برقم الطلب ورقم التواصل.',
+          'تابع طلباتك وحجوزاتك، أو ابحث برقم الطلب ورقم الهاتف.',
           'Follow your orders and bookings, or look up a request with its number and phone.',
         )}
         actions={
@@ -64,21 +65,21 @@ export default function MyOrders({ ar }: Props) {
       />
       {error && (
         <p className="form-error" role="alert">
-          {error}
+          {orderMessage(error, ar)}
         </p>
       )}
       {busy && <p role="status">{t('جارٍ تحميل الطلبات…', 'Loading requests…')}</p>}
       {!busy && !error && !orders.length && (
         <div className="orders-empty">
-          <h2>{t('أول لحظة حلوة تبدأ هنا', 'Your first sweet moment starts here')}</h2>
+          <h2>{t('لا توجد طلبات مسجّلة', 'No requests have been recorded')}</h2>
           <p>
             {t(
-              'أضف منتجات إلى الحقيبة أو احجز لمناسبتك القادمة.',
-              'Add products to your bag or book for your next occasion.',
+              'تصفح المنتجات وأضف اختياراتك إلى سلة التسوق، أو أرسل طلب حجز لمناسبتك.',
+              'Browse the products, add your selections to the shopping cart, or submit an occasion booking request.',
             )}
           </p>
           <a className="button primary" href="#collection">
-            {t('تصفح المجموعة', 'Browse the collection')}
+            {t('تصفح المنتجات', 'Browse the collection')}
           </a>
         </div>
       )}
@@ -100,20 +101,20 @@ export default function MyOrders({ ar }: Props) {
         ))}
       </div>
       <form className="order-form" onSubmit={track}>
-        <h2>{t('طلبت من جهاز آخر؟', 'Ordered from another device?')}</h2>
+        <h2>{t('متابعة طلب من جهاز آخر', 'Track a request from another device')}</h2>
         <div className="form-row">
           <label>
             {t('رقم الطلب', 'Request number')}
             <input name="id" dir="ltr" placeholder="DP-…" minLength={15} maxLength={15} required />
           </label>
           <label>
-            {t('رقم التواصل', 'Phone number')}
+            {t('رقم الهاتف', 'Phone number')}
             <input name="phone" type="tel" dir="ltr" minLength={7} maxLength={24} required />
           </label>
         </div>
         {trackError && (
           <p className="form-error" role="alert">
-            {trackError}
+            {orderMessage(trackError, ar)}
           </p>
         )}
         <button className="button secondary">{t('تتبّع الطلب', 'Track request')}</button>

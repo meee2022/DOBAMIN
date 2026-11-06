@@ -11,6 +11,7 @@ The 2026-11-06 rollout applies the same identity to navigation, menu photography
 ## Users
 Customers ordering sweets and gifts; shop staff preparing requests by day.
 ## Brand Commitments
+All website Arabic copy uses clear, formal Modern Standard Arabic. Follow `branding/website-copy.md` for terminology, including navigation, forms, notifications, service errors and staff pages. Keep product names and business rules unchanged; retain the English option.
 Preserve the original Dopamine heart-script logo. branding/website-identity.json is the source of truth for colors and fonts, based on the approved Nardo, sage, pistachio, powder blue, olive and slate drybrush packaging. BREWSPOT is a structural reference, not the brand.
 ## Evidence on Hand
 The real handheld shop-container photo supplied on 2026-11-02 is the primary physical reference for future cup-based designs and supersedes the earlier squat mockup proportions. Read `branding/approved-cups.json` before creating cup imagery. The actual container is taller and photographed open; numerical dimensions, capacity and actual lid appearance remain unconfirmed.
