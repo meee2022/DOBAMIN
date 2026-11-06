@@ -24,12 +24,12 @@ colors:
 typography:
   display:
     fontFamily: "Aref Ruqaa, serif"
-    fontSize: "clamp(42px,4.5vw,70px)"
+    fontSize: "clamp(42px,4.6vw,66px)"
     fontWeight: 400
-    lineHeight: 1.55
+    lineHeight: 1.5
   headline:
     fontFamily: "Aref Ruqaa, serif"
-    fontSize: "40px"
+    fontSize: "clamp(32px,3.4vw,48px)"
     fontWeight: 400
   title:
     fontFamily: "Amiri, serif"
@@ -37,10 +37,10 @@ typography:
     fontWeight: 400
   product-title:
     fontFamily: "Amiri, serif"
-    fontSize: "24px"
+    fontSize: "23px"
     fontWeight: 400
     lineHeight: 1.55
-  gallery-title:
+  collection-title:
     fontFamily: "Amiri, serif"
     fontSize: "25px"
     fontWeight: 400
@@ -75,7 +75,9 @@ rounded:
   order-card: "12px"
   status: "20px"
   square: "0"
-  media-card: "14px"
+  media-card: "10px"
+  compact-media: "8px"
+  category-arch: "100px 100px 10px 10px"
   product-action: "5px"
   media-control: "6px"
 spacing:
@@ -90,44 +92,49 @@ components:
   button-primary:
     backgroundColor: "{colors.accent}"
     textColor: "{colors.white}"
-    rounded: "{rounded.subtle}"
+    rounded: "{rounded.media-control}"
     padding: "12px 25px"
     typography: "{typography.button}"
   button-primary-hover:
     backgroundColor: "#344334"
   button-secondary:
     textColor: "{colors.ink}"
-    rounded: "{rounded.subtle}"
+    rounded: "{rounded.media-control}"
     padding: "12px 25px"
   button-secondary-hover:
     backgroundColor: "{colors.surface}"
   product-image:
     backgroundColor: "{colors.surface}"
-    rounded: "{rounded.square}"
+    rounded: "{rounded.media-card}"
   product-card:
+    backgroundColor: "transparent"
+    textColor: "{colors.ink}"
+    rounded: "{rounded.square}"
+  category-card:
     backgroundColor: "{colors.white}"
     textColor: "{colors.ink}"
-    rounded: "{rounded.media-card}"
-  gallery-card:
-    backgroundColor: "{colors.white}"
+    rounded: "{rounded.category-arch}"
+    padding: "10px 10px 18px"
+  gift-card:
+    backgroundColor: "{colors.bg}"
     textColor: "{colors.ink}"
     rounded: "{rounded.media-card}"
   product-add:
-    backgroundColor: "{colors.accent}"
-    textColor: "{colors.white}"
+    backgroundColor: "transparent"
+    textColor: "{colors.accent}"
     rounded: "{rounded.product-action}"
     padding: "8px 13px"
   media-search:
     backgroundColor: "{colors.white}"
     textColor: "{colors.ink}"
     rounded: "{rounded.media-control}"
-    padding: "10px 15px"
-  gallery-filter:
-    backgroundColor: "{colors.white}"
+    padding: "10px 16px"
+  menu-filter:
+    backgroundColor: "transparent"
     textColor: "{colors.ink}"
-    rounded: "{rounded.media-control}"
-    padding: "8px 17px"
-  gallery-filter-selected:
+    rounded: "{rounded.product-action}"
+    padding: "12px"
+  menu-filter-selected:
     backgroundColor: "{colors.accent}"
     textColor: "{colors.white}"
   photo-viewer:
@@ -138,7 +145,7 @@ components:
   cart-panel:
     backgroundColor: "{colors.bg}"
     textColor: "{colors.ink}"
-    padding: "27px"
+    padding: "28px"
   toast:
     backgroundColor: "{colors.ink}"
     textColor: "{colors.white}"
@@ -178,59 +185,43 @@ components:
 
 # Design System: Dopamine
 
-## Complete identity rollout — 2026-11-06
-
-The menu photography was subsequently corrected at the raster-image level after the user rejected framing-only changes: all 24 photographs now include sunlit Nardo limestone, ivory/sage architecture, powder-blue linen and sage/powder-blue ceramic plates. The food's source ingredients remain identifiable; cup-based products follow the real taller shop-container reference without an invented lid. `branding/menu-photography.json` is the current image inventory; old beige/peach images remain historical source files only.
-
-The approved Nardo, graphite and horizontal sage/blue drybrush identity applies across the complete public website. `src/identity.css` unifies shared chrome, product-photo frames, cart, booking, tracking and privacy. The compact header places the original logo, four customer navigation links, language and bag controls within one desktop row; mobile uses two compact rows. The first viewport contains only the latest approved lifestyle photographs of the six-cup, six-tart and twelve-protein-ball selections, never legacy warm hero photos. The original food subject in each menu photo stays identifiable inside a powder-blue/Nardo frame with the exact approved brush artwork.
-
-`src/brand-experience.ts` is the allowlist for approved customer gift selections. Every gift links to `#/booking?gift=<id>` and prefills editable request notes. `BrandPageHeader.web.tsx` establishes a shared solid sky surface, contained selection image, graphite heading and drybrush edge for customer pages. Booking uses a two-column form and selection image on desktop, with the form first on phones. Cart and photo dialogs retain native focus and Escape behavior. Navigation between application routes resets scroll instantly after the next render; in-page section links keep their smooth movement.
-
-The public gallery implementation and obsolete paired-image, hero and gallery styles have been removed. Original image files are preserved outside the interface. No new raster artwork was generated for this rollout. The existing color tokens, bilingual type system, order validation and server behavior remain authoritative. Earlier component descriptions below are historical where superseded by this section and the current source.
-
-## Official customer storefront — 2026-11-02
-
-The public website presents the official customer storefront rather than packaging experiments. `src/Home.web.tsx` and `src/storefront.css` own this surface. The first viewport pairs a product-led heading and menu action with the approved six-cup box and two plated products. All imagery is reused from existing assets without new generation. Preserve complete packaging with `object-fit: contain`.
-
-Nardo is the primary canvas. Graphite carries text; deep sage carries actions and selected states. Sage surfaces hold the gifts collection and pale blue holds the order sequence and story logo. Horizontal drybrush artwork connects the hero and menu and remains on the approved packaging and footer. Preserve Arabic RTL, English LTR and the existing bag, booking, tracking and order backend.
-
 ## Overview
 
 **Creative North Star: "A calm confectionery boutique"**
 
-Warm paper surfaces, the supplied script logo, and original dessert and packaging imagery establish a quiet boutique. Light Nardo, sage and powder blue carry the atmosphere; deep sage concentrates attention on actions and selected states. Fine neutral borders enclose product and gallery cards, while editorial sections retain generous open space.
+Nardo surfaces, the supplied heart-script logo, and approved sunlit dessert photography establish a quiet boutique. Sage and powder blue carry the atmosphere; deep sage concentrates attention on actions and selected states. Editorial space, arched category frames and open product presentations give the existing identity room to breathe.
 
-Arabic is the initial reading direction, with literary display lettering and generous text leading. English uses a restrained high-contrast serif. Operational forms and preparation schedules use Arial for both languages while retaining the brand palette. This record describes the implemented web demo in `App.web.tsx`, `src/web.css`, `src/Orders.web.tsx`, `src/orders.css`, `src/menu.css`, `src/ProductCard.web.tsx`, `src/Gallery.web.tsx`, and `src/PhotoViewer.web.tsx`; the deferred native scaffold does not establish a second visual system.
+Arabic is the initial reading direction, with literary display lettering and generous text leading. English uses the established high-contrast serif. Operational forms and preparation schedules retain Arial and the brand palette. The implemented web surface is authoritative: `App.web.tsx` loads `src/boutique.css` after the earlier identity, storefront and section-photography styles. This 2026-11-06 record supersedes the earlier full-width overlay hero, square category frames and enclosed menu-card descriptions. It does not establish a native-app redesign.
 
 **Key Characteristics:**
-- Nardo surfaces with sage, pistachio, powder blue and slate drybrush accents.
-- Arabic literary display paired with restrained English serif.
-- Product photography, fine rules, and generous spacing.
-- Warm-white enclosed media cards with rounded corners and focused image enlargement.
+- Nardo surfaces, graphite text, sage actions and powder-blue section backgrounds.
+- The original heart-script logo and established Arabic/English typography.
+- Approved lifestyle photography framed by arches and restrained corners.
+- Open product presentations, aligned actions, fine rules and generous editorial space.
 
 ## Colors
 
-The palette combines warm confectionery neutrals with a deep deep sage action color. Frontmatter values reproduce the implemented custom properties and operational semantic colors.
+`branding/website-identity.json` remains the palette and font authority; `src/brand-tokens.css` exposes its implemented values. Frontmatter preserves those existing primitives rather than establishing a replacement palette. The downloadable visual guide remains at `/brand/`.
 
 ### Primary
-- **Sage (`primary`):** quiet rules, decorative accents, and scrollbar thumb.
-- **Deep sage (`accent`):** primary actions, selected collection filters, and keyboard focus.
+- **Sage (`primary`):** quiet accents and identity artwork.
+- **Deep sage (`accent`):** primary actions, selected menu filters and the announcement strip.
 
 ### Secondary
-- **Powder blue (`rose`):** text-selection background.
+- **Powder blue (`rose`):** the established blue identity accent. Its existing pale sky surface supports gifts, booking imagery and cart summaries.
 
 ### Neutral
-- **Nardo (`bg`):** page, navigation, cart, and photo-viewer surface.
-- **Graphite (`ink`):** principal text and outlined actions.
-- **Muted green-gray (`muted`):** descriptive copy and secondary metadata.
-- **Warm rule (`line`):** navigation, collection, cart, and footer dividers.
-- **Soft parchment (`surface`):** footer, image placeholders, count badges, and secondary hover.
-- **Warm white (`white`):** product and gallery card surfaces, search and filter controls, and text over deep sage actions and cocoa notifications.
+- **Nardo (`bg`):** the page canvas, gift cards, cart and photo dialog.
+- **Graphite (`ink`):** principal text and the original logo.
+- **Muted green-gray (`muted`):** supporting copy and metadata.
+- **Quiet sage rule (`line`):** navigation, section, card-action and cart dividers.
+- **Sage surface (`surface`):** the menu filter panel, ordering section and image placeholders.
+- **White (`white`):** category frames, form fields and text over deep sage actions.
 
-**The Deep sage Action Rule.** Use deep sage to identify actions, selected filters, and keyboard focus; preserve the warm neutral field around them.
+**The Deep Sage Action Rule.** Use deep sage to identify primary actions and selected filters; keep editorial text graphite and the surrounding canvas quiet.
 
 ### Operational status colors
-Pending uses the amber pair; confirmed and preparing share the lavender pair; ready and completed share the green pair; cancelled uses the muted red pair. Error surfaces combine the error background and border with deep sage text. These are semantic feedback colors, not new brand accents. Always display the written status alongside its color.
+Pending uses the amber pair; confirmed and preparing share the blue-gray pair; ready and completed share the green pair; cancelled uses the muted red pair. Error surfaces use their existing semantic background and border. These are feedback colors, not new brand accents. Always display the written status alongside its color.
 
 ## Typography
 
@@ -238,104 +229,90 @@ Pending uses the amber pair; confirmed and preparing share the lavender pair; re
 **Body Font:** Amiri, with serif fallback.
 **English Font:** Antic Didone, with serif fallback.
 
-Arabic display is expressive and unemboldened; supporting Amiri text remains spacious and readable. English switches the site family to Antic Didone. Arial serves the language switch and compact numeric count, and intentionally becomes the working typeface for checkout, booking, receipts, customer orders, and administration.
+Arabic display remains expressive and unemboldened. English headings and editorial copy use the established serif. Arial serves compact numeric counts and operational forms, receipts, customer orders and administration.
 
 ### Hierarchy
-- **Display:** the frontmatter fluid role serves the Arabic hero. It becomes 48px below 1050px and 44px below 700px, with mobile leading of 1.4. English hero is 58px, then 43px and 42px at those breakpoints, with leading of 1.25.
-- **Headline:** collection headings use the headline role, becoming 31px on mobile. Gift headings use 52px and leading of 1.5, reducing to 43px and 38px. These are established contextual variations, not a mathematical scale.
-- **Title:** menu names use the product-title role and become 25px at 600px and below. Gallery names use the gallery-title role. English inherits Antic Didone. Secondary bilingual names use 14px type and 1.6 leading; price-on-confirmation text stays subordinate at 13px.
-- **Body:** the root role is 18px. Hero and gifting paragraphs use 19px with leading of 1.9; hero copy is capped at 420px. Mobile hero copy becomes 16px and 345px wide.
-- **Label:** category metadata uses muted 12px text; image captions use 13px. Full-size buttons use 16px on desktop and 15px on mobile; product-add actions use 14px.
+- **Display:** the fluid frontmatter role serves the split hero with 1.5 leading. At 700px and below it becomes 40px in Arabic and 38px in English, with 1.45 leading.
+- **Headline:** section headings use the incumbent fluid headline role and 1.5 leading.
+- **Title:** product names use the product-title role and 1.55 leading; category and gift names use the collection-title role. All three become 21px on mobile. Secondary product translations use 13px and are hidden at the mobile breakpoint.
+- **Body:** the root role remains 18px. Hero copy uses 20px, 1.9 leading and a 38ch maximum measure, reducing to 18px on mobile.
+- **Label:** menu metadata and price-confirmation text use 13px; product actions use 15px, reducing to 14px on mobile. Category descriptions use 15px, reducing to 14px. Counts use Arial at 12px.
 
 **The Language Pairing Rule.** Preserve the implemented Arabic and English family relationship and reading direction when extending a surface.
 
-**The Operate Typography Rule.** Use Arial for order forms, request records, and preparation schedules in both languages; keep the boutique display pairing on editorial surfaces. Operational headings are 32px at weight 500, reducing to 26px on mobile; fields use 14px labels, and status labels use 12px.
+**The Operate Typography Rule.** Use Arial for order forms, request records and preparation schedules in both languages; keep the boutique display pairing on editorial surfaces.
 
 ## Layout
 
-Content sections use a centered maximum width of 1440px, horizontal padding of 5.2%, and vertical padding of 83px and 88px. The desktop header is a three-column arrangement with a centered logo; the hero and gifting section use two columns. Product and gallery grids use three columns with 28px gaps.
+The public storefront uses a centered 1240px maximum width with 89.6% fluid width, becoming 90% on mobile. The desktop header places the original logo, customer navigation and language/bag actions in one row. Mobile keeps logo/actions above a dedicated navigation row.
 
-At 1050px and below, product and gallery grids become two columns; header and type dimensions compress and the story becomes two columns. At 700px and below, navigation occupies a second header row, hero copy centers above the photograph, and story and gifting stack; section padding becomes 48px 6%. At 600px and below, product and gallery grids become one column with 22px and 24px gaps respectively. Paired product photographs remain two equal columns inside each card. Above 1600px, the hero increases to a 700px minimum height.
+The homepage opens with separate copy and photography columns in a 0.88fr / 1.12fr ratio and a 5% gap. Copy stays on the solid canvas. The photograph has a contained caption link over its lower edge; it is not a full-width text-overlay hero. Its height is 550px, then 480px at 1100px and below. At 700px the hero stacks copy above a 330px photograph. The four photographic category entries use four columns, becoming two on mobile.
 
-Arabic starts right-to-left. Mixed-language editorial areas deliberately use left-to-right layout; translated copy follows the active language. The cart remains a right-side drawer with a width of 460px, constrained to the viewport, and full dynamic viewport height.
+The shopping area pairs a 225px filter sidebar with flexible results, with a 36px gap. At 1100px the sidebar becomes 190px with a 24px gap and products move from three columns to two. At 700px the sidebar becomes a toolbar above the two-column product grid. Mobile controls omit sidebar explanatory copy and counts while preserving search, selected states and all categories. Product cards stretch evenly and push their price/action area to the bottom.
 
-Operational pages cap at 1280px with 55px 5% 80px padding; booking and login cap at 650px and 550px respectively. Customer order cards use two columns with 24px gaps. Preparation rows use 90px / flexible / 165px columns for time, details, and status. The summary strip uses four columns. At 700px and below, cards and preparation rows become single-column, summaries become two-column, and status controls move beneath a divider. Date and time fields remain paired.
+Gifts and story use paired editorial columns on desktop and stack on mobile. Desktop gift cards form a three-column grid; on mobile each becomes a compact row with a 42% image column and adjacent copy. Shared page headers use a breadcrumb, heading, description and a small image; the image is hidden on mobile. Booking retains its desktop form/selection pairing and form-first mobile order.
+
+Arabic uses RTL and English uses LTR; logical spacing and directional arrows follow the active language. Operational order records and schedules retain their established responsive grids. The cart is a right-side native-dialog drawer constrained to `min(560px, 100vw)`, with 28px padding, reducing to 20px on mobile.
 
 ## Elevation & Depth
 
-The system is predominantly flat: photography, warm tonal bands, whitespace, and fine borders establish depth. Product and gallery cards use offwhite surfaces and fine neutral borders without outer shadows; hover changes their border to caramel. The photograph stamp uses a diffuse shadow (`0 4px 18px #462d2710`). The cart backdrop combines translucent cocoa with a 3px blur. The photo viewer uses a separate dark translucent backdrop (`#271c19cf`) without blur.
+The storefront is predominantly flat. Photography, Nardo/sage/sky tonal bands, whitespace and fine rules establish hierarchy. Product presentations have transparent backgrounds and no enclosing borders or shadows; category and gift containers use quiet surfaces. The native dialogs retain the existing dark translucent backdrop, with the cart's existing blur.
 
-Hover lifts full-size actions by 2px and gently scales product photography to 1.035. The shared easing is `cubic-bezier(.16,1,.3,1)`. Reduced-motion preference disables animations and transitions and restores automatic scrolling.
+Product imagery scales to 1.035 over 0.35s on hover. Existing actions retain their modest state transitions; menu selected states change surface and text color. Reduced-motion preference suppresses transitions and animations and restores automatic scrolling. Do not promote retired photograph-stamp shadows or historical gallery animations into current system rules.
 
 ## Shapes
 
-Product and gallery cards use 14px corners and clip their imagery. Product image buttons have square internal corners, with two square images separated by 3px; gallery cards contain one square image. Media search and gallery filters use 6px corners; product-add buttons use 5px. Bag counts, image-expand affordances, and the photograph stamp are circular; retain these distinctions instead of applying one radius everywhere. Decorative and structural lines are usually 1px; active collection filters use a 2px underline.
+Arches are reserved for the hero and photographic category navigation. The hero uses pronounced top corners (160px desktop, 90px mobile) and restrained lower corners. Category frames use the frontmatter category-arch shape with inset image arches. These are intentional image frames, not the shape for every control.
 
-Operational records use 12px corners and a 1px warm-rule border, without shadows. Fields use 4px corners; status labels use 20px corners. Operational grouping remains distinct from the larger-cornered media cards.
+Reusable product imagery, gift cards, the filter panel and booking panels use the media-card radius. Small cart and page-header images and cart summaries use compact-media corners. Storefront actions and search use media-control corners; product-add actions and menu filters use product-action corners. Product copy remains open on the page, with square, transparent outer containers.
+
+Operational records and photo dialogs retain order-card corners; native form fields retain field corners; statuses retain their pill shape. Bag and close controls use their existing capsule or circular shapes. Fine structural rules are generally 1px.
 
 ## Components
 
 ### Buttons
-Primary actions are deep sage with offwhite text; secondary actions are transparent with a 1px cocoa border. Shared minimum height is 51px, reducing to 48px on mobile. Hover darkens primary actions or fills secondary actions with parchment. All links and buttons receive a 2px deep sage focus outline with 5px offset. Disabled buttons use 0.45 opacity and a not-allowed cursor.
+Primary storefront actions use deep sage, white text and a 50px minimum height; secondary text links retain visible underlines. Product-add actions are full-width outlined controls, at least 44px tall, with deep sage text and a deep sage/white hover state. Visible focus remains part of all actions. Preserve disabled and saving feedback.
 
-### Chips
-Product categories are muted text metadata with a short bottom rule within the card copy. Collection filters remain underlined text buttons. Gallery filters are offwhite bordered buttons with category counts; their pressed state fills deep sage with offwhite text. Both filter families expose `aria-pressed`.
+### Filters and Search
+The menu has an all-products filter and three catalog-category filters. Desktop filters stack with counts; mobile filters form a single row without counts. Selected filters fill deep sage and expose `aria-pressed`. Search is bilingual, visibly labelled for assistive technology, at least 46px tall and uses the existing slate focus outline. Search, category selection and reset update a live result count.
 
-### Cards / Containers
-Product and gallery cards are offwhite, enclosed by a 1px warm-rule border with 14px corners and no shadow. Product cards show packaging and plated views simultaneously, each captioned and clickable for enlargement. Copy uses 17px 22px 22px padding, becoming 16px 20px 20px at 600px. Category, primary name, and translation precede a ruled bottom row with price status and a deep sage Add to bag button. Gallery cards use one generous square image and 21px 24px 26px copy padding. Their circular expand affordance is 40px.
+Six products appear initially; the expansion control reveals all matching products. Search or selecting a category immediately shows every match. Photographic tarts, cups and desserts entries clear search, select their existing category and move focus to the menu heading; the protein-ball entry opens its approved gift booking.
 
-**The Enclosed Media Rule.** Keep product and gallery imagery, bilingual names, and associated actions within offwhite cards with fine neutral borders and 14px corners; retain shadow-free surfaces.
+### Product and Gift Presentations
+Each product shows one approved plated image with an enlargement action, category metadata, a primary name, desktop translation, price-confirmation text and an aligned outlined Add to bag control. Copy has 16px top spacing, reducing to 12px on mobile. A fine rule separates its price/action area.
 
-### Media Search and Image Viewer
-The public packaging gallery has been retired. The menu has Arabic/English search and four category filters. Nine products appear initially; a button reveals the full menu, while searching or selecting a category shows all matching products. Each product has one plated image and a focused enlargement action. Approved six-tart, six-cup and twelve-protein-ball boxes appear only in the customer gifts section. Old `#/gallery` links resolve to `#gifting`.
+**The Open Product Rule.** Keep menu photography, product copy and aligned actions visually connected on the page canvas without enclosing the entire product in a filled card.
 
-Menu and gallery searches use offwhite fields with 46px minimum height, 6px corners, and a 2px slate focus outline offset by 2px. Gallery category filters include counts; a separate live status reports matching images. Search matches Arabic and English names. Empty gallery results offer a reset.
+Gift cards keep approved box imagery and editable booking links, with Nardo copy surfaces and fine action dividers. Mobile rows retain the same content and link semantics. The public packaging gallery remains retired; legacy gallery links resolve to the gifts section.
 
-The native photo dialog uses a cream surface, 12px corners, width `min(920px,94vw)`, and maximum height of 94dvh. A sticky header holds the title, subtitle, and 44px SVG close control. The image is contained without cropping within 70dvh, with an underlined original-image link beneath. Escape and backdrop dismissal close the dialog; body scrolling is restored on close. Remote media fall back to local assets on image error. Product cards do not animate on entry; gallery images retain a restrained 1.035 hover scale and reduced-motion handling.
+### Approved Photography
+The latest menu raster set contains all 24 products on sunlit Nardo stone with sage/powder-blue ceramics. `branding/menu-photography.json` is its inventory. The approved six-role section set and responsive WebP variants are recorded in `branding/section-photography.json`. Hero, categories and gifts reuse these photographs; no new raster imagery was generated for the boutique UI redesign. The hero is high priority; lower photographs load lazily.
 
-### Navigation
-Desktop links are text-only with an animated thin deep sage hover underline. The supplied logo anchors the center. Language and bag controls occupy the opposing side; mobile retains the logo and actions above a dedicated navigation row. Icons are thin inline SVG strokes, never text glyph substitutes.
+Preserve approved subjects and horizontal drybrush artwork. Lifestyle images may be cropped by their implemented frame; the photo dialog contains its image without cropping. Do not restore old beige, peach or pink menu backgrounds or plates. Future cup imagery must follow `branding/approved-cups.json` and its taller real open-container reference; that reference establishes neither a lid nor exact dimensions. Preserve original files and bilingual archives.
 
-### Bag Drawer and Notifications
-The native dialog has a cream surface, a fine header divider, scrollable item list, and an anchored subtotal/action area. Quantity controls are square outlined buttons; remove and close use SVG icons. Empty and completed states center their icon, title, copy, and action. A cocoa toast appears at the lower center with a short fade and vertical transition.
+### Navigation and Page Headers
+Preserve the original heart-script logo and the four customer links. Navigation uses text links with understated hover underlines, language switching and the bag count; SVG icons retain visible focus and accessible names. Shared inner-page headers use an understated breadcrumb and fine bottom divider, with a small approved gift image on desktop. The former solid sky heading block and decorative brush edge are superseded.
 
-### Operational Forms
-Fields use offwhite surfaces, graphite text, neutral borders, 12px padding, and a 45px minimum height. Labels sit above their controls with an 8px gap. Focus uses a 2px slate outline with 2px offset. Date and time occupy paired columns; phone entry remains left-to-right. Textareas resize vertically. The conditional delivery address follows fulfilment choice. Errors appear inline in a tinted bordered alert, and submission disables the fieldset while saving. The cart form scrolls with its header held sticky.
+### Bag, Image Viewer and Forms
+The bag drawer uses open item rows separated by fine rules, compact images, quantity controls, a sky-tinted summary and an anchored action area. The photo dialog retains a sticky title/close row, contained image and original-image link. Native focus handling, Escape dismissal and restored body scrolling remain required.
+
+Operational fields retain visible labels, neutral borders, existing focus/error feedback and disabled saving states. Phone entry stays LTR; date and time remain paired; conditional address fields follow fulfilment choice. Booking panels use restrained rounded surfaces and generous padding. Customer empty states retain a clear next action.
 
 ### Order Status and Preparation Schedule
-Statuses always combine a written label with their semantic color pair. Confirmed/preparing and ready/completed deliberately share color families; text distinguishes the exact state. Records group by preparation day, with Qatar time visible next to the time. Explicit date, status, and customer/request search controls precede the records; counts and update feedback remain separate from the records. A labelled native select changes status and exposes saving feedback. Long notes preserve line breaks, wrap, and cap at 65ch. Empty results offer a filter-reset action.
-
-Receipts emphasize the request identifier and requested Qatar date/time, with pending-confirmation wording. The success mark uses the same authored SVG check stroke as the existing interface.
+Statuses combine text with the existing semantic color pairs. Requests, receipts and preparation records show Qatar time and pending staff confirmation. Preserve the configured 24-hour lead time and 10:00–22:00 request window; these are existing application rules, not newly verified opening-hour claims. Prices remain unconfirmed and there is no online payment. The redesign does not change catalog, validation, server behavior or native-app styling.
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** preserve the supplied logo and brand palette.
-- **Do** retain Arabic and English reading direction and type pairing.
-- **Do** use enclosed offwhite product and gallery cards, fine rules, and sage and powder-blue tonal sections.
-- **Do** provide visible keyboard focus and honor reduced-motion preference.
-- **Do** pair every operational status color with a written label and display Qatar time for preparation dates.
+- **Do** preserve the original logo, approved palette, bilingual typography and reading direction.
+- **Do** reuse approved sunlit menu and section photography, keeping its physical subjects and brush identity intact.
+- **Do** use open product presentations, aligned actions, fine rules and sage/powder-blue tonal sections.
+- **Do** provide visible keyboard focus, meaningful labels and reduced-motion behavior.
+- **Do** pair every operational status color with written text and display Qatar time for scheduled requests.
 
 ### Don't:
-- **Don't** replace supplied brand assets with a generic wordmark or unrelated palette.
-- **Don't** apply container shadows to the bordered product and gallery cards.
-- **Don't** treat English category labels as interactive filter controls.
-- **Don't** promote demo prices or checkout states into production commerce claims.
-
-
-
-## Approved website identity — 2026-11-01
-
-The user explicitly requested applying the approved packaging identity to the website. Source of truth: `branding/website-identity.json`. `npm run build:brand` generates CSS tokens, the shareable guide at `/brand/`, downloadable CSS/JSON and optimized approved artwork.
-
-Nardo #F4F4F1 and graphite #454B4B lead. Sage #A8B798, pale pistachio #C3CDB3, powder blue #B6CDD6, olive #939A75 and slate #748791 reproduce the approved drybrush family. Accessible deep sage #435342 is reserved for primary actions; hover #344334 and focus #465E6A keep controls legible. Text uses solid backgrounds, never the decorative brush.
-
-Preserve the original heart-script logo, Arabic/English type pairing and reading direction. The transparent graphite logo follows the original heart-script reference; preserve its letterforms and proportions. Drybrush artwork belongs on section edges and the footer; do not scatter it across controls or product cards. The current scope changes the website identity while retaining catalog, cart, bookings and order behavior. Native UI styling is outside this identity update.
-
-The visual/downloadable guide is `/brand/`; code is in `src/brand-tokens.css` and `src/brand.css`. Semantic status tokens retain written labels. Ten foreground/background pairs are checked by the build script; text contrast is at least 4.5:1.
-
-## Approved section photography integration — 2026-11-06
-
-This web-only rollout supersedes the earlier first-viewport composition: the approved signature still life now fills the hero, followed by four square category photographs and a landscape gifts introduction. It retains sunlit Nardo stone, sage and powder-blue ceramics and linen, and the complete horizontal drybrush artwork on gift packaging. Existing identity tokens and bilingual typography remain authoritative; `.impeccable` system files are unchanged.
-
-The hero preserves its full aspect ratio, with copy over its quiet right side on wide screens and above the image at 1000px and below. Categories use four columns, becoming two at 700px; the gifts introduction also stacks at 700px. Every photograph has a full-size and 640px-wide WebP source with explicit dimensions and responsive source selection. The hero receives high loading priority; category and gifts images load lazily. Category actions retain visible keyboard focus, and menu-filter actions move focus to the menu heading. See `branding/section-photography.json` for role, provenance and public-path details. These are homepage composition choices, not new global design tokens or a native app implementation.
+- **Don't** replace the approved identity with a generic wordmark, new palette or new font system.
+- **Don't** restore the superseded full-width overlay hero or enclosed gallery-card layout as the current storefront pattern.
+- **Don't** spread arches, drybrush decoration or container shadows across every control and product.
+- **Don't** restore beige, peach or pink backgrounds or plates in customer-facing menu photography.
+- **Don't** turn unconfirmed prices, schedules or pending requests into production commerce claims.

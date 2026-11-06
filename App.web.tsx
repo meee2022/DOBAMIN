@@ -8,6 +8,7 @@ import './src/orders.css';
 import './src/storefront.css';
 import './src/identity.css';
 import './src/section-photography.css';
+import './src/boutique.css';
 import Icon from './src/Icon.web';
 import SiteHeader from './src/SiteHeader.web';
 import SiteFooter from './src/SiteFooter.web';
@@ -35,7 +36,7 @@ export default function App() {
       // Old gallery links now lead to the customer-facing gifts collection.
       if (location.hash === '#/gallery') history.replaceState(null, '', '#gifting');
       setRoute(location.hash);
-      if (location.hash.startsWith('#/'))
+      if (!location.hash || location.hash === '#' || location.hash.startsWith('#/'))
         requestAnimationFrame(() => window.scrollTo({ top: 0, left: 0, behavior: 'instant' }));
       else
         requestAnimationFrame(() =>

@@ -19,10 +19,14 @@ Dopamine Brand Identity Design1.pdf: brand assets and packaging references.
 ## Capabilities and Constraints
 Arabic and English. Orders and bookings are saved as pending and reviewed by staff. No online payment. Customers track requests by device or by request number and phone. Order rules live in src/shop-config.json.
 ## Open business inputs
-Prices, WhatsApp number, address, confirmed opening hours and lead time, delivery zones and fees, real photography, nutrition and allergen details, and the Single Daily, Daily Gathering and Luxury collections.
+Prices, WhatsApp number, address, confirmed opening hours and lead time, delivery zones and fees, nutrition and allergen details, and the Single Daily, Daily Gathering and Luxury collections. The application currently enforces a 24-hour lead time and a 10:00–22:00 Qatar-time request window; these remain configured rules pending business confirmation. Approved customer-facing photography is recorded in the branding manifests.
 
 ## Approved section photography integration — 2026-11-06
 
 The approved six-image section concept is integrated into the web storefront: signature hero, tarts, dessert cups, desserts, protein balls, and gifts. Tarts, cups and desserts select their existing menu filters (`tarte`, `cups`, `desserts`), clear search and move focus to the menu heading. Protein balls link to the existing protein gift booking; the gifts introduction links to occasion booking. The foreground cup in the cups category image is Victoria berry, so that image represents dessert cups generally, not a cheesecake-only selection.
 
 `branding/section-photography.json` records the six roles and twelve public WebP assets, including a 640px-wide variant per role. Originals remain in the bilingual archive identified by `output/section-concept-job.json`; its preliminary-concept status describes the original generation stage. This integration changes the web surface only and does not establish native app integration or change the catalog, prices, order rules or approved identity.
+
+## Boutique interface redesign — 2026-11-06
+
+The subsequent request explicitly redesigned the web interface, beyond inserting the approved section photographs. The storefront now pairs editorial hero copy with an arched image, uses photographic category navigation, a desktop filter sidebar/mobile toolbar, open product presentations and compact mobile gift rows. The original logo, identity palette, fonts, approved photographs, catalog and commerce behavior remain authoritative. Six products appear initially; expansion reveals all matches, while category/search results show every match. The redesign also refines shared booking, orders and cart presentation. No raster images were generated and no native-app surface was changed.

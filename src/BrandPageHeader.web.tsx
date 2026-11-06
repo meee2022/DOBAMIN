@@ -18,6 +18,9 @@ export default function BrandPageHeader({
   return (
     <header className="brand-page-heading">
       <div className="brand-page-copy">
+        <a className="page-breadcrumb" href="#">
+          {ar ? 'دوبامين / الرئيسية' : 'Dopamine / Home'}
+        </a>
         <h1>{title}</h1>
         <p>{description}</p>
         {actions && <div className="brand-page-actions">{actions}</div>}
