@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { products } from './catalog';
 import { approvedGifts, giftBookingLink } from './brand-experience';
+import { sectionPhotos } from './section-photography';
 import Icon from './Icon.web';
 import ProductCard from './ProductCard.web';
 
@@ -11,7 +12,11 @@ const categories = [
   { id: 'cups', ar: 'أكواب', en: 'Dessert cups' },
 ];
 const gifts = approvedGifts;
-const cups = approvedGifts[1];
+const photoCategories = [
+  { id: 'tarte', photo: sectionPhotos.tarts, ar: 'التارت', en: 'Tarts', descriptionAr: 'الفستق والفواكه والشوكولاتة', descriptionEn: 'Pistachio, fruit and chocolate' },
+  { id: 'cups', photo: sectionPhotos.cups, ar: 'أكواب الحلوى', en: 'Dessert cups', descriptionAr: 'طبقات متنوّعة من النكهات', descriptionEn: 'Layers of flavour' },
+  { id: 'desserts', photo: sectionPhotos.desserts, ar: 'الحلويات', en: 'Desserts', descriptionAr: 'تشكيلة تستحق التجربة', descriptionEn: 'A selection to discover' },
+];
 
 export default function Home({
   ar,
@@ -31,10 +36,20 @@ export default function Home({
       `${p.ar} ${p.en}`.toLowerCase().includes(search.trim().toLowerCase()),
   );
   const visible = expanded || search.trim() || category !== 'all' ? matches : matches.slice(0, 9);
+  const browseCategory = (id: string) => {
+    setCategory(id);
+    setSearch('');
+    setExpanded(false);
+    requestAnimationFrame(() => {
+      document.getElementById('menu-heading')?.focus({ preventScroll: true });
+      document.getElementById('collection')?.scrollIntoView();
+    });
+  };
 
   return (
     <main className="storefront">
-      <section className="storefront-hero storefront-wrap">
+      <section className="section-hero">
+        <img {...sectionPhotos.hero} className="section-hero-photo" sizes="(max-width: 1360px) 100vw, 1360px" fetchPriority="high" alt={t('تارت الفستق والبندق مع كوب تشيز كيك التوت بألوان دوبامين', 'Pistachio and hazelnut tarts with a berry cheesecake cup in Dopamine colours')} />
         <div className="storefront-intro">
           <h1>
             {t('حلويات مميّزة،', 'Distinctive sweets,')}
@@ -57,46 +72,27 @@ export default function Home({
             </a>
           </div>
         </div>
-        <div className="storefront-hero-images">
-          <img
-            className="storefront-cups"
-            src={cups.src}
-            srcSet={cups.srcSet}
-            sizes="(max-width: 700px) 56vw, 29vw"
-            width={cups.width}
-            height={cups.height}
-            alt={t(
-              'علبة هدايا دوبامين تضم ستة أكواب من الحلوى',
-              'Six dessert cups in a Dopamine gift box',
-            )}
-            fetchPriority="high"
-          />
-          <div className="storefront-hero-plates">
-            <img
-              src={gifts[0].src}
-              srcSet={gifts[0].srcSet}
-              sizes="(max-width: 700px) 34vw, 20vw"
-              width={gifts[0].width}
-              height={gifts[0].height}
-              alt={ar ? gifts[0].ar : gifts[0].en}
-            />
-            <img
-              src={gifts[2].src}
-              srcSet={gifts[2].srcSet}
-              sizes="(max-width: 700px) 34vw, 20vw"
-              width={gifts[2].width}
-              height={gifts[2].height}
-              alt={ar ? gifts[2].ar : gifts[2].en}
-            />
-          </div>
-        </div>
       </section>
       <div className="storefront-brush" aria-hidden="true" />
+
+      <section className="section-categories storefront-wrap" aria-labelledby="category-heading">
+        <div className="storefront-section-heading"><div><h2 id="category-heading">{t('لكل ذوق، اختيار.', 'A selection for every taste.')}</h2><p>{t('تعرّف إلى أصنافنا واختر ما يناسبك.', 'Discover our collections and find your favourite.')}</p></div></div>
+        <div className="section-category-grid">
+          {photoCategories.map((c) => <button type="button" className="section-category" key={c.id} onClick={() => browseCategory(c.id)} aria-label={t('عرض أصناف ' + c.ar, 'Browse ' + c.en)}>
+            <img {...c.photo} sizes="(max-width: 700px) 44vw, 22vw" alt="" loading="lazy" decoding="async" />
+            <span className="section-category-title">{ar ? c.ar : c.en}</span><span className="section-category-description">{ar ? c.descriptionAr : c.descriptionEn}</span>
+          </button>)}
+          <a className="section-category" href={giftBookingLink('protein')} aria-label={t('حجز علبة كرات البروتين', 'Book a protein ball gift box')}>
+            <img {...sectionPhotos.protein} sizes="(max-width: 700px) 44vw, 22vw" alt="" loading="lazy" decoding="async" />
+            <span className="section-category-title">{t('كرات البروتين', 'Protein balls')}</span><span className="section-category-description">{t('المكسرات والسمسم وجوز الهند', 'Nuts, sesame and coconut')}</span>
+          </a>
+        </div>
+      </section>
 
       <section id="collection" className="storefront-menu storefront-wrap">
         <div className="storefront-section-heading">
           <div>
-            <h2>{t('قائمة المنتجات', 'Our product selection')}</h2>
+            <h2 id="menu-heading" tabIndex={-1}>{t('قائمة المنتجات', 'Our product selection')}</h2>
             <p>
               {t(
                 'تعرّف إلى أصنافنا واختر ما يناسب ذوقك.',
@@ -181,20 +177,9 @@ export default function Home({
 
       <section id="gifting" className="storefront-gifting">
         <div className="storefront-wrap">
-          <div className="storefront-section-heading">
-            <div>
-              <h2>{t('هدايا للمناسبات', 'Gifts for every occasion')}</h2>
-              <p>
-                {t(
-                  'تشكيلات من حلويات دوبامين في علب هدايا بتصميمنا الخاص، للتجمعات والمناسبات.',
-                  'Dopamine dessert selections in our signature gift boxes, for gatherings and special occasions.',
-                )}
-              </p>
-            </div>
-            <a className="storefront-text-link" href="#/booking">
-              {t('احجز لمناسبتك', 'Plan your occasion')}
-              <Icon name="arrow" size={18} />
-            </a>
+          <div className="section-gift-intro">
+            <img {...sectionPhotos.gifts} sizes="(max-width: 700px) 88vw, 48vw" loading="lazy" decoding="async" alt={t('علبتا هدايا دوبامين برسمة الفرشاة المعتمدة', 'Dopamine gift boxes with our signature brush artwork')} />
+            <div><h2>{t('هدايا للمناسبات', 'Gifts for every occasion')}</h2><p>{t('تشكيلات من حلويات دوبامين في علب هدايا بتصميمنا الخاص، للتجمعات والمناسبات.', 'Dopamine dessert selections in our signature gift boxes, for gatherings and special occasions.')}</p><a className="button primary" href="#/booking">{t('احجز لمناسبتك', 'Plan your occasion')}<Icon name="arrow" /></a></div>
           </div>
           <div className="storefront-gift-grid">
             {gifts.map((p) => (

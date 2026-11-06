@@ -7,6 +7,7 @@ import './src/brand.css';
 import './src/orders.css';
 import './src/storefront.css';
 import './src/identity.css';
+import './src/section-photography.css';
 import Icon from './src/Icon.web';
 import SiteHeader from './src/SiteHeader.web';
 import SiteFooter from './src/SiteFooter.web';

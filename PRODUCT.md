@@ -20,3 +20,9 @@ Dopamine Brand Identity Design1.pdf: brand assets and packaging references.
 Arabic and English. Orders and bookings are saved as pending and reviewed by staff. No online payment. Customers track requests by device or by request number and phone. Order rules live in src/shop-config.json.
 ## Open business inputs
 Prices, WhatsApp number, address, confirmed opening hours and lead time, delivery zones and fees, real photography, nutrition and allergen details, and the Single Daily, Daily Gathering and Luxury collections.
+
+## Approved section photography integration — 2026-11-06
+
+The approved six-image section concept is integrated into the web storefront: signature hero, tarts, dessert cups, desserts, protein balls, and gifts. Tarts, cups and desserts select their existing menu filters (`tarte`, `cups`, `desserts`), clear search and move focus to the menu heading. Protein balls link to the existing protein gift booking; the gifts introduction links to occasion booking. The foreground cup in the cups category image is Victoria berry, so that image represents dessert cups generally, not a cheesecake-only selection.
+
+`branding/section-photography.json` records the six roles and twelve public WebP assets, including a 640px-wide variant per role. Originals remain in the bilingual archive identified by `output/section-concept-job.json`; its preliminary-concept status describes the original generation stage. This integration changes the web surface only and does not establish native app integration or change the catalog, prices, order rules or approved identity.

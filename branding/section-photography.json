@@ -1,0 +1,129 @@
+{
+  "date": "2026-11-06",
+  "status": "integrated_in_web_source",
+  "scope": "Web storefront only; no native app integration claim.",
+  "originalManifest": "output/section-concept-job.json",
+  "originalArchiveFolder": "كل الصور - All Images/new/2026-11-06 - تصور أقسام الموقع والتطبيق - Section Concept",
+  "originalManifestNote": "The original manifest records the preliminary generation stage and is preserved unchanged.",
+  "identity": "Approved sunlit Nardo stone, sage and powder-blue boutique photography; approved horizontal drybrush artwork remains visible on gift packaging.",
+  "assetCount": 12,
+  "responsiveVariantWidth": 640,
+  "implementation": [
+    "src/Home.web.tsx",
+    "src/section-photography.ts",
+    "src/section-photography.css"
+  ],
+  "images": [
+    {
+      "role": "hero",
+      "nameAr": "الواجهة الرئيسية",
+      "nameEn": "Signature Hero",
+      "publicPath": "/collections/sections-2026-11-06/hero.webp",
+      "responsivePublicPath": "/collections/sections-2026-11-06/hero-640.webp",
+      "width": 1536,
+      "height": 1024,
+      "responsiveWidth": 640,
+      "original": "E:\\projects\\Dopamin\\كل الصور - All Images\\new\\2026-11-06 - تصور أقسام الموقع والتطبيق - Section Concept\\01 - الصور الأصلية - Originals\\01 - الواجهة الرئيسية - Signature Hero.png",
+      "archiveWebAsset": "E:\\projects\\Dopamin\\كل الصور - All Images\\new\\2026-11-06 - تصور أقسام الموقع والتطبيق - Section Concept\\02 - للموقع والتطبيق - Web and App\\01 - الواجهة الرئيسية - Signature Hero.webp",
+      "action": {
+        "type": "section_links",
+        "targets": [
+          "#collection",
+          "#gifting"
+        ]
+      }
+    },
+    {
+      "role": "tarts",
+      "nameAr": "قسم التارت",
+      "nameEn": "Tarts Category",
+      "publicPath": "/collections/sections-2026-11-06/tarts.webp",
+      "responsivePublicPath": "/collections/sections-2026-11-06/tarts-640.webp",
+      "width": 1254,
+      "height": 1254,
+      "responsiveWidth": 640,
+      "original": "E:\\projects\\Dopamin\\كل الصور - All Images\\new\\2026-11-06 - تصور أقسام الموقع والتطبيق - Section Concept\\01 - الصور الأصلية - Originals\\02 - قسم التارت - Tarts Category.png",
+      "archiveWebAsset": "E:\\projects\\Dopamin\\كل الصور - All Images\\new\\2026-11-06 - تصور أقسام الموقع والتطبيق - Section Concept\\02 - للموقع والتطبيق - Web and App\\02 - قسم التارت - Tarts Category.webp",
+      "action": {
+        "type": "menu_filter",
+        "filter": "tarte",
+        "target": "#collection",
+        "clearsSearch": true,
+        "focusTarget": "#menu-heading"
+      }
+    },
+    {
+      "role": "cups",
+      "nameAr": "قسم أكواب الحلوى",
+      "nameEn": "Dessert Cups Category",
+      "publicPath": "/collections/sections-2026-11-06/cups.webp",
+      "responsivePublicPath": "/collections/sections-2026-11-06/cups-640.webp",
+      "width": 1254,
+      "height": 1254,
+      "responsiveWidth": 640,
+      "original": "E:\\projects\\Dopamin\\كل الصور - All Images\\new\\2026-11-06 - تصور أقسام الموقع والتطبيق - Section Concept\\01 - الصور الأصلية - Originals\\03 - قسم أكواب الحلوى - Dessert Cups Category.png",
+      "archiveWebAsset": "E:\\projects\\Dopamin\\كل الصور - All Images\\new\\2026-11-06 - تصور أقسام الموقع والتطبيق - Section Concept\\02 - للموقع والتطبيق - Web and App\\03 - قسم أكواب الحلوى - Dessert Cups Category.webp",
+      "action": {
+        "type": "menu_filter",
+        "filter": "cups",
+        "target": "#collection",
+        "clearsSearch": true,
+        "focusTarget": "#menu-heading"
+      },
+      "subjectNote": "The foreground cup is Victoria berry, an existing menu flavor. Use as a general dessert-cups category image, not a cheesecake-only selection."
+    },
+    {
+      "role": "desserts",
+      "nameAr": "قسم الحلويات",
+      "nameEn": "Desserts Category",
+      "publicPath": "/collections/sections-2026-11-06/desserts.webp",
+      "responsivePublicPath": "/collections/sections-2026-11-06/desserts-640.webp",
+      "width": 1254,
+      "height": 1254,
+      "responsiveWidth": 640,
+      "original": "E:\\projects\\Dopamin\\كل الصور - All Images\\new\\2026-11-06 - تصور أقسام الموقع والتطبيق - Section Concept\\01 - الصور الأصلية - Originals\\04 - قسم الحلويات - Desserts Category.png",
+      "archiveWebAsset": "E:\\projects\\Dopamin\\كل الصور - All Images\\new\\2026-11-06 - تصور أقسام الموقع والتطبيق - Section Concept\\02 - للموقع والتطبيق - Web and App\\04 - قسم الحلويات - Desserts Category.webp",
+      "action": {
+        "type": "menu_filter",
+        "filter": "desserts",
+        "target": "#collection",
+        "clearsSearch": true,
+        "focusTarget": "#menu-heading"
+      }
+    },
+    {
+      "role": "protein",
+      "nameAr": "قسم كرات البروتين",
+      "nameEn": "Protein Balls Category",
+      "publicPath": "/collections/sections-2026-11-06/protein.webp",
+      "responsivePublicPath": "/collections/sections-2026-11-06/protein-640.webp",
+      "width": 1254,
+      "height": 1254,
+      "responsiveWidth": 640,
+      "original": "E:\\projects\\Dopamin\\كل الصور - All Images\\new\\2026-11-06 - تصور أقسام الموقع والتطبيق - Section Concept\\01 - الصور الأصلية - Originals\\05 - قسم كرات البروتين - Protein Balls Category.png",
+      "archiveWebAsset": "E:\\projects\\Dopamin\\كل الصور - All Images\\new\\2026-11-06 - تصور أقسام الموقع والتطبيق - Section Concept\\02 - للموقع والتطبيق - Web and App\\05 - قسم كرات البروتين - Protein Balls Category.webp",
+      "action": {
+        "type": "gift_booking",
+        "giftId": "protein",
+        "target": "#/booking?gift=protein"
+      },
+      "subjectNote": "The category photograph contains nine balls. The existing booking selection is the twelve-ball gift box; this photograph does not change the gift quantity."
+    },
+    {
+      "role": "gifts",
+      "nameAr": "قسم الهدايا والمناسبات",
+      "nameEn": "Gifts and Occasions",
+      "publicPath": "/collections/sections-2026-11-06/gifts.webp",
+      "responsivePublicPath": "/collections/sections-2026-11-06/gifts-640.webp",
+      "width": 1536,
+      "height": 1024,
+      "responsiveWidth": 640,
+      "original": "E:\\projects\\Dopamin\\كل الصور - All Images\\new\\2026-11-06 - تصور أقسام الموقع والتطبيق - Section Concept\\01 - الصور الأصلية - Originals\\06 - قسم الهدايا والمناسبات - Gifts and Occasions.png",
+      "archiveWebAsset": "E:\\projects\\Dopamin\\كل الصور - All Images\\new\\2026-11-06 - تصور أقسام الموقع والتطبيق - Section Concept\\02 - للموقع والتطبيق - Web and App\\06 - قسم الهدايا والمناسبات - Gifts and Occasions.webp",
+      "action": {
+        "type": "occasion_booking",
+        "target": "#/booking"
+      }
+    }
+  ]
+}
