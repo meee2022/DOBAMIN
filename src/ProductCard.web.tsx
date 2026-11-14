@@ -7,7 +7,7 @@ type Product = {
   en: string;
   category: string;
   price: number | null;
-  image: any;
+  storefrontImage: any;
 };
 export default function ProductCard({
   product: p,
@@ -20,7 +20,7 @@ export default function ProductCard({
 }) {
   const [photo, setPhoto] = useState<Photo | null>(null);
   const label = ar ? p.ar : p.en;
-  const fallback = assetUrl(p.image);
+  const fallback = assetUrl(p.storefrontImage);
   const category =
     p.category === 'tarte'
       ? ar

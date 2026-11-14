@@ -21,18 +21,20 @@ export default function ProductScreen({ route, navigation }: any) {
       />
       <FadeIn>
         <View style={styles.copy}>
-          <View style={styles.views}>
-            <Chip
-              label={t('على الطبق', 'On the plate')}
-              selected={view === 'plate'}
-              onPress={() => setView('plate')}
-            />
-            <Chip
-              label={t('بتغليف دوبامين', 'Dopamine packaging')}
-              selected={view === 'packaging'}
-              onPress={() => setView('packaging')}
-            />
-          </View>
+          {product.image !== product.packagingImage && (
+            <View style={styles.views}>
+              <Chip
+                label={t('على الطبق', 'On the plate')}
+                selected={view === 'plate'}
+                onPress={() => setView('plate')}
+              />
+              <Chip
+                label={t('بتغليف دوبامين', 'Dopamine packaging')}
+                selected={view === 'packaging'}
+                onPress={() => setView('packaging')}
+              />
+            </View>
+          )}
           <Title>{ar ? product.ar : product.en}</Title>
           <Body>{money(product.price, t)}</Body>
           <Body style={{ fontSize: 13 }}>

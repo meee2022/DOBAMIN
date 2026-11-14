@@ -142,5 +142,65 @@
     "ar": "كوب ليبانيز تفاح كرامبل",
     "en": "Libanaise apple crumble cup",
     "price": null
+  },
+  {
+    "id": "talbina",
+    "ar": "تلبينة",
+    "en": "Talbina",
+    "price": null
+  },
+  {
+    "id": "date-balls",
+    "ar": "كرات التمر",
+    "en": "Date balls",
+    "price": null
+  },
+  {
+    "id": "chia-pudding",
+    "ar": "بودينغ الشيا",
+    "en": "Chia pudding",
+    "price": null
+  },
+  {
+    "id": "chocolate-peanut-butter",
+    "ar": "شوكولاتة بزبدة الفول السوداني",
+    "en": "Chocolate peanut butter",
+    "price": null
+  },
+  {
+    "id": "pancakes",
+    "ar": "بان كيك كلاسيكي",
+    "en": "Classic pancakes",
+    "price": null
+  },
+  {
+    "id": "chocolate-pancakes",
+    "ar": "بان كيك بالشوكولاتة",
+    "en": "Chocolate pancakes",
+    "price": null
+  },
+  {
+    "id": "berry-oatmeal",
+    "ar": "شوفان بالتوت",
+    "en": "Berry oatmeal",
+    "price": null
+  },
+  {
+    "id": "apple-cinnamon-yogurt",
+    "ar": "زبادي بالتفاح والقرفة",
+    "en": "Apple cinnamon yogurt",
+    "price": null
+  },
+  {
+    "id": "peanut-butter-bowl",
+    "ar": "وعاء زبدة الفول السوداني",
+    "en": "Peanut butter bowl",
+    "price": null
+  },
+  {
+    "id": "fruit-salad",
+    "ar": "سلطة الفواكه",
+    "en": "Fruit salad",
+    "price": null
   }
 ]

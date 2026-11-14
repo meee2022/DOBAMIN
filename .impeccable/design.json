@@ -409,11 +409,11 @@
   ],
   "narrative": {
     "northStar": "A calm confectionery boutique",
-    "overview": "Nardo surfaces, the supplied heart-script logo, and approved sunlit dessert photography establish a quiet boutique. Sage and powder blue carry the atmosphere; deep sage concentrates attention on actions and selected states. Editorial space, arched category frames and open product presentations give the existing identity room to breathe.\n\nArabic is the initial reading direction, with literary display lettering and generous text leading. English uses the established high-contrast serif. Operational forms and preparation schedules retain Arial and the brand palette. The implemented web surface is authoritative: `App.web.tsx` loads `src/boutique.css` after the earlier identity, storefront and section-photography styles. This 2026-11-06 record supersedes the earlier full-width overlay hero, square category frames and enclosed menu-card descriptions. It does not establish a native-app redesign.",
+    "overview": "Nardo surfaces, the supplied heart-script logo, and approved sunlit dessert photography establish a quiet boutique. Sage and powder blue carry the atmosphere; deep sage concentrates attention on actions and selected states. Editorial space, gently rounded category frames and open product presentations give the existing identity room to breathe.\n\nArabic is the initial reading direction, with literary display lettering and generous text leading. English uses the established high-contrast serif. Operational forms and preparation schedules retain Arial and the brand palette. The implemented web surface is authoritative: `App.web.tsx` loads `src/boutique.css` after the earlier identity, storefront and section-photography styles. This 2026-11-06 record supersedes the earlier full-width overlay hero, enclosed menu-card descriptions. It does not establish a native-app redesign.",
     "keyCharacteristics": [
       "Nardo surfaces, graphite text, sage actions and powder-blue section backgrounds.",
       "The original heart-script logo and established Arabic/English typography.",
-      "Approved lifestyle photography framed by arches and restrained corners.",
+      "Complete approved lifestyle photographs with restrained corners and no subject cropping.",
       "Open product presentations, aligned actions, fine rules and generous editorial space."
     ],
     "rules": [
@@ -436,6 +436,11 @@
         "name": "The Open Product Rule",
         "body": "Keep menu photography, product copy and aligned actions visually connected on the page canvas without enclosing the entire product in a filled card.",
         "section": "elevation"
+      },
+      {
+        "name": "The Complete Photograph Rule",
+        "body": "Preserve the complete approved image. Hero and story use intrinsic ratios; gift cards use equal square white mounts with object-fit contain. Keep captions below photographs, use modest corners and avoid hover zoom. Mobile gift cards stack at full width.",
+        "section": "imagery"
       }
     ],
     "dos": [

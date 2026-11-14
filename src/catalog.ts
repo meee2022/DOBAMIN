@@ -8,7 +8,22 @@ export type MenuProduct = {
   price: number | null;
   image: any;
   packagingImage: any;
+  storefrontImage: any;
 };
+const restaurantPackaging: Record<string, any> = {
+  'bahamas-lava-cake': require('../assets/menu/restaurant-2026-11-14/bahamas-lava-cake.webp'),
+  'talbina': require('../assets/menu/restaurant-2026-11-14/talbina.webp'),
+  'date-balls': require('../assets/menu/restaurant-2026-11-14/date-balls.webp'),
+  'chia-pudding': require('../assets/menu/restaurant-2026-11-14/chia-pudding.webp'),
+  'chocolate-peanut-butter': require('../assets/menu/restaurant-2026-11-14/chocolate-peanut-butter.webp'),
+  'pancakes': require('../assets/menu/restaurant-2026-11-14/pancakes.webp'),
+  'chocolate-pancakes': require('../assets/menu/restaurant-2026-11-14/chocolate-pancakes.webp'),
+  'berry-oatmeal': require('../assets/menu/restaurant-2026-11-14/berry-oatmeal.webp'),
+  'apple-cinnamon-yogurt': require('../assets/menu/restaurant-2026-11-14/apple-cinnamon-yogurt.webp'),
+  'peanut-butter-bowl': require('../assets/menu/restaurant-2026-11-14/peanut-butter-bowl.webp'),
+  'fruit-salad': require('../assets/menu/restaurant-2026-11-14/fruit-salad.webp'),
+};
+
 const images: Record<string, { image: any; packagingImage: any }> = {
   'tarte-hazelnut-praline': {
     image: require('../assets/menu/identity-2026-11-06/tarte-hazelnut-praline - تارت براليني البندق.webp'),
@@ -36,7 +51,7 @@ const images: Record<string, { image: any; packagingImage: any }> = {
   },
   'bahamas-lava-cake': {
     image: require('../assets/menu/identity-2026-11-06/bahamas-lava-cake - باهاماس لافا كيك.webp'),
-    packagingImage: require('../assets/menu/web/bahamas-lava-cake - باهاماس لافا كيك - تغليف - Packaging.webp'),
+    packagingImage: restaurantPackaging['bahamas-lava-cake'],
   },
   tiramisu: {
     image: require('../assets/menu/identity-2026-11-06/tiramisu - تيراميسو.webp'),
@@ -112,6 +127,7 @@ export const products: MenuProduct[] = menu.map((p) => ({
   price:
     (prices as { id: string; price: number | null }[]).find((row) => row.id === p.id)?.price ??
     null,
-  ...images[p.id],
+  ...(images[p.id] ?? { image: restaurantPackaging[p.id], packagingImage: restaurantPackaging[p.id] }),
+  storefrontImage: restaurantPackaging[p.id] ?? images[p.id].image,
 }));
 export const assetUrl = (asset: any): string => (typeof asset === 'string' ? asset : asset.uri);

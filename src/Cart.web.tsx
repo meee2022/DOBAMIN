@@ -99,7 +99,7 @@ export default function Cart({ ar, t, cart, setCart, change, dialog }: Props) {
                 .filter((p) => cart[p.id] > 0)
                 .map((p) => (
                   <div className="cart-item" key={p.id}>
-                    <img src={assetUrl(p.image)} width={1024} height={1024} alt="" />
+                    <img src={assetUrl(p.storefrontImage)} width={1024} height={1024} alt="" />
                     <div>
                       <h3>{ar ? p.ar : p.en}</h3>
                       <span>{money(p.price)}</span>

@@ -77,7 +77,7 @@ rounded:
   square: "0"
   media-card: "10px"
   compact-media: "8px"
-  category-arch: "100px 100px 10px 10px"
+  category-frame: "10px"
   product-action: "5px"
   media-control: "6px"
 spacing:
@@ -113,7 +113,7 @@ components:
   category-card:
     backgroundColor: "{colors.white}"
     textColor: "{colors.ink}"
-    rounded: "{rounded.category-arch}"
+    rounded: "{rounded.category-frame}"
     padding: "10px 10px 18px"
   gift-card:
     backgroundColor: "{colors.bg}"
@@ -189,14 +189,14 @@ components:
 
 **Creative North Star: "A calm confectionery boutique"**
 
-Nardo surfaces, the supplied heart-script logo, and approved sunlit dessert photography establish a quiet boutique. Sage and powder blue carry the atmosphere; deep sage concentrates attention on actions and selected states. Editorial space, arched category frames and open product presentations give the existing identity room to breathe.
+Nardo surfaces, the supplied heart-script logo, and approved sunlit dessert photography establish a quiet boutique. Sage and powder blue carry the atmosphere; deep sage concentrates attention on actions and selected states. Editorial space, gently rounded category frames and open product presentations give the existing identity room to breathe.
 
 Arabic is the initial reading direction, with literary display lettering and generous text leading. English uses the established high-contrast serif. Operational forms and preparation schedules retain Arial and the brand palette. The implemented web surface is authoritative: `App.web.tsx` loads `src/boutique.css` after the earlier identity, storefront and section-photography styles. This 2026-11-06 record supersedes the earlier full-width overlay hero, square category frames and enclosed menu-card descriptions. It does not establish a native-app redesign.
 
 **Key Characteristics:**
 - Nardo surfaces, graphite text, sage actions and powder-blue section backgrounds.
 - The original heart-script logo and established Arabic/English typography.
-- Approved lifestyle photography framed by arches and restrained corners.
+- Complete approved lifestyle photographs with restrained corners and no subject cropping.
 - Open product presentations, aligned actions, fine rules and generous editorial space.
 
 ## Colors
@@ -246,11 +246,11 @@ Arabic display remains expressive and unemboldened. English headings and editori
 
 The public storefront uses a centered 1240px maximum width with 89.6% fluid width, becoming 90% on mobile. The desktop header places the original logo, customer navigation and language/bag actions in one row. Mobile keeps logo/actions above a dedicated navigation row.
 
-The homepage opens with separate copy and photography columns in a 0.88fr / 1.12fr ratio and a 5% gap. Copy stays on the solid canvas. The photograph has a contained caption link over its lower edge; it is not a full-width text-overlay hero. Its height is 550px, then 480px at 1100px and below. At 700px the hero stacks copy above a 330px photograph. The four photographic category entries use four columns, becoming two on mobile.
+The homepage opens with separate copy and photography columns in a 0.88fr / 1.12fr ratio and a 5% gap. Copy stays on the solid canvas. The photograph keeps its intrinsic 3:2 ratio with its caption link below it. At 700px the hero stacks copy above the complete photograph. The four photographic category entries use four columns, becoming two on mobile.
 
 The shopping area pairs a 225px filter sidebar with flexible results, with a 36px gap. At 1100px the sidebar becomes 190px with a 24px gap and products move from three columns to two. At 700px the sidebar becomes a toolbar above the two-column product grid. Mobile controls omit sidebar explanatory copy and counts while preserving search, selected states and all categories. Product cards stretch evenly and push their price/action area to the bottom.
 
-Gifts and story use paired editorial columns on desktop and stack on mobile. Desktop gift cards form a three-column grid; on mobile each becomes a compact row with a 42% image column and adjacent copy. Shared page headers use a breadcrumb, heading, description and a small image; the image is hidden on mobile. Booking retains its desktop form/selection pairing and form-first mobile order.
+Gifts and story use paired editorial columns on desktop and stack on mobile. Desktop gift cards form a three-column grid; on mobile each becomes a full-width stacked card. All gift images use equal square white mounts with contain sizing, preserving both portrait and landscape originals. Shared page headers use a breadcrumb, heading, description and a small image; the image is hidden on mobile. Booking retains its desktop form/selection pairing and form-first mobile order.
 
 Arabic uses RTL and English uses LTR; logical spacing and directional arrows follow the active language. Operational order records and schedules retain their established responsive grids. The cart is a right-side native-dialog drawer constrained to `min(560px, 100vw)`, with 28px padding, reducing to 20px on mobile.
 
@@ -258,11 +258,11 @@ Arabic uses RTL and English uses LTR; logical spacing and directional arrows fol
 
 The storefront is predominantly flat. Photography, Nardo/sage/sky tonal bands, whitespace and fine rules establish hierarchy. Product presentations have transparent backgrounds and no enclosing borders or shadows; category and gift containers use quiet surfaces. The native dialogs retain the existing dark translucent backdrop, with the cart's existing blur.
 
-Product imagery scales to 1.035 over 0.35s on hover. Existing actions retain their modest state transitions; menu selected states change surface and text color. Reduced-motion preference suppresses transitions and animations and restores automatic scrolling. Do not promote retired photograph-stamp shadows or historical gallery animations into current system rules.
+Product imagery does not zoom on hover, preserving visible plates and photograph edges. Existing actions retain their modest state transitions; menu selected states change surface and text color. Reduced-motion preference suppresses transitions and animations and restores automatic scrolling. Do not promote retired photograph-stamp shadows or historical gallery animations into current system rules.
 
 ## Shapes
 
-Arches are reserved for the hero and photographic category navigation. The hero uses pronounced top corners (160px desktop, 90px mobile) and restrained lower corners. Category frames use the frontmatter category-arch shape with inset image arches. These are intentional image frames, not the shape for every control.
+Hero and category photographs use modest rounded corners rather than arched masks. Hero corners are 10px desktop and 8px mobile; category frames are 10px with 6px image corners. This preserves the complete approved composition.
 
 Reusable product imagery, gift cards, the filter panel and booking panels use the media-card radius. Small cart and page-header images and cart summaries use compact-media corners. Storefront actions and search use media-control corners; product-add actions and menu filters use product-action corners. Product copy remains open on the page, with square, transparent outer containers.
 
@@ -283,12 +283,12 @@ Each product shows one approved plated image with an enlargement action, categor
 
 **The Open Product Rule.** Keep menu photography, product copy and aligned actions visually connected on the page canvas without enclosing the entire product in a filled card.
 
-Gift cards keep approved box imagery and editable booking links, with Nardo copy surfaces and fine action dividers. Mobile rows retain the same content and link semantics. The public packaging gallery remains retired; legacy gallery links resolve to the gifts section.
+Gift cards keep approved box imagery and editable booking links, with Nardo copy surfaces and fine action dividers. Mobile gift cards stack vertically with full-width square image mounts, retaining the same content and link semantics. The public packaging gallery remains retired; legacy gallery links resolve to the gifts section.
 
 ### Approved Photography
 The latest menu raster set contains all 24 products on sunlit Nardo stone with sage/powder-blue ceramics. `branding/menu-photography.json` is its inventory. The approved six-role section set and responsive WebP variants are recorded in `branding/section-photography.json`. Hero, categories and gifts reuse these photographs; no new raster imagery was generated for the boutique UI redesign. The hero is high priority; lower photographs load lazily.
 
-Preserve approved subjects and horizontal drybrush artwork. Lifestyle images may be cropped by their implemented frame; the photo dialog contains its image without cropping. Do not restore old beige, peach or pink menu backgrounds or plates. Future cup imagery must follow `branding/approved-cups.json` and its taller real open-container reference; that reference establishes neither a lid nor exact dimensions. Preserve original files and bilingual archives.
+Preserve approved subjects and horizontal drybrush artwork. Show the complete approved photograph: hero and story images keep their intrinsic ratio, category images use modest corners, and gift images are contained within equal square white mounts. Keep captions below images and disable product hover enlargement so subjects, plates, logos and box edges remain visible on desktop and mobile. The photo dialog also contains its image without cropping. Do not restore old beige, peach or pink menu backgrounds or plates. Future cup imagery must follow `branding/approved-cups.json` and its taller real open-container reference; that reference establishes neither a lid nor exact dimensions. Preserve original files and bilingual archives.
 
 ### Navigation and Page Headers
 Preserve the original heart-script logo and the four customer links. Navigation uses text links with understated hover underlines, language switching and the bag count; SVG icons retain visible focus and accessible names. Shared inner-page headers use an understated breadcrumb and fine bottom divider, with a small approved gift image on desktop. The former solid sky heading block and decorative brush edge are superseded.

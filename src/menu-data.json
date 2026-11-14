@@ -214,5 +214,85 @@
     "price": null,
     "plate": "cup-libanaise-apple-crumble - كوب ليبانيز تفاح كرامبل - طبق - Plate",
     "packaging": "cup-libanaise-apple-crumble - كوب ليبانيز تفاح كرامبل - تغليف - Packaging"
+  },
+  {
+    "id": "talbina",
+    "ar": "تلبينة",
+    "en": "Talbina",
+    "category": "cups",
+    "price": null,
+    "packaging": "تلبينة - Talbina"
+  },
+  {
+    "id": "date-balls",
+    "ar": "كرات التمر",
+    "en": "Date balls",
+    "category": "desserts",
+    "price": null,
+    "packaging": "كرات التمر - Date balls"
+  },
+  {
+    "id": "chia-pudding",
+    "ar": "بودينغ الشيا",
+    "en": "Chia pudding",
+    "category": "cups",
+    "price": null,
+    "packaging": "بودينغ الشيا - Chia pudding"
+  },
+  {
+    "id": "chocolate-peanut-butter",
+    "ar": "شوكولاتة بزبدة الفول السوداني",
+    "en": "Chocolate peanut butter",
+    "category": "cups",
+    "price": null,
+    "packaging": "شوكولاتة بزبدة الفول السوداني - Chocolate peanut butter"
+  },
+  {
+    "id": "pancakes",
+    "ar": "بان كيك كلاسيكي",
+    "en": "Classic pancakes",
+    "category": "desserts",
+    "price": null,
+    "packaging": "بان كيك كلاسيكي - Classic pancakes"
+  },
+  {
+    "id": "chocolate-pancakes",
+    "ar": "بان كيك بالشوكولاتة",
+    "en": "Chocolate pancakes",
+    "category": "desserts",
+    "price": null,
+    "packaging": "بان كيك بالشوكولاتة - Chocolate pancakes"
+  },
+  {
+    "id": "berry-oatmeal",
+    "ar": "شوفان بالتوت",
+    "en": "Berry oatmeal",
+    "category": "cups",
+    "price": null,
+    "packaging": "شوفان بالتوت - Berry oatmeal"
+  },
+  {
+    "id": "apple-cinnamon-yogurt",
+    "ar": "زبادي بالتفاح والقرفة",
+    "en": "Apple cinnamon yogurt",
+    "category": "cups",
+    "price": null,
+    "packaging": "زبادي بالتفاح والقرفة - Apple cinnamon yogurt"
+  },
+  {
+    "id": "peanut-butter-bowl",
+    "ar": "وعاء زبدة الفول السوداني",
+    "en": "Peanut butter bowl",
+    "category": "cups",
+    "price": null,
+    "packaging": "وعاء زبدة الفول السوداني - Peanut butter bowl"
+  },
+  {
+    "id": "fruit-salad",
+    "ar": "سلطة الفواكه",
+    "en": "Fruit salad",
+    "category": "cups",
+    "price": null,
+    "packaging": "سلطة الفواكه - Fruit salad"
   }
 ]
